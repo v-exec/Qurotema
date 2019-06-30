@@ -4,117 +4,215 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour {
 
-	//camera and rigidbody
-	private Transform cameraTransform;
+	//connections
 	private Rigidbody rb;
+	private GameObject cam;
+	private Camera camComponent;
 
-	//movement
-	private float walkSpeed = 10f;
-	private float sprintSpeed = 40f;
-	private float jumpSpeed = 3f;
-	private float gravity = 600f;
-	private float speedChangeWalk = 2.0f;
-	private float speedChangeSprint = 0.2f;
-	private float stopSpeed = 0.92f;
+	//parameters
+	public float walkSpeed = 0.2f;
+	public float sprintSpeed = 0.8f;
+	public float jumpSpeed = 450f;
+	public float flyHeight = 80f;
 
-	//internal movement
+	public float gravity = 5f;
+
+	public float speedChangeWalk = 2.0f;
+	public float speedChangeSprint = 0.2f;
+	public float speedChangeStop = 1.5f;
+	public float directionChangeSpeed = 3f;
+	public float airDampening = 0.2f;
+	public float flyEase = 4f;
+
+	public float jumpDelayTime = 0.1f;
+	public float groundedHeight = 0.2f;
+	public float floatDistance = 4f;
+	public float flightSpeedMultiplier = 2f;
+	public float flightControlMultiplier = 10f;
+
+	public float defaultFOV = 65f;
+	public float fastFOV = 90f;
+	public float flyingFOV = 100f;
+	public float FOVease = 2f;
+
+	//internal
+	public bool flying = false;
+
 	private float targetSpeed = 0f;
-	private bool sprinting = false;
+	private float targetFOV = 0f;
 	private bool jumping = false;
-	private Vector2 currentDirection = new Vector2(0, 0);
-
-	//get camera
-	void Start () {
-		cameraTransform = GameObject.Find("Main Camera").transform;
+	private bool sprinting = false;
+	private Vector2 targetDirection = new Vector2(0, 0);
+	
+	void Start() {
+		//get components
+		cam = GameObject.Find("Camera");
+		camComponent = cam.GetComponent<Camera>();
 		rb = GetComponent<Rigidbody>();
+
+		//set fov to default
+		targetFOV = defaultFOV;
 	}
 
 	//escape
 	void Update() {
-		if (Input.GetKey("escape")) {
+		handleKeys();
+		setFOV();
+	}
+
+	void FixedUpdate() {
+		move();
+	}
+
+	void handleKeys() {
+		if (Input.GetKeyDown("escape")) {
 			Application.Quit();
+		}
+
+		if (Input.GetKeyDown(KeyCode.LeftAlt)) {
+			flying = !flying;
+			if (flying) {
+				walkSpeed *= flightSpeedMultiplier;
+				sprintSpeed *= flightSpeedMultiplier;
+
+				speedChangeWalk *= flightControlMultiplier;
+				speedChangeSprint *= flightControlMultiplier;
+				speedChangeStop *= flightControlMultiplier;
+				directionChangeSpeed *= flightControlMultiplier;
+			} else {
+				walkSpeed /= flightSpeedMultiplier;
+				sprintSpeed /= flightSpeedMultiplier;
+
+				speedChangeWalk /= flightControlMultiplier;
+				speedChangeSprint /= flightControlMultiplier;
+				speedChangeStop /= flightControlMultiplier;
+				directionChangeSpeed /= flightControlMultiplier;
+			}
 		}
 	}
 
-	void FixedUpdate () {
-		//additional gravity when not grounded
-		rb.AddForce(new Vector3(0, -gravity, 0));
-		if (!isGrounded(0.1f) && !jumping) {
-			rb.AddForce(new Vector3(0, -gravity * 20f, 0));
-		}
+	void setFOV() {
+		if (!flying) targetFOV = Nox.ease(targetFOV, Nox.remap(targetSpeed, walkSpeed, sprintSpeed, defaultFOV, fastFOV), FOVease);
+		camComponent.fieldOfView = targetFOV;
+	}
 
-		//input
+	void move() {
+		//get input
 		float horizontal = 0f;
 		float vertical = 0f;
 		if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f) horizontal = Input.GetAxis("Horizontal");
 		if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f) vertical = Input.GetAxis("Vertical");
+		Vector2 direction = getInput(horizontal, vertical);
+		Vector3 newLoc = new Vector3(gameObject.transform.position.x + direction.x, gameObject.transform.position.y, gameObject.transform.position.z + direction.y);
 
-		//calculating direction vector
-		Vector3 direction = new Vector3(horizontal, 0.0f, vertical);
-		Vector3 newDir = cameraTransform.forward;
+		//glue to ground, or add gravity for jump
+		if (!flying) {
+			if (!jumping) {
+				newLoc = groundPlayer(newLoc);
+			} else {
+				rb.AddForce(new Vector3(0, -gravity, 0));
+			}
+		} else {
+			//fly
+			rb.velocity = new Vector3(0, 0, 0);
+			targetFOV = Nox.ease(targetFOV, flyingFOV, FOVease);
 
-		direction = cameraTransform.TransformDirection(direction);
-		direction.y = 0.0f;
-
-		//limit input magnitude (to avoid high-magnitude input when moving diagonally)
-		direction = Vector3.Normalize(direction);
-		currentDirection = new Vector2(direction.x, direction.z) * targetSpeed;
-
-		//applied movement
-		Vector3 newVel;
-		newVel = new Vector3(currentDirection.x, rb.velocity.y, currentDirection.y);
-		
-		//only apply movement if grounded
-		if (isGrounded(0.5f)) rb.velocity = newVel;
-
-		//jump
-		if (Input.GetKeyDown(KeyCode.Space) && isGrounded(0.5f)) {
-			jumping = true;
-			rb.AddForce(Vector3.up * (jumpSpeed * 10000));
-			StartCoroutine(JumpDelay());
+			if (transform.position.y < flyHeight - 0.001f) newLoc = new Vector3(newLoc.x, Nox.ease(transform.position.y, flyHeight, flyEase), newLoc.z);
+			else newLoc = new Vector3(newLoc.x, flyHeight, newLoc.z);
 		}
 
-		//no movement
-		if (Mathf.Abs(horizontal) < 0.1f && Mathf.Abs(vertical) < 0.1f && isGrounded(0.1f)) {
-			sprinting = false;
-			if (targetSpeed != 0) targetSpeed = 0f;
-			
-			if (isGrounded(0.1f) && rb.velocity.x > 0 || rb.velocity.z > 0) {
-				rb.velocity *= stopSpeed;
-				
-				if (rb.velocity.x < 0.1f && rb.velocity.z < 0.1f) {
-					rb.velocity = new Vector3(0, rb.velocity.y, 0);
-				}
-			}
+		//apply movement
+		rb.MovePosition(newLoc);
 
+		//jump
+		if (Input.GetKeyDown(KeyCode.Space) && isGrounded(groundedHeight) && !jumping && !flying) {
+			jumping = true;
+			rb.AddForce(Vector3.up * (jumpSpeed));
+			StartCoroutine(jumpDelay());
+		}
+
+		sprinting = false;
+
+		//no movement - stop all forces (excluding vertical force for jumping)
+		if (horizontal == 0f && vertical == 0f && isGrounded(groundedHeight)) {
+			targetSpeed = Nox.ease(targetSpeed, 0f, speedChangeStop);
+			rb.velocity = new Vector3(0, rb.velocity.y, 0);
 		//sprint
 		} else if (Input.GetKey(KeyCode.LeftShift)) {
 			sprinting = true;
-			if (targetSpeed != sprintSpeed) targetSpeed = ease(targetSpeed, sprintSpeed, speedChangeSprint);
-
+			targetSpeed = Nox.ease(targetSpeed, sprintSpeed, speedChangeSprint);
 		//walk
 		} else {
-			sprinting = false;
-			if (targetSpeed != walkSpeed) targetSpeed = ease(targetSpeed, walkSpeed, speedChangeWalk);
+			targetSpeed = Nox.ease(targetSpeed, walkSpeed, speedChangeWalk);
 		}
 	}
 
-	float ease (float val, float target, float ease) {
-		float difference = target - val;
-		difference *= ease * Time.deltaTime;
-		return val + difference;
+	Vector2 getInput(float horizontal, float vertical) {
+		//calculating direction vector
+		Vector3 direction = new Vector3(horizontal, 0.0f, vertical);
+
+		//create rotated transform that is locked to avoid up/down camera angle affecting direction magnitude
+		Quaternion cameraRotation = cam.transform.rotation;
+		cam.transform.Rotate(Vector3.left, cam.transform.localRotation.eulerAngles.x);
+
+		direction = cam.transform.TransformDirection(direction);
+		direction.y = 0.0f;
+
+		//revert camera's rotation
+		cam.transform.rotation = cameraRotation;
+
+		//limit input magnitude (to avoid high-magnitude input when moving diagonally)
+		direction = Vector3.Normalize(direction);
+
+		//ease direction for smoother movement (dampen direction change if in air)
+		float changer = directionChangeSpeed;
+		if (jumping) changer *= airDampening;
+
+		targetDirection.x = Nox.ease(targetDirection.x, direction.x, changer);
+		targetDirection.y = Nox.ease(targetDirection.y, direction.z, changer);
+
+		//amplify normalized vector to desired speed
+		return new Vector2(targetDirection.x, targetDirection.y) * targetSpeed;
 	}
 
-	bool isGrounded (float extraDistance) {
+	Vector3 groundPlayer(Vector3 location) {
+		RaycastHit hit;
+		//offset raycast location to take into account collider height (add small correction for when collider and surface are perfectly aligned)
+		Vector3 boundLocation = new Vector3(location.x, location.y - (GetComponent<Collider>().bounds.extents.y - 0.01f), location.z);
+		Ray downRay = new Ray(boundLocation, -Vector3.up);
+
+		if (Physics.Raycast(downRay, out hit)) {
+
+			if (hit.collider.gameObject.layer != 9) { //PlayerNonColliders layer
+				
+				//if distance is big enough, make player fall with gravity instead of forcing them to the ground
+				if (hit.distance > floatDistance && !jumping) {
+					jumping = true;
+					StartCoroutine(jumpDelay());
+				} else if (hit.distance > groundedHeight) {
+					//only apply transformation pushing player down if they're too high - otherwise this continuously pushes player downwards undesireably
+					location = new Vector3(location.x, location.y - hit.distance + groundedHeight, location.z);
+				}
+			}
+		}
+
+		return location;
+	}
+
+	bool isGrounded(float extraDistance) {
 		return Physics.Raycast(transform.position, -Vector3.up, GetComponent<Collider>().bounds.extents.y + extraDistance);
 	}
 
-	IEnumerator JumpDelay () {
-		yield return new WaitForSeconds(0.2f);
+	IEnumerator jumpDelay() {
+		yield return new WaitForSeconds(jumpDelayTime);
 
 		while(jumping) {
 			yield return new WaitForSeconds(0.01f);
-			if (isGrounded(0.3f)) jumping = false;
+			if (isGrounded(groundedHeight)) jumping = false;
 		}
+	}
+
+	public float getSpeed() {
+		return targetSpeed / sprintSpeed;
 	}
 }

@@ -9,12 +9,13 @@ public class LocationData : MonoBehaviour {
 	Text data;
 
 	void Start () {
-		position = GameObject.Find("System").GetComponent<Nox>().playerPosition;
+		position = GameObject.Find("Nox").GetComponent<Nox>().playerPosition;
 		data = GetComponent<Text>();
 	}
 	
 	void Update () {
-		position = GameObject.Find("System").GetComponent<Nox>().playerPosition;
-		data.text = position.x * 20 + "\n" + position.y * 20 + "\n" + position.z * 20;
+		position = GameObject.Find("Nox").GetComponent<Nox>().playerPosition;
+		var text = (position.x * 20).ToString("F2") + "\n" + (position.y * 20).ToString("F2") + "\n" + (position.z * 20).ToString("F2");
+		data.text = text;
 	}
 }

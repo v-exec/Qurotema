@@ -5,20 +5,20 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour {
 
 	//mouse
-	private float mouseSensitivity = 130.0f;
-	private float clampAngle = 80.0f;
-	private float easeSpeed = 1.5f;
-	private float shakeSpeed = 1.0f;
-	private float shakeQuantity = 1.4f;
-	private float followSpeed = 5f;
-
+	public float mouseSensitivity = 130.0f;
+	public float clampAngle = 80.0f;
+	public float easeSpeed = 1.5f;
+	public float shakeSpeed = 1.0f;
+	public float shakeQuantity = 1.4f;
+	public float followSpeed = 5f;
+ 
 	//internal mouse
 	private float rotY = 0.0f;
 	private float rotX = 0.0f;
 	private float currentX = 0.0f;
 	private float currentY = 0.0f;
 	private GameObject player;
-	private Rigidbody playerBody;
+	private Camera cam;
 	private float playerSpeed;
 
 	//shake noise
@@ -26,23 +26,33 @@ public class MouseLook : MonoBehaviour {
 	private float perlinY;
 	private float perlinZ;
 
-	void Start () {
+	void Start() {
+		//lock cursor
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
 
+		//get rotation
 		Vector3 rot = transform.localRotation.eulerAngles;
 		rotY = rot.y;
 		rotX = rot.x;
 
+		//get perlin noise seed
 		perlinX = Random.Range(0f, 1000f);
 		perlinY = Random.Range(0f, 1000f);
 		perlinZ = Random.Range(0f, 1000f);
 
+		//get components
 		player = GameObject.Find("Player");
-		playerBody = player.GetComponent<Rigidbody>();
+		cam = gameObject.GetComponent<Camera>();
 	}
 
-	void FixedUpdate () {
+	void FixedUpdate() {
+		handleInput();
+		shake();
+		follow();
+	}
+
+	void handleInput() {
 		//get input
 		float mouseX = Input.GetAxis("Mouse X");
 		float mouseY = -Input.GetAxis("Mouse Y");
@@ -54,38 +64,28 @@ public class MouseLook : MonoBehaviour {
 		rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
 
 		//ease rotation
-		currentX = ease(currentX, rotX, easeSpeed);
-		currentY = ease(currentY, rotY, easeSpeed);
+		currentX = Nox.ease(currentX, rotX, easeSpeed);
+		currentY = Nox.ease(currentY, rotY, easeSpeed);
 
 		//apply rotation
 		Quaternion localRotation = Quaternion.Euler(currentX, currentY, 0.0f);
 		transform.rotation = localRotation;
-
-		shake();
-
-		follow();
 	}
 
-	float ease (float val, float target, float ease) {
-		float difference = target - val;
-		difference *= ease * Time.deltaTime;
-		return val + difference;
-	}
-
-	void shake () {
+	void shake() {
 		//increment perlin 'cursor'
 		perlinX += shakeSpeed * Time.deltaTime;
 		perlinY += shakeSpeed * Time.deltaTime;
 		perlinZ += shakeSpeed * Time.deltaTime;
 
 		//remap to -1 to 1 and amplify according to shake quantity
-		float x = remap(Mathf.PerlinNoise(perlinX, 0), 0f, 1f, -1f, 1f) * shakeQuantity;
-		float y = remap(Mathf.PerlinNoise(perlinY, 0), 0f, 1f, -1f, 1f) * shakeQuantity;
-		float z = remap(Mathf.PerlinNoise(perlinZ, 0), 0f, 1f, -1f, 1f) * shakeQuantity;
+		float x = Nox.remap(Mathf.PerlinNoise(perlinX, 0), 0f, 1f, -1f, 1f) * shakeQuantity;
+		float y = Nox.remap(Mathf.PerlinNoise(perlinY, 0), 0f, 1f, -1f, 1f) * shakeQuantity;
+		float z = Nox.remap(Mathf.PerlinNoise(perlinZ, 0), 0f, 1f, -1f, 1f) * shakeQuantity;
 
 		//use player speed as subtraction to shake speed modifier
 		//the faster the player moves, the less camera shake there is
-		playerSpeed = playerBody.velocity.magnitude;
+		playerSpeed = player.GetComponent<PlayerMove>().getSpeed();
 		float shakeSpeedModifier = 1f - (playerSpeed * 0.005f);
 		if (shakeSpeedModifier < 0) shakeSpeedModifier = 0;
 
@@ -94,13 +94,9 @@ public class MouseLook : MonoBehaviour {
 	}
 
 	void follow() {
-		float x = ease(transform.position.x, player.transform.position.x, followSpeed);
-		float y = ease(transform.position.y, player.transform.position.y + 0.5f, followSpeed);
-		float z = ease(transform.position.z, player.transform.position.z, followSpeed);
+		float x = Nox.ease(transform.position.x, player.transform.position.x, followSpeed);
+		float y = Nox.ease(transform.position.y, player.transform.position.y + 0.5f, followSpeed);
+		float z = Nox.ease(transform.position.z, player.transform.position.z, followSpeed);
 		transform.position = new Vector3(x, y, z);
-	}
-
-	float remap(float val, float min1, float max1, float min2, float max2) {
-		return (val - min1) / (max1 - min1) * (max2 - min2) + min2;
 	}
 }

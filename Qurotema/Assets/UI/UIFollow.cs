@@ -5,19 +5,24 @@ using UnityEngine.UI;
 
 public class UIFollow : MonoBehaviour {
 
-	float distanceFromCamera = 0.9f;
-	public float followSpeed = 1f;
-	float opacity = 0f;
-	float fadeSpeed = 0.4f;
-	float targetOpacity = 0.2f;
-	Coroutine fader;
+	//parameters
+	public float distanceFromCamera = 1.2f;
+	public float followSpeed = 45f;
+	public float targetOpacity = 0.9f;
+	public float fadeSpeed = 10f;
+	public float fadeDelay = 0f;
+	
+	//internal
+	private float opacity = 0f;
+	private Coroutine fader;
+	private PlayerMove playerScript;
 
 	void Start () {
 		transform.position = Camera.main.transform.position + (Camera.main.transform.forward * distanceFromCamera);
 		transform.rotation = Camera.main.transform.rotation;
 	}
 
-	void Update () {
+	void Update() {
 		if (Input.GetMouseButtonDown(1)) {
 			if (opacity != targetOpacity) {
 				if (fader != null) StopCoroutine(fader);
@@ -32,31 +37,37 @@ public class UIFollow : MonoBehaviour {
 			}
 		}
 
+		//override when flying
+		if (Nox.player.GetComponent<PlayerMove>().flying) {
+			if (fader != null) StopCoroutine(fader);
+			if (opacity != 0f) opacity = Nox.ease(opacity, 0f, fadeSpeed / 2f);
+		}
+
 		GetComponent<CanvasGroup>().alpha = opacity;
 	}
 
-	void FixedUpdate () {
+	void FixedUpdate() {
+		follow();
+	}
+
+	void follow() {
 		Vector3 targetPosition = Camera.main.transform.position + (Camera.main.transform.forward * distanceFromCamera);
 		Vector3 newPosition = transform.position;
 
-		newPosition.x = ease(newPosition.x, targetPosition.x, followSpeed);
-		newPosition.y = ease(newPosition.y, targetPosition.y, followSpeed);
-		newPosition.z = ease(newPosition.z, targetPosition.z, followSpeed);
+		newPosition.x = Nox.ease(newPosition.x, targetPosition.x, followSpeed);
+		newPosition.y = Nox.ease(newPosition.y, targetPosition.y, followSpeed);
+		newPosition.z = Nox.ease(newPosition.z, targetPosition.z, followSpeed);
 
 		transform.position = newPosition;
 		transform.rotation = Camera.main.transform.rotation;
 	}
 
-	float ease (float val, float target, float ease) {
-		float difference = target - val;
-		difference *= ease;
-		return val + difference;
-	}
+	IEnumerator Fade(float target) {
+		yield return new WaitForSeconds(fadeDelay);
 
-	IEnumerator Fade (float target) {
 		while (Mathf.Abs(opacity - target) > 0.01f) {
 			yield return new WaitForSeconds(0.01f);
-			opacity = ease(opacity, target, fadeSpeed);
+			opacity = Nox.ease(opacity, target, fadeSpeed);
 		}
 
 		opacity = target;
