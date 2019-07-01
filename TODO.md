@@ -2,7 +2,6 @@
 
 - Find way to exclude UI from motion blur
 - Think of what to do visually for flying mode - different UI?
-- Look into takng into account FOV for UI placement
 - Refine terrain shader
 - Create strings instrument
 - Add teleportation
@@ -14,7 +13,6 @@
 - Create monoliths for language constructs
 - Create language
 - Create language characters
-
 - More instruments?
 - Bigger / different map?
 - Gates interaction?

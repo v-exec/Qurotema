@@ -8,18 +8,27 @@ public class UIFollow : MonoBehaviour {
 	//parameters
 	public float distanceFromCamera = 1.2f;
 	public float followSpeed = 45f;
-	public float targetOpacity = 0.9f;
-	public float fadeSpeed = 10f;
 	public float fadeDelay = 0f;
+
+	private float targetOpacity = 0.9f;
+	private float fadeSpeed = 10f;
+	private float distanceFromCameraDifference = 0.3f;
 	
 	//internal
 	private float opacity = 0f;
+	private float minDistanceFromCamera = 0f;
+	private float targetDistance = 0f;
+
 	private Coroutine fader;
 	private PlayerMove playerScript;
 
 	void Start () {
-		transform.position = Camera.main.transform.position + (Camera.main.transform.forward * distanceFromCamera);
+		playerScript = Nox.player.GetComponent<PlayerMove>();
+
+		transform.position = Camera.main.transform.position + (Camera.main.transform.forward * targetDistance);
 		transform.rotation = Camera.main.transform.rotation;
+
+		minDistanceFromCamera = distanceFromCamera - distanceFromCameraDifference;
 	}
 
 	void Update() {
@@ -47,11 +56,12 @@ public class UIFollow : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
+		setDistance();
 		follow();
 	}
 
 	void follow() {
-		Vector3 targetPosition = Camera.main.transform.position + (Camera.main.transform.forward * distanceFromCamera);
+		Vector3 targetPosition = Camera.main.transform.position + (Camera.main.transform.forward * targetDistance);
 		Vector3 newPosition = transform.position;
 
 		newPosition.x = Nox.ease(newPosition.x, targetPosition.x, followSpeed);
@@ -60,6 +70,10 @@ public class UIFollow : MonoBehaviour {
 
 		transform.position = newPosition;
 		transform.rotation = Camera.main.transform.rotation;
+	}
+
+	void setDistance() {
+		targetDistance = Nox.remap(playerScript.targetFOV, playerScript.defaultFOV, playerScript.fastFOV, distanceFromCamera, minDistanceFromCamera);
 	}
 
 	IEnumerator Fade(float target) {

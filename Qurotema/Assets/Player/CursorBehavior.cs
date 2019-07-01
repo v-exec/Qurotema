@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class CursorBehavior : MonoBehaviour {
 
-	public float distanceFromCamera = 5f;
-	public float followSpeed = 15f;
+	//cursor
+	private float distanceFromCamera = 5f;
+	private float followSpeed = 15f;
 
+	//components
 	private Rigidbody rb;
 
 	void Start () {

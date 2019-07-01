@@ -4,42 +4,43 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour {
 
-	//connections
+	//components
 	private Rigidbody rb;
 	private GameObject cam;
 	private Camera camComponent;
 
-	//parameters
+	//movement
 	public float walkSpeed = 0.2f;
 	public float sprintSpeed = 0.8f;
-	public float jumpSpeed = 450f;
-	public float flyHeight = 80f;
 
-	public float gravity = 5f;
+	private float jumpSpeed = 450f;
+	private float flyHeight = 80f;
+	private float gravity = 5f;
 
-	public float speedChangeWalk = 2.0f;
-	public float speedChangeSprint = 0.2f;
-	public float speedChangeStop = 1.5f;
-	public float directionChangeSpeed = 3f;
-	public float airDampening = 0.2f;
-	public float flyEase = 4f;
+	private float speedChangeWalk = 2.0f;
+	private float speedChangeSprint = 0.2f;
+	private float speedChangeStop = 1.5f;
+	private float directionChangeSpeed = 3f;
+	private float airDampening = 0.2f;
+	private float flyEase = 4f;
 
-	public float jumpDelayTime = 0.1f;
-	public float groundedHeight = 0.2f;
-	public float floatDistance = 4f;
-	public float flightSpeedMultiplier = 2f;
-	public float flightControlMultiplier = 10f;
+	private float jumpDelayTime = 0.1f;
+	private float groundedHeight = 0.2f;
+	private float floatDistance = 4f;
+	private float flightSpeedMultiplier = 2f;
+	private float flightControlMultiplier = 10f;
 
 	public float defaultFOV = 65f;
 	public float fastFOV = 90f;
-	public float flyingFOV = 100f;
-	public float FOVease = 2f;
+	
+	private float flyingFOV = 100f;
+	private float FOVease = 2f;
 
 	//internal
 	public bool flying = false;
+	public float targetSpeed = 0f;
+	public float targetFOV = 0f;
 
-	private float targetSpeed = 0f;
-	private float targetFOV = 0f;
 	private bool jumping = false;
 	private bool sprinting = false;
 	private Vector2 targetDirection = new Vector2(0, 0);

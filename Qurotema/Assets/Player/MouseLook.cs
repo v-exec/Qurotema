@@ -5,21 +5,23 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour {
 
 	//mouse
-	public float mouseSensitivity = 130.0f;
-	public float clampAngle = 80.0f;
-	public float easeSpeed = 1.5f;
-	public float shakeSpeed = 1.0f;
-	public float shakeQuantity = 1.4f;
-	public float followSpeed = 5f;
+	private float mouseSensitivity = 130.0f;
+	private float clampAngle = 80.0f;
+	private float easeSpeed = 1.5f;
+	private float shakeSpeed = 1.0f;
+	private float shakeQuantity = 1.4f;
+	private float followSpeed = 5f;
  
 	//internal mouse
 	private float rotY = 0.0f;
 	private float rotX = 0.0f;
 	private float currentX = 0.0f;
 	private float currentY = 0.0f;
+	private float playerSpeed;
+
+	//components
 	private GameObject player;
 	private Camera cam;
-	private float playerSpeed;
 
 	//shake noise
 	private float perlinX;
