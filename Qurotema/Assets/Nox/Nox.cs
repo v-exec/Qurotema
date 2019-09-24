@@ -6,6 +6,7 @@ public class Nox : MonoBehaviour {
 
 	static public GameObject player;
 	public Vector3 playerPosition;
+	public List<String> strings = new List<String>();
 
 	public float waveHeightSpeed = 0.01f;
 	public float waveOffsetSpeed = 0.02f;
@@ -16,11 +17,13 @@ public class Nox : MonoBehaviour {
 	private float currentWaveOffset = 0f;
 
 	private Material terrainMaterial;
+	private Material terrainOverheadMaterial;
 
 	void Start () {
 		player = GameObject.Find("Player");
 		playerPosition = player.transform.position;
 		terrainMaterial = GameObject.Find("Terrain").GetComponent<MeshRenderer>().material;
+		terrainOverheadMaterial = GameObject.Find("Terrain Overhead").GetComponent<MeshRenderer>().material;
 
 		//perlin noise seed
 		waveHeightPerlin = Random.Range(0f, 1000f);
@@ -33,15 +36,29 @@ public class Nox : MonoBehaviour {
 		moveWave();
 	}
 
-	void moveWave() {
+	private void moveWave() {
 		//calculate wave height
 		waveHeightPerlin += waveHeightSpeed * Time.deltaTime;
 		terrainMaterial.SetFloat("_WaveStrength", Mathf.PerlinNoise(waveHeightPerlin, 0f));
+		terrainOverheadMaterial.SetFloat("_WaveStrength", Mathf.PerlinNoise(waveHeightPerlin, 0f));
 
 		//calculate wave offset
 		waveOffsetPerlin += waveOffsetSpeed * Time.deltaTime;
 		currentWaveOffset += Mathf.PerlinNoise(waveOffsetPerlin, 0f) * waveOffsetDampening;
 		terrainMaterial.SetVector("_WaveOffset", new Vector4(0f, currentWaveOffset, 0f, 0f));
+		terrainOverheadMaterial.SetVector("_WaveOffset", new Vector4(0f, currentWaveOffset, 0f, 0f));
+	}
+
+	public void addString(GameObject o) {
+		strings.Add(o.GetComponent<String>());
+	}
+
+	public bool stringExists(Vector3 s, Vector3 e) {
+		for (int i = 0; i < strings.Count; i++) {
+			if (strings[i].start == s && strings[i].end == e) return true;
+			if (strings[i].start == e && strings[i].end == s) return true;
+		}
+		return false;
 	}
 
 	//statics

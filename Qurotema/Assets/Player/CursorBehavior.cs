@@ -4,25 +4,36 @@ using UnityEngine;
 
 public class CursorBehavior : MonoBehaviour {
 
-	//cursor
 	private float distanceFromCamera = 5f;
 	private float followSpeed = 15f;
-
-	//components
 	private Rigidbody rb;
+
+	private Vector3 red = new Vector3(1f, 0f, 0f);
+	private Vector3 purple = new Vector3(0.05f, 0.05f, 1f);
+
+	private Material mat;
+	private Material trail;
+
+	public float velocity = 0;
 
 	void Start () {
 		transform.position = Camera.main.transform.position + (Camera.main.transform.forward * distanceFromCamera);
 		rb = GetComponent<Rigidbody>();
+		mat = GetComponent<MeshRenderer>().material;
+		trail = GetComponent<TrailRenderer>().material;
 	}
 
 	void Update () {
 		if (!Input.GetMouseButton(1)) {
 			GetComponent<MeshRenderer>().enabled = false;
 			GetComponent<TrailRenderer>().enabled = false;
+			makePassive();
 		} else {
 			GetComponent<MeshRenderer>().enabled = true;
 			GetComponent<TrailRenderer>().enabled = true;
+
+			if (Input.GetMouseButtonDown(0)) makeActive();
+			if (Input.GetMouseButtonUp(0)) makePassive();
 		}
 	}
 	
@@ -34,6 +45,18 @@ public class CursorBehavior : MonoBehaviour {
 		newPosition.y = Nox.ease(newPosition.y, targetPosition.y, followSpeed);
 		newPosition.z = Nox.ease(newPosition.z, targetPosition.z, followSpeed);
 
+		velocity = Vector3.Distance(transform.position, newPosition);
+
 		rb.MovePosition(newPosition);
+	}
+
+	void makeActive() {
+		mat.SetVector("_Color", red);
+		trail.SetVector("_Color", red);
+	}
+
+	void makePassive() {
+		mat.SetVector("_Color", purple);
+		trail.SetVector("_Color", purple);
 	}
 }

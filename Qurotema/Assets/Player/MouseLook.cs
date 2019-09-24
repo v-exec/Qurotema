@@ -10,7 +10,7 @@ public class MouseLook : MonoBehaviour {
 	private float easeSpeed = 1.5f;
 	private float shakeSpeed = 1.0f;
 	private float shakeQuantity = 1.4f;
-	private float followSpeed = 5f;
+	private float followSpeed = 8f;
  
 	//internal mouse
 	private float rotY = 0.0f;

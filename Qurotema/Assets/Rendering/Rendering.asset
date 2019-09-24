@@ -61,7 +61,6 @@ MonoBehaviour:
   meanHeight:
     m_OverrideState: 1
     m_Value: 1
-    min: 1
   anisotropy:
     m_OverrideState: 1
     m_Value: 0.9
@@ -182,6 +181,40 @@ MonoBehaviour:
   rayMaxIterations:
     m_OverrideState: 1
     m_Value: 120
+  enableRaytracing:
+    m_OverrideState: 0
+    m_Value: 0
+  rayLength:
+    m_OverrideState: 0
+    m_Value: 10
+    min: 0.001
+    max: 50
+  clampValue:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0.001
+    max: 10
+  temporalAccumulationWeight:
+    m_OverrideState: 0
+    m_Value: 0.1
+    min: 0.001
+    max: 1
+  spatialFilterRadius:
+    m_OverrideState: 0
+    m_Value: 4
+  numSamples:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 1
+    max: 32
+  enableFilter:
+    m_OverrideState: 0
+    m_Value: 0
+  filterRadius:
+    m_OverrideState: 0
+    m_Value: 16
+    min: 1
+    max: 32
 --- !u!114 &-8772566577468927
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -387,13 +420,13 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
     min: 0
-  maxVelocity:
-    m_OverrideState: 1
-    m_Value: 250
+  maximumVelocity:
+    m_OverrideState: 0
+    m_Value: 200
     min: 0
     max: 1500
-  minVel:
-    m_OverrideState: 1
+  minimumVelocity:
+    m_OverrideState: 0
     m_Value: 2
     min: 0
     max: 64
@@ -402,6 +435,11 @@ MonoBehaviour:
     m_Value: 0.03
     min: 0
     max: 0.2
+  depthComparisonExtent:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 20
 --- !u!114 &8350422975032299987
 MonoBehaviour:
   m_ObjectHideFlags: 3
