@@ -46,7 +46,7 @@ MonoBehaviour:
     supportSubsurfaceScattering: 1
     increaseSssSampleCount: 1
     supportVolumetrics: 1
-    increaseResolutionOfVolumetrics: 0
+    increaseResolutionOfVolumetrics: 1
     supportLightLayers: 0
     supportDistortion: 1
     supportTransparentBackface: 1
@@ -69,7 +69,7 @@ MonoBehaviour:
       planarReflectionProbeCacheSize: 2
       planarReflectionTextureSize: 512
       reflectionProbeCacheSize: 64
-      reflectionCubemapSize: 256
+      reflectionCubemapSize: 512
       reflectionCacheCompressed: 0
       planarReflectionCacheCompressed: 0
       skyReflectionSize: 256

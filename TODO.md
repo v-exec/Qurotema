@@ -1,6 +1,9 @@
 # TO DO
 
 - Think of what to do visually for flying mode - different UI?
+- Refine marble and metal materials + meshes
+- Create water
+- Create rocks
 - Refine terrain shader
 - Add teleportation
 - Create motion graphics animation system for intro and mission updates
