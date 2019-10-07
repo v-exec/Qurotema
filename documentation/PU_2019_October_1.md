@@ -28,7 +28,7 @@ So, I created my own mesh in Blender, made some clouds for testing, and mapped t
 
 In the process of creating the close-to-sun-transparency effect, I ended up with some accidentally interesting results by clipping the clouds too abruptly.
 
-![clipAccident](https://github.com/v-exec/Qurotema/tree/master/documentation/new.clipAccident.png)
+![clipAccident](https://raw.githubusercontent.com/v-exec/Qurotema/master/documentation/new/clipAccident.png)
 
 Although I didn't keep this effect, I did like how odd it looked, and might decide to bring it back in a later version.
 
@@ -36,7 +36,7 @@ Finally, I wanted to also slowly rotate the starry night skybox. Even this was p
 
 The result is this:
 
-![skyboxExample](https://github.com/v-exec/Qurotema/tree/master/documentation/new.skyboxExample.png)
+![skyboxExample](https://raw.githubusercontent.com/v-exec/Qurotema/master/documentation/new/skyboxExample.png)
 
 The clouds are still the test clouds, but even they look alright with the current setup.
 
