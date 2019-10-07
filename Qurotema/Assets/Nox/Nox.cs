@@ -5,6 +5,7 @@ using UnityEngine;
 public class Nox : MonoBehaviour {
 
 	static public GameObject player;
+	static public GameObject sun;
 	public Vector3 playerPosition;
 	public List<String> strings = new List<String>();
 
@@ -16,11 +17,15 @@ public class Nox : MonoBehaviour {
 	private float waveOffsetPerlin = 0f;
 	private float currentWaveOffset = 0f;
 
+	private float voronoiOffset = 0f;
+	public float voronoiOffsetSpeed = 0.1f;
+
 	private Material terrainMaterial;
 	private Material terrainOverheadMaterial;
 
 	void Start () {
 		player = GameObject.Find("Player");
+		sun = GameObject.Find("SunSphere");
 		playerPosition = player.transform.position;
 		terrainMaterial = GameObject.Find("Terrain").GetComponent<MeshRenderer>().material;
 		terrainOverheadMaterial = GameObject.Find("Terrain Overhead").GetComponent<MeshRenderer>().material;
@@ -34,6 +39,12 @@ public class Nox : MonoBehaviour {
 		playerPosition = player.transform.position;
 
 		moveWave();
+		displaceVoronoi();
+	}
+
+	private void displaceVoronoi() {
+		voronoiOffset += voronoiOffsetSpeed;
+		terrainMaterial.SetFloat("_VoronoiOffset", voronoiOffset);
 	}
 
 	private void moveWave() {

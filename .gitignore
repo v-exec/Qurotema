@@ -37,3 +37,5 @@ sysinfo.txt
 
 # Alternatives
 /documentation/old
+*.dds
+*.spp
