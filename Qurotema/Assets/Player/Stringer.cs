@@ -18,7 +18,7 @@ public class Stringer : MonoBehaviour {
 		cursor = GameObject.Find("Cursor").GetComponent<CursorBehavior>();
 	}
 
-	void Update() {
+	void FixedUpdate() {
 		if (!stringing) leftClick();
 		else {
 			drawPendingString();
@@ -27,6 +27,7 @@ public class Stringer : MonoBehaviour {
 	}
 
 	private void leftClick() {
+		//play string
 		if (Input.GetMouseButton(1) && !Input.GetMouseButton(0)) {
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -38,6 +39,7 @@ public class Stringer : MonoBehaviour {
 			}
 		}
 
+		//start create string
 		if (Input.GetMouseButtonDown(0) && Input.GetMouseButton(1)) {
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -52,6 +54,7 @@ public class Stringer : MonoBehaviour {
 	}
 
 	private void leftRelease() {
+		//end create string
 		if (Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1)) {
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

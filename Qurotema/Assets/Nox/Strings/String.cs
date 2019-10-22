@@ -41,7 +41,9 @@ public class String : MonoBehaviour {
 		if (ready) {
 			ready = false;
 			amplitude = strength / 5f;
-			if (amplitude > 2f) amplitude = 2f;
+			//clamp amplitude to avoid extreme vibration / lack thereof
+			if (amplitude > 0.05f) amplitude = 0.05f;
+			if (amplitude < 0.01f) amplitude = 0.01f;
 
 			StopCoroutine(ringRoutine);
 			ringRoutine = Ring();

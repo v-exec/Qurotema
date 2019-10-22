@@ -74,7 +74,7 @@ MonoBehaviour:
   enableDistantFog:
     m_OverrideState: 1
     m_Value: 1
---- !u!114 &-3062454408172772337
+--- !u!114 &-2925198895416868119
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83,64 +83,60 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a81bcacc415a1f743bfdf703afc52027, type: 3}
-  m_Name: GradientSky
+  m_Script: {fileID: 11500000, guid: 9008a067f4d626c4d8bc4bc48f04bb89, type: 3}
+  m_Name: AmbientOcclusion
   m_EditorClassIdentifier: 
   active: 1
   m_AdvancedMode: 0
-  rotation:
+  intensity:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.2
     min: 0
-    max: 360
-  skyIntensityMode:
+    max: 4
+  stepCount:
     m_OverrideState: 1
-    m_Value: 0
-  exposure:
+    m_Value: 25
+    min: 2
+    max: 32
+  radius:
     m_OverrideState: 1
-    m_Value: -2
-  multiplier:
+    m_Value: 0.5
+    min: 0.25
+    max: 5
+  fullResolution:
     m_OverrideState: 1
     m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
+  maximumRadiusInPixels:
     m_OverrideState: 1
-    m_Value: 1
-    min: 0
-  desiredLuxValue:
-    m_OverrideState: 1
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 1
-    m_Value: 2
-  updatePeriod:
+    m_Value: 50
+    min: 16
+    max: 256
+  directLightingStrength:
     m_OverrideState: 1
     m_Value: 0
     min: 0
-  includeSunInBaking:
+    max: 1
+  enableRaytracing:
     m_OverrideState: 1
     m_Value: 0
-  top:
+  rayLength:
     m_OverrideState: 1
-    m_Value: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
-    hdr: 1
-    showAlpha: 0
-    showEyeDropper: 1
-  middle:
+    m_Value: 0.5
+    min: 0
+    max: 50
+  enableFilter:
     m_OverrideState: 1
-    m_Value: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 1}
-    hdr: 1
-    showAlpha: 0
-    showEyeDropper: 1
-  bottom:
+    m_Value: 0
+  numSamples:
     m_OverrideState: 1
-    m_Value: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
-    hdr: 1
-    showAlpha: 0
-    showEyeDropper: 1
-  gradientDiffusion:
+    m_Value: 4
+    min: 1
+    max: 64
+  filterRadius:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 16
+    min: 1
+    max: 32
 --- !u!114 &-2147189679662165953
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -283,10 +279,10 @@ MonoBehaviour:
   - {fileID: 114339849572665496}
   - {fileID: -8772566577468927}
   - {fileID: -3352347674914365972}
-  - {fileID: -3062454408172772337}
   - {fileID: -2147189679662165953}
   - {fileID: 5829344153667117928}
   - {fileID: 3704252490132939203}
+  - {fileID: -2925198895416868119}
 --- !u!114 &114339849572665496
 MonoBehaviour:
   m_ObjectHideFlags: 0

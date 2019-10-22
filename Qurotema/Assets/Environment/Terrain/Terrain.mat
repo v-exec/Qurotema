@@ -111,10 +111,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_17EFD393: 0
     - Vector1_18655589: 0.6
     - Vector1_2AEBD2EA: 1
     - Vector1_3CEDD0D7: 0
+    - Vector1_5EED409C: 0
     - Vector1_6B9B734E: 0.09
+    - Vector1_85ED3BEA: 0
+    - Vector1_C13719F7: 0
+    - Vector1_C4B244C1: 0
+    - Vector1_C5658D11: 0
+    - Vector1_C59F155F: 0
+    - Vector1_D7173186: 0
+    - Vector1_FF736495: 0
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ATDistance: 1
@@ -127,6 +136,11 @@ Material:
     - _AlphaDstBlend: 0
     - _AlphaSrcBlend: 1
     - _Anisotropy: 0
+    - _Blend0: 0
+    - _Blend1: 0
+    - _Blend2: 0
+    - _Blend3: 0
+    - _Blend4: 0
     - _BlendMode: 0
     - _CoatMask: 0
     - _CullMode: 2
@@ -159,6 +173,9 @@ Material:
     - _DoubleSidedNormalMode: 1
     - _Drag: 1
     - _DstBlend: 0
+    - _EmissionBlend0: 0
+    - _EmissionBlend1: 0
+    - _EmissionStrength: 10
     - _EmissiveColorMode: 1
     - _EmissiveExposureWeight: 1
     - _EmissiveIntensity: 1
@@ -203,6 +220,8 @@ Material:
     - _SSRefractionProjectionModel: 0
     - _ShiverDirectionality: 0.5
     - _ShiverDrag: 0.2
+    - _SmoothBlend0: 0
+    - _SmoothBlend1: 1
     - _Smoothness: 0.5
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
@@ -239,7 +258,8 @@ Material:
     - _UVEmissive: 0
     - _UseEmissiveIntensity: 0
     - _UseShadowThreshold: 0
-    - _VoronoiOffset: 13.9
+    - _VoronoiOffset: 2
+    - _WaveOffset: 0.1
     - _WaveStrength: 1
     - _ZTestDepthEqualForOpaque: 3
     - _ZTestGBuffer: 4
@@ -248,13 +268,14 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Vector2_3BF4734: {r: 5, g: 50, b: 0, a: 0}
+    - Vector2_4B0A299E: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_5B7CC286: {r: 0, g: 0.0003, b: 0, a: 0}
     - Vector2_7011A67D: {r: 100, g: 100, b: 0, a: 0}
     - Vector2_89395435: {r: 92, g: 92, b: 0, a: 0}
     - Vector2_AEF9D81C: {r: 1, g: 1, b: 1, a: 1}
     - Vector2_B63A8865: {r: 0, g: 0, b: 0, a: 0}
     - Vector3_A1399D47: {r: 0, g: 0, b: 0, a: 0}
-    - _AnimatedUV: {r: 1, g: 5, b: 0, a: 0}
+    - _AnimatedUV: {r: 50, g: 500, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 0, g: 0, b: 0, a: 1}
@@ -270,8 +291,9 @@ Material:
     - _TransmittanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _UV0: {r: 200, g: 200, b: 0, a: 0}
     - _UV1: {r: 93, g: 93, b: 0, a: 0}
+    - _UV2: {r: 500, g: 500, b: 0, a: 0}
     - _UVDetailsMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
-    - _WaveLimits: {r: 0, g: 0.0005, b: 0, a: 0}
+    - _WaveLimits: {r: -0.2, g: 0.2, b: 0, a: 0}
     - _WaveOffset: {r: 0, g: 7.58, b: 0, a: 0}

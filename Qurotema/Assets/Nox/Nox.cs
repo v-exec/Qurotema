@@ -4,60 +4,39 @@ using UnityEngine;
 
 public class Nox : MonoBehaviour {
 
+	//instruments
 	static public GameObject player;
 	static public GameObject sun;
 	public Vector3 playerPosition;
 	public List<String> strings = new List<String>();
 
-	public float waveHeightSpeed = 0.01f;
-	public float waveOffsetSpeed = 0.02f;
-	public float waveOffsetDampening = 0.0005f;
-
+	//terrain waves
+	public float waveHeightSpeed = 0.1f;
 	private float waveHeightPerlin = 0f;
-	private float waveOffsetPerlin = 0f;
-	private float currentWaveOffset = 0f;
 
-	private float voronoiOffset = 0f;
-	public float voronoiOffsetSpeed = 0.1f;
-
+	//terrain material
 	private Material terrainMaterial;
-	private Material terrainOverheadMaterial;
 
 	void Start () {
 		player = GameObject.Find("Player");
 		sun = GameObject.Find("SunSphere");
 		playerPosition = player.transform.position;
 		terrainMaterial = GameObject.Find("Terrain").GetComponent<MeshRenderer>().material;
-		terrainOverheadMaterial = GameObject.Find("Terrain Overhead").GetComponent<MeshRenderer>().material;
 
 		//perlin noise seed
 		waveHeightPerlin = Random.Range(0f, 1000f);
-		waveOffsetPerlin = Random.Range(0f, 1000f);
 	}
 
 	void Update () {
 		playerPosition = player.transform.position;
 
 		moveWave();
-		displaceVoronoi();
-	}
-
-	private void displaceVoronoi() {
-		voronoiOffset += voronoiOffsetSpeed;
-		terrainMaterial.SetFloat("_VoronoiOffset", voronoiOffset);
 	}
 
 	private void moveWave() {
 		//calculate wave height
 		waveHeightPerlin += waveHeightSpeed * Time.deltaTime;
 		terrainMaterial.SetFloat("_WaveStrength", Mathf.PerlinNoise(waveHeightPerlin, 0f));
-		terrainOverheadMaterial.SetFloat("_WaveStrength", Mathf.PerlinNoise(waveHeightPerlin, 0f));
-
-		//calculate wave offset
-		waveOffsetPerlin += waveOffsetSpeed * Time.deltaTime;
-		currentWaveOffset += Mathf.PerlinNoise(waveOffsetPerlin, 0f) * waveOffsetDampening;
-		terrainMaterial.SetVector("_WaveOffset", new Vector4(0f, currentWaveOffset, 0f, 0f));
-		terrainOverheadMaterial.SetVector("_WaveOffset", new Vector4(0f, currentWaveOffset, 0f, 0f));
 	}
 
 	public void addString(GameObject o) {
