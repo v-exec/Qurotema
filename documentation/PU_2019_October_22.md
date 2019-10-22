@@ -20,6 +20,16 @@ Another effect I was experimenting with were feedback effects through emission t
 
 With that, the terrain is done! Here are some examples of what it can look like:
 
+![terrain1](https://raw.githubusercontent.com/v-exec/Qurotema/master/documentation/new/terrain1.png)
+![terrain2](https://raw.githubusercontent.com/v-exec/Qurotema/master/documentation/new/terrain2.png)
+![terrain3](https://raw.githubusercontent.com/v-exec/Qurotema/master/documentation/new/terrain3.png)
+![terrain4](https://raw.githubusercontent.com/v-exec/Qurotema/master/documentation/new/terrain4.png)
+![terrain5](https://raw.githubusercontent.com/v-exec/Qurotema/master/documentation/new/terrain5.png)
+![terrain6](https://raw.githubusercontent.com/v-exec/Qurotema/master/documentation/new/terrain6.png)
+![terrain7](https://raw.githubusercontent.com/v-exec/Qurotema/master/documentation/new/terrain7.png)
+![terrain8](https://raw.githubusercontent.com/v-exec/Qurotema/master/documentation/new/terrain8.png)
+![terrain9](https://raw.githubusercontent.com/v-exec/Qurotema/master/documentation/new/terrain9.png)
+
 ## Clouds Removal
 
 In the last update, I put a lot of focus on the clouds and skybox. Despite that time and effort, I've decided that the clouds detract from the atmosphere more so than add to it. Qurotema is a fairly dark environment, and bright white clouds contrast too starkly in style. If they're dark, then they lack contrast and blend in awkwardly into the starry sky. Additionally, the terrain is already a busy visual, adding clouds to the sky makes the environment look too busy. For that reason, I've only kept the starry sky, and removed the clouds. As of right now, I do not intend to bring the clouds back, and feel like I'll leave the sky as it is and call it done as well!
@@ -37,6 +47,8 @@ Next came the monolith. I wanted to use a material similar to that of the platfo
 
 While experimenting with the monolith's material, I came across a rocky pattern that significantly influenced the roughness of the material. The marble was originally very reflective, but this new approach made it quite rough in most areas. Once I imported it into Unity, it worked far better with the environment for two big reasons.
 
+![monolith](https://raw.githubusercontent.com/v-exec/Qurotema/master/documentation/new/mono.png)
+
 First of all, reflectiveness makes it more difficult for the texture itself to be seen, and I wanted the black marble to be easily recognizeable.
 
 ![reflective marble example](https://raw.githubusercontent.com/v-exec/Qurotema/master/documentation/new/reflectiveMarbleExample.png)
@@ -45,7 +57,7 @@ Second of all, the terrain is already incredibly reflective. Adding more reflect
 
 I updated the marble on the strings platform to match with this new texture, and it worked very nicely!
 
-![monolith](https://raw.githubusercontent.com/v-exec/Qurotema/master/documentation/new/mono.png)
+![newTextures](https://raw.githubusercontent.com/v-exec/Qurotema/master/documentation/new/newTextures.png)
 
 ## Next Week
 
