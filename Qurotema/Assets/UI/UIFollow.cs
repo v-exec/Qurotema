@@ -39,7 +39,7 @@ public class UIFollow : MonoBehaviour {
 			case "flight":
 				if (Nox.player.GetComponent<PlayerMove>().flying) {
 					if (fader != null) StopCoroutine(fader);
-					if (opacity != 0.5f) opacity = Nox.ease(opacity, 0.5f, fadeSpeed / 2f);
+					if (opacity != targetOpacity) opacity = Nox.ease(opacity, targetOpacity, (fadeSpeed / 2f) * fadeDelay);
 				} else {
 					if (fader != null) StopCoroutine(fader);
 					if (opacity != 0f) opacity = Nox.ease(opacity, 0f, fadeSpeed / 2f);
@@ -81,7 +81,7 @@ public class UIFollow : MonoBehaviour {
 
 				if (Input.GetMouseButtonDown(1)) {
 					if (fader != null) StopCoroutine(fader);
-					if (opacity != 0f) opacity = Nox.ease(opacity, 0f, fadeSpeed / 2f);
+					fader = StartCoroutine(Fade(0f));
 				}
 
 				if (Nox.player.GetComponent<PlayerMove>().flying) {

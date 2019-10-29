@@ -195,7 +195,7 @@ Material:
     - _Normal_Speed: 0.1
     - _Normal_Strength: 10
     - _Offset: 0
-    - _OffsetSpeed: 0.1
+    - _OffsetSpeed: 0.03
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
     - _PPDMinSamples: 5

@@ -13,13 +13,14 @@ public class Nox : MonoBehaviour {
 	//terrain manipulation
 	public float waveHeightSpeed = 0.1f;
 	private float waveHeightPerlin = 0f;
-	static public Vector3 flyPoint = new Vector3(0,0,0);
+	static public GameObject flyPoint;
 
 	//terrain material
 	private Material terrainMaterial;
 
 	void Start () {
 		player = GameObject.Find("Player");
+		flyPoint = GameObject.Find("FlyPoint");
 		sun = GameObject.Find("SunSphere");
 		playerPosition = player.transform.position;
 		terrainMaterial = GameObject.Find("Terrain").GetComponent<MeshRenderer>().material;
@@ -40,10 +41,10 @@ public class Nox : MonoBehaviour {
 		terrainMaterial.SetFloat("_WaveStrength", Mathf.PerlinNoise(waveHeightPerlin, 0f));
 
 		//move flypoint upwards for fading effect
-		if (flyPoint.y < 500) flyPoint = new Vector3(flyPoint.x, flyPoint.y += 0.8f, flyPoint.z);
+		if (flyPoint.transform.position.y < 500) flyPoint.transform.Translate((Vector3.up * 30) * Time.deltaTime);
 
 		//communicate flypoint to terrain shader
-		terrainMaterial.SetVector("_FlyPoint", flyPoint);
+		terrainMaterial.SetVector("_FlyPoint", flyPoint.transform.position);
 	}
 
 	public void addString(GameObject o) {
