@@ -9,6 +9,7 @@ public class Nox : MonoBehaviour {
 	static public GameObject sun;
 	public Vector3 playerPosition;
 	public List<String> strings = new List<String>();
+	public float energy = 0f;
 
 	//terrain manipulation
 	public float waveHeightSpeed = 0.1f;

@@ -44,6 +44,9 @@ public class PlayerMove : MonoBehaviour {
 	private bool jumping = false;
 	private bool sprinting = false;
 	private Vector2 targetDirection = new Vector2(0, 0);
+
+	//story
+	private bool ready = false;
 	
 	void Start() {
 		//get components
@@ -57,12 +60,16 @@ public class PlayerMove : MonoBehaviour {
 
 	//escape
 	void Update() {
-		handleKeys();
+		if (!ready) {
+			if (GameObject.Find("Nox").GetComponent<Story>().introductionFinished) ready = true;
+		}
+		
+		if (ready) handleKeys();
 		setFOV();
 	}
 
 	void FixedUpdate() {
-		move();
+		if (ready) move();
 	}
 
 	void handleKeys() {

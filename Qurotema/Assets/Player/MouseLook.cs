@@ -28,6 +28,9 @@ public class MouseLook : MonoBehaviour {
 	private float perlinY;
 	private float perlinZ;
 
+	//story
+	private bool ready = false;
+
 	void Start() {
 		//lock cursor
 		Cursor.visible = false;
@@ -37,6 +40,8 @@ public class MouseLook : MonoBehaviour {
 		Vector3 rot = transform.localRotation.eulerAngles;
 		rotY = rot.y;
 		rotX = rot.x;
+		currentY = rotY;
+		currentX = rotX;
 
 		//get perlin noise seed
 		perlinX = Random.Range(0f, 1000f);
@@ -49,6 +54,10 @@ public class MouseLook : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
+		if (!ready) {
+			if (GameObject.Find("Nox").GetComponent<Story>().introductionFinished) ready = true;
+		}
+
 		handleInput();
 		shake();
 		follow();
@@ -58,6 +67,11 @@ public class MouseLook : MonoBehaviour {
 		//get input
 		float mouseX = Input.GetAxis("Mouse X");
 		float mouseY = -Input.GetAxis("Mouse Y");
+
+		if (!ready) {
+			mouseX = 0;
+			mouseY = 0;
+		}
 
 		//rotation manipulation
 		rotY += mouseX * mouseSensitivity * Time.deltaTime;
@@ -87,7 +101,8 @@ public class MouseLook : MonoBehaviour {
 
 		//use player speed as subtraction to shake speed modifier
 		//the faster the player moves, the less camera shake there is
-		playerSpeed = player.GetComponent<PlayerMove>().getSpeed();
+		player.GetComponent<PlayerMove>().getSpeed();
+
 		float shakeSpeedModifier = 1f - (playerSpeed * 0.005f);
 		if (shakeSpeedModifier < 0) shakeSpeedModifier = 0;
 
