@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour {
 
 	//components
-	private Rigidbody rb;
+	public Rigidbody rb;
 	private GameObject cam;
 	private Camera camComponent;
 
@@ -70,8 +70,10 @@ public class PlayerMove : MonoBehaviour {
 			Application.Quit();
 		}
 
-		if (Input.GetKeyDown(KeyCode.LeftAlt)) {
+		//switch to flying mode only if no mouse buttons are pressed
+		if (Input.GetKeyDown(KeyCode.LeftAlt) && !Input.GetMouseButton(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2)) {
 			flying = !flying;
+			//change speeds and dampening parameters when flying for quicker and snappier movement in-air
 			if (flying) {
 				walkSpeed *= flightSpeedMultiplier;
 				sprintSpeed *= flightSpeedMultiplier;

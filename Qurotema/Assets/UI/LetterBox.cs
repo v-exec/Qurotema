@@ -49,15 +49,17 @@ public class LetterBox : MonoBehaviour {
 
 	//force aspect ratio with letterboxing
 	void forceAspectRatio(float ratio) {
-		float variance = ratio / cam.aspect;
+		if (cam.aspect <= 1.1f) return;
 
-		Vector2 resize = new Vector2(Screen.width + 10f, ((variance * Screen.height) - Screen.height) / 2f);
+		float variance = (ratio / cam.aspect) - 1f;
+
+		Vector2 resize = new Vector2(Screen.width + 10f, (variance * Screen.height) / 2f);
 
 		lowPanel.sizeDelta = resize;
-		lowPanel.anchoredPosition = new Vector2(0f, lowPanel.rect.height / 2f);
+		lowPanel.anchoredPosition = new Vector2(0f, (lowPanel.rect.height / 2f) - 1f);
 
 		highPanel.sizeDelta = resize;
-		highPanel.anchoredPosition = new Vector2(0f, -highPanel.rect.height / 2f);
+		highPanel.anchoredPosition = new Vector2(0f, (-highPanel.rect.height / 2f) + 1f);
 	}
 
 	IEnumerator changeAspectRatio(float desiredRatio) {

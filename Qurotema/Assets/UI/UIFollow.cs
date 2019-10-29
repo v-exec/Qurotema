@@ -9,6 +9,7 @@ public class UIFollow : MonoBehaviour {
 	public float distanceFromCamera = 1.2f;
 	public float followSpeed = 45f;
 	public float fadeDelay = 0f;
+	public string triggerLayer;
 
 	private float targetOpacity = 0.9f;
 	private float fadeSpeed = 10f;
@@ -32,24 +33,62 @@ public class UIFollow : MonoBehaviour {
 	}
 
 	void Update() {
-		if (Input.GetMouseButtonDown(1)) {
-			if (opacity != targetOpacity) {
-				if (fader != null) StopCoroutine(fader);
-				fader = StartCoroutine(Fade(targetOpacity));
-			}
-		}
+		
+		//modes
+		switch (triggerLayer) {
+			case "flight":
+				if (Nox.player.GetComponent<PlayerMove>().flying) {
+					if (fader != null) StopCoroutine(fader);
+					if (opacity != 0.5f) opacity = Nox.ease(opacity, 0.5f, fadeSpeed / 2f);
+				} else {
+					if (fader != null) StopCoroutine(fader);
+					if (opacity != 0f) opacity = Nox.ease(opacity, 0f, fadeSpeed / 2f);
+				}
+				break;
 
-		if (Input.GetMouseButtonUp(1)) {
-			if (opacity != 0f) {
-				if (fader != null) StopCoroutine(fader);
-				fader = StartCoroutine(Fade(0f));
-			}
-		}
+			case "control":
+				if (Input.GetMouseButtonDown(1)) {
+					if (fader != null) StopCoroutine(fader);
+					fader = StartCoroutine(Fade(targetOpacity));
+				}
 
-		//override when flying
-		if (Nox.player.GetComponent<PlayerMove>().flying) {
-			if (fader != null) StopCoroutine(fader);
-			if (opacity != 0f) opacity = Nox.ease(opacity, 0f, fadeSpeed / 2f);
+				if (Input.GetMouseButtonUp(1)) {
+					if (fader != null) StopCoroutine(fader);
+					fader = StartCoroutine(Fade(0f));
+				}
+
+				if (Input.GetMouseButtonDown(2)) {
+					if (fader != null) StopCoroutine(fader);
+					fader = StartCoroutine(Fade(0f));
+				}
+
+				if (Nox.player.GetComponent<PlayerMove>().flying) {
+					if (fader != null) StopCoroutine(fader);
+					if (opacity != 0f) opacity = Nox.ease(opacity, 0f, fadeSpeed / 2f);
+				}
+				break;
+
+			case "movement":
+				if (Input.GetMouseButtonDown(2)) {
+					if (fader != null) StopCoroutine(fader);
+					fader = StartCoroutine(Fade(targetOpacity));
+				}
+
+				if (Input.GetMouseButtonUp(2)) {
+					if (fader != null) StopCoroutine(fader);
+					fader = StartCoroutine(Fade(0f));
+				}
+
+				if (Input.GetMouseButtonDown(1)) {
+					if (fader != null) StopCoroutine(fader);
+					if (opacity != 0f) opacity = Nox.ease(opacity, 0f, fadeSpeed / 2f);
+				}
+
+				if (Nox.player.GetComponent<PlayerMove>().flying) {
+					if (fader != null) StopCoroutine(fader);
+					if (opacity != 0f) opacity = Nox.ease(opacity, 0f, fadeSpeed / 2f);
+				}
+				break;
 		}
 
 		GetComponent<CanvasGroup>().alpha = opacity;

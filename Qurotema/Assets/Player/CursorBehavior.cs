@@ -35,6 +35,12 @@ public class CursorBehavior : MonoBehaviour {
 			if (Input.GetMouseButtonDown(0)) makeActive();
 			if (Input.GetMouseButtonUp(0)) makePassive();
 		}
+
+		//override in movement and flight modes
+		if (Input.GetMouseButton(2) || Nox.player.GetComponent<PlayerMove>().flying) {
+			GetComponent<MeshRenderer>().enabled = false;
+			GetComponent<TrailRenderer>().enabled = false;
+		}
 	}
 	
 	void FixedUpdate () {

@@ -10,9 +10,10 @@ public class Nox : MonoBehaviour {
 	public Vector3 playerPosition;
 	public List<String> strings = new List<String>();
 
-	//terrain waves
+	//terrain manipulation
 	public float waveHeightSpeed = 0.1f;
 	private float waveHeightPerlin = 0f;
+	static public Vector3 flyPoint = new Vector3(0,0,0);
 
 	//terrain material
 	private Material terrainMaterial;
@@ -30,13 +31,19 @@ public class Nox : MonoBehaviour {
 	void Update () {
 		playerPosition = player.transform.position;
 
-		moveWave();
+		animateTerrain();
 	}
 
-	private void moveWave() {
+	private void animateTerrain() {
 		//calculate wave height
 		waveHeightPerlin += waveHeightSpeed * Time.deltaTime;
 		terrainMaterial.SetFloat("_WaveStrength", Mathf.PerlinNoise(waveHeightPerlin, 0f));
+
+		//move flypoint upwards for fading effect
+		if (flyPoint.y < 500) flyPoint = new Vector3(flyPoint.x, flyPoint.y += 0.8f, flyPoint.z);
+
+		//communicate flypoint to terrain shader
+		terrainMaterial.SetVector("_FlyPoint", flyPoint);
 	}
 
 	public void addString(GameObject o) {
