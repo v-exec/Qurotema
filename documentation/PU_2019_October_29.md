@@ -39,20 +39,31 @@ To do this, I am producing a set of tracks and samples that work together as an 
 These triggers are:
 
 Looking at the sun.
+
 Looking at the gates.
+
 Walking / running / player speed.
+
 Jumping.
+
 Flying.
+
 Teleporting.
+
 Using the UI mode.
+
 Looking at a monolith.
+
 Instrument interactions.
 
 In addition to these sound triggers, for the purpose of using audio to provide dynamic range to the game's narrative, Qurotema features the following musical states:
 
 Idle
+
 Low Energy
+
 High Energy
+
 Monumental
 
 Each of these states features differences in instrumentation and arrangement, but nonetheless blend between one another seamlessly, both in terms of mixing, as well as composition. The same actions from the player produce different results, depending on the state the game is in.
