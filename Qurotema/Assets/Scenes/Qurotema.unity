@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2035111234}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.012776626, g: 0.012776626, b: 0.016715433, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7792,6 +7792,7 @@ GameObject:
   - component: {fileID: 1283151638}
   - component: {fileID: 1283151637}
   - component: {fileID: 1283151639}
+  - component: {fileID: 1283151640}
   m_Layer: 0
   m_Name: Nox
   m_TagString: Untagged
@@ -7812,8 +7813,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPosition: {x: 0, y: 0, z: 0}
-  strings: []
-  energy: 0
 --- !u!4 &1283151638
 Transform:
   m_ObjectHideFlags: 0
@@ -7850,6 +7849,18 @@ MonoBehaviour:
   timeSpentPlayingStrings: 0
   timeSpentPlayingX: 0
   timeSpentPlayingY: 0
+--- !u!114 &1283151640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283151636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d750408e69fa7bc458142de9043dbf5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1297650280
 GameObject:
   m_ObjectHideFlags: 0

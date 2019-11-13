@@ -8,8 +8,6 @@ public class Nox : MonoBehaviour {
 	static public GameObject player;
 	static public GameObject sun;
 	public Vector3 playerPosition;
-	public List<String> strings = new List<String>();
-	public float energy = 0f;
 
 	//terrain manipulation
 	private float waveHeightSpeed = 0.1f;
@@ -20,6 +18,7 @@ public class Nox : MonoBehaviour {
 	private float[] emissions = new float[2];
 	private float[] smoothnesses = new float[1];
 	private float mixerSpeed = 0.1f;
+	private Coroutine feedbackCoroutine;
 
 	//terrain material
 	private Material terrainMaterial;
@@ -89,24 +88,42 @@ public class Nox : MonoBehaviour {
 
 	//feedback
 	public void flashFeedback() {
-		
-	}
-
-	//strings
-	public void addString(GameObject o) {
-		strings.Add(o.GetComponent<String>());
-	}
-
-	public bool stringExists(Vector3 s, Vector3 e) {
-		for (int i = 0; i < strings.Count; i++) {
-			if (strings[i].start == s && strings[i].end == e) return true;
-			if (strings[i].start == e && strings[i].end == s) return true;
+		if (feedbackCoroutine != null) {
+			StopCoroutine(feedbackCoroutine);
 		}
-		return false;
+
+		for (int i = 0; i < emissions.Length; i++) {
+			emissions[i] = 0f;
+		}
+
+		float random = Random.Range(0f, 1f);
+
+		if (random > 0.5f) {
+			feedbackCoroutine = StartCoroutine(Feedback(0));
+		} else {
+			feedbackCoroutine = StartCoroutine(Feedback(1));
+		}
 	}
 
-	//audio
+	IEnumerator Feedback(int id) {
+		while (emissions[id] < 1f) {
+			emissions[id] += 0.1f;
+			terrainMaterial.SetFloat("_EmissionBlend" + id, emissions[id]);
+			yield return new WaitForSeconds(0.01f);
+		}
 
+		emissions[id] = 1f;
+		terrainMaterial.SetFloat("_EmissionBlend" + id, emissions[id]);
+
+		while (emissions[id] > 0f) {
+			emissions[id] -= 0.02f;
+			terrainMaterial.SetFloat("_EmissionBlend" + id, emissions[id]);
+			yield return new WaitForSeconds(0.01f);
+		}
+
+		emissions[id] = 0f;
+		terrainMaterial.SetFloat("_EmissionBlend" + id, emissions[id]);
+	}
 
 	//statics
 	public static float ease(float val, float target, float ease) {

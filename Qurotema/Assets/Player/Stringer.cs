@@ -9,6 +9,8 @@ public class Stringer : MonoBehaviour {
 	private bool stringing = false;
 	private CursorBehavior cursor;
 
+	private List<StringCord> stringSet = new List<StringCord>();
+
 	public LineRenderer liner;
 	public GameObject strings;
 	public GameObject stringObject;
@@ -34,7 +36,7 @@ public class Stringer : MonoBehaviour {
 
 			if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~mask)) {
 				if (hit.collider.tag == "String") {
-					hit.collider.gameObject.GetComponent<String>().playSound(cursor.velocity);
+					hit.collider.gameObject.GetComponent<StringCord>().playSound(cursor.velocity);
 				}
 			}
 		}
@@ -62,7 +64,7 @@ public class Stringer : MonoBehaviour {
 			if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~mask)) {
 				if (hit.collider.tag == "StringsNode") {
 					end = hit.collider.gameObject.transform.position;
-					if (end == start) cancelString();
+					if (end == start || stringExists(start, end)) cancelString();
 					else endString(end);
 				} else cancelString();
 			} else cancelString();
@@ -100,12 +102,29 @@ public class Stringer : MonoBehaviour {
 
 	private void createString(Vector3 s, Vector3 e) {
 		Vector3 pos = Vector3.Lerp(s, e, 0.5f);
+
 		GameObject stringInstance = Instantiate(stringObject, pos, Quaternion.identity);
 		stringInstance.transform.LookAt(e);
 		stringInstance.transform.localScale += new Vector3(0, Vector3.Distance(s, e) * 50, 0);
 		stringInstance.transform.Rotate(-90, 0, 0);
-		String component = stringInstance.GetComponent<String>();
+
+		StringCord component = stringInstance.GetComponent<StringCord>();
 		component.init(s, e);
+
+		addString(stringInstance);
+	}
+
+	private void addString(GameObject o) {
+		stringSet.Add(o.GetComponent<StringCord>());
+	}
+
+	private bool stringExists(Vector3 s, Vector3 e) {
+		for (int i = 0; i < stringSet.Count; i++) {
+			StringCord str = stringSet[i].GetComponent<StringCord>();
+			if (str.start == s && str.end == e) return true;
+			if (str.start == e && str.end == s) return true;
+		}
+		return false;
 	}
 
 	private void playSnap(float strength) {

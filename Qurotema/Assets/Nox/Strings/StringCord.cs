@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class String : MonoBehaviour {
+public class StringCord : MonoBehaviour {
 
 	public Vector3 start;
 	public Vector3 end;
