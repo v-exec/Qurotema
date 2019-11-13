@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2035111234}
-  m_IndirectSpecularColor: {r: 0.012776626, g: 0.012776626, b: 0.016715433, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7814,7 +7814,6 @@ MonoBehaviour:
   playerPosition: {x: 0, y: 0, z: 0}
   strings: []
   energy: 0
-  waveHeightSpeed: 0.1
 --- !u!4 &1283151638
 Transform:
   m_ObjectHideFlags: 0
@@ -7844,7 +7843,7 @@ MonoBehaviour:
   sun: {fileID: 2035111233}
   gates: {fileID: 8296172667768287536}
   sky: {fileID: 0}
-  introductionFinished: 0
+  introductionFinished: 1
   endingStarted: 0
   monolithsRead: 0
   instrumentsPlayed: 0
