@@ -7861,51 +7861,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d750408e69fa7bc458142de9043dbf5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ambiencesEm:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  ambiencesCM:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  clicks:
-  - {fileID: 0}
-  - {fileID: 0}
-  dropletsLo:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  dropletsHi:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  sun: {fileID: 0}
-  harmonyLo: {fileID: 0}
-  harmonyHi: {fileID: 0}
-  melodiesLo: []
-  melodiesHi: []
-  padLo: {fileID: 0}
-  padHi: {fileID: 0}
-  percussionLo: {fileID: 0}
-  percussionHi: {fileID: 0}
-  rhythmLo: {fileID: 0}
-  rhythmHi: {fileID: 0}
-  sparkles: []
-  vocalLo: {fileID: 0}
-  vocalHi: {fileID: 0}
-  whipsLo: []
-  whipsHi: []
-  whispers: {fileID: 0}
-  theme: {fileID: 0}
-  stringsSnap: {fileID: 0}
-  stringsStart: {fileID: 0}
-  stringsEnd: {fileID: 0}
-  stringsPlay: []
+  sounds:
+  - oneShot: 0
+    audios: []
+    name: 
+  - oneShot: 0
+    audios: []
+    name: 
 --- !u!1 &1297650280
 GameObject:
   m_ObjectHideFlags: 0

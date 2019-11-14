@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Sound : MonoBehaviour {
 
-	//drivers
 	private float energy = 20f; //range: 0 - 100
 	private float eneryFalloff = 1f;
 	private bool atRoot = false;
+	private SoundClip[] soundClips;
 	
    	[System.Serializable]
    	public class Sonic { public bool oneShot; public AudioClip[] audios; public string name; }
