@@ -1,13 +1,12 @@
 # TO DO
 
-- Produce a lot of sounds
+- Produce instrument sounds
 - Tie sounds to systems
 
-- Bigger / different map
-- Create map limits
-
-- Add language
+- Add language projections
 - Story progressions
+
+- Bigger / different map with limits
 
 - More instruments
 - Sun click secret
