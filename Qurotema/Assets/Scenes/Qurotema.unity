@@ -7861,13 +7861,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d750408e69fa7bc458142de9043dbf5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
-  - oneShot: 0
-    audios: []
-    name: 
-  - oneShot: 0
-    audios: []
-    name: 
+  soundEmitter: {fileID: 6795656644235646544, guid: 6ce8f24a1702b3e4f9b2bdcf7d482973,
+    type: 3}
+  sounds: []
 --- !u!1 &1297650280
 GameObject:
   m_ObjectHideFlags: 0
