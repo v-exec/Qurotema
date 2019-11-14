@@ -1,6 +1,6 @@
 ## Idle
 
-Static - vocals + bass ambience + chord ambience / occaisional theme
+Static - vocals + bass ambience + chord ambience / occasional theme
 
 ## Low Energy
 
@@ -10,7 +10,7 @@ Run - percusssion 1
 
 Air - highpass filter (soft)
 
-Teleport - whip 1
+Teleport - whips 1
 
 Movement Line - droplets 1
 
@@ -20,7 +20,7 @@ Fly Surface Active - pad 1
 
 Control Dot - rhythm 1
 
-Control Dot Active - melody 1 (height controls pitch)
+Control Dot Active - melodies 1 (height controls pitch)
 
 ## High Energy
 
@@ -30,7 +30,7 @@ Run - percussion 2
 
 Air - highpass filter (heavy)
 
-Teleport - whip 2
+Teleport - whips 2
 
 Movement Line - droplets 2
 
@@ -40,11 +40,11 @@ Fly Surface Active - pad 2
 
 Control Dot - rhythm 2
 
-Control Dot Active - melody 2 (height controls pitch)
+Control Dot Active - melodies 2 (height controls pitch)
 
 ## Monumental
 
-Static - theme minus vocals + sparkles
+Static - sparkles
 
 ## Env
 
@@ -56,4 +56,4 @@ Opposite world - filtered clicks (volume driven by energy)
 
 Gates - vocals
 
-Instruments - unique to each instrument X
+Instruments - unique to each instrument

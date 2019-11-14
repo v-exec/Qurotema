@@ -47,12 +47,16 @@ public class PlayerMove : MonoBehaviour {
 
 	//story
 	private bool ready = false;
+
+	//audio
+	private Sound soundSystem;
 	
 	void Start() {
 		//get components
 		cam = GameObject.Find("Camera");
 		camComponent = cam.GetComponent<Camera>();
 		rb = GetComponent<Rigidbody>();
+		soundSystem = GameObject.Find("Nox").GetComponent<Sound>();
 
 		//set fov to default
 		targetFOV = defaultFOV;
@@ -66,6 +70,8 @@ public class PlayerMove : MonoBehaviour {
 		
 		if (ready) handleKeys();
 		setFOV();
+
+		handleSound();
 	}
 
 	void FixedUpdate() {
@@ -89,6 +95,8 @@ public class PlayerMove : MonoBehaviour {
 				speedChangeSprint *= flightControlMultiplier;
 				speedChangeStop *= flightControlMultiplier;
 				directionChangeSpeed *= flightControlMultiplier;
+
+				soundSystem.toggleSound("harmonies", true);
 			} else {
 				walkSpeed /= flightSpeedMultiplier;
 				sprintSpeed /= flightSpeedMultiplier;
@@ -97,7 +105,21 @@ public class PlayerMove : MonoBehaviour {
 				speedChangeSprint /= flightControlMultiplier;
 				speedChangeStop /= flightControlMultiplier;
 				directionChangeSpeed /= flightControlMultiplier;
+
+				soundSystem.toggleSound("harmonies", false);
 			}
+		}
+	}
+
+	void handleSound() {
+		if (flying && sprinting) {
+			soundSystem.addEnergy(1.4f);
+		} else if (flying && !sprinting) {
+			soundSystem.addEnergy(1.2f);
+		} else if (sprinting) {
+			soundSystem.addEnergy(0.9f);
+		} else if (getSpeed() > 1f) {
+			soundSystem.addEnergy(0.4f);
 		}
 	}
 
