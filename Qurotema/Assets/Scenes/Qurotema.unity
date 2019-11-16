@@ -7869,6 +7869,26 @@ MonoBehaviour:
   ambiences:
   - audio: {fileID: 8300000, guid: 5573f7c48b8683b4d9b0aa065eba8c78, type: 3}
     name: bass Em
+  - audio: {fileID: 8300000, guid: 54c5b468584f86341a5321eabc2d4265, type: 3}
+    name: bass CM
+  - audio: {fileID: 8300000, guid: cf51f89d24af92a4cb339ee94609cbf1, type: 3}
+    name: bass ambience Em
+  - audio: {fileID: 8300000, guid: e9cfc19a7d16d2345a43c16082450205, type: 3}
+    name: bass ambience CM
+  - audio: {fileID: 8300000, guid: 477cfd46bf5e9a74b8bf8a285fe22b46, type: 3}
+    name: chord ambience Em
+  - audio: {fileID: 8300000, guid: a40240a031b8aa946bab072292875d89, type: 3}
+    name: chord ambience CM
+  - audio: {fileID: 8300000, guid: 558db8ba901934540a1e44989c627b4b, type: 3}
+    name: clicks
+  - audio: {fileID: 8300000, guid: 49d257f7db5c0c246b896f4c383aae05, type: 3}
+    name: clicks filtered
+  - audio: {fileID: 8300000, guid: 0cc0a3e88f4cf11459d9298bf1d8daf6, type: 3}
+    name: theme
+  - audio: {fileID: 8300000, guid: 7e8fb5a300bc8f249864ffe2d85a335b, type: 3}
+    name: vocals
+  - audio: {fileID: 8300000, guid: a7f9a2664003fd049aea39e49b9a3287, type: 3}
+    name: sun
   dynamics:
   - oneShot: 0
     audiosLo:
@@ -7876,6 +7896,90 @@ MonoBehaviour:
     audiosHi:
     - {fileID: 8300000, guid: e31bed4ed1f53514f85f4ac38cfd60b5, type: 3}
     name: harmonies
+  - oneShot: 0
+    audiosLo:
+    - {fileID: 8300000, guid: feb96866f9609604f99f3381fa7e9c52, type: 3}
+    audiosHi:
+    - {fileID: 8300000, guid: 4806d7706e419514fab7a1f93e5e09d5, type: 3}
+    name: percussion
+  - oneShot: 1
+    audiosLo:
+    - {fileID: 8300000, guid: 98ecbe4eb9d561142a1ca3210085c51c, type: 3}
+    - {fileID: 8300000, guid: b19bbb38b431b9747b8fe942d9f4b9f1, type: 3}
+    - {fileID: 8300000, guid: 7caa74c2a920a1e4196b950d55b15ccd, type: 3}
+    - {fileID: 8300000, guid: 29553e99e40feea42b5ff070f85592a5, type: 3}
+    audiosHi:
+    - {fileID: 8300000, guid: 1fbc84a207533dc4383dacf33c7ad2f0, type: 3}
+    - {fileID: 8300000, guid: ee22aae7f84b61742a817c5205901cb0, type: 3}
+    - {fileID: 8300000, guid: 7454496a1d4d4ba4c9966eb0405b9167, type: 3}
+    - {fileID: 8300000, guid: 15c1262f54d651847be39995a71c7b9e, type: 3}
+    name: whips
+  - oneShot: 1
+    audiosLo:
+    - {fileID: 8300000, guid: 2296bc64c25ae994e8df44aad64fdd73, type: 3}
+    - {fileID: 8300000, guid: fb8d4a8b9665d7f438d6e39efdff0306, type: 3}
+    - {fileID: 8300000, guid: a96f6c08f9ca3e2428a02ba8c1d79ca1, type: 3}
+    - {fileID: 8300000, guid: 42101aaafa4d8344484bb73a0b8cc4f6, type: 3}
+    - {fileID: 8300000, guid: eee70b5868e405941a493bf8b576c065, type: 3}
+    audiosHi:
+    - {fileID: 8300000, guid: fa87e650fc17c264e96f4c7b5243ce77, type: 3}
+    - {fileID: 8300000, guid: 4b2a741537b069349964d567e604eccd, type: 3}
+    - {fileID: 8300000, guid: 33f836f287832054d8135d2ad5189e12, type: 3}
+    - {fileID: 8300000, guid: a2a9dce674551de4a9b3821931033aa0, type: 3}
+    - {fileID: 8300000, guid: bb37baff8bcf6ec47a049fbb9d93f8dd, type: 3}
+    name: droplets
+  - oneShot: 0
+    audiosLo:
+    - {fileID: 8300000, guid: 0cafd70e269a6b84798121c1a5f09ca0, type: 3}
+    audiosHi:
+    - {fileID: 8300000, guid: 3232511ac1ef4f742875cb07cc73c69a, type: 3}
+    name: pads
+  - oneShot: 0
+    audiosLo:
+    - {fileID: 8300000, guid: e2bd6f57b82c8d1409ebf6b265c3a9e1, type: 3}
+    audiosHi:
+    - {fileID: 8300000, guid: 477d2bd707ce7934d8f926d0cc32528c, type: 3}
+    name: rhythms
+  - oneShot: 1
+    audiosLo:
+    - {fileID: 8300000, guid: c5e953d5b4443dd4cb7863068fc238f1, type: 3}
+    - {fileID: 8300000, guid: dab54a5fdbd016340a7d28a84ab91809, type: 3}
+    - {fileID: 8300000, guid: 89eb64fb76a851a4096c46bb272c033b, type: 3}
+    - {fileID: 8300000, guid: 375f9ee93f7323748b89312993112c99, type: 3}
+    - {fileID: 8300000, guid: d3302000dd5c8b24b9b0f4ae0069c913, type: 3}
+    - {fileID: 8300000, guid: f2f1d3dbb34add341bb056e317823302, type: 3}
+    - {fileID: 8300000, guid: b7ad70522339bc947b660e5059d85e83, type: 3}
+    - {fileID: 8300000, guid: a3a0cddcc42391842ba4a0e72017c1a2, type: 3}
+    - {fileID: 8300000, guid: f0ee0de48a5e8bc41b528edd5031c845, type: 3}
+    - {fileID: 8300000, guid: bba311eb8f97e5e458793ba52afd6053, type: 3}
+    - {fileID: 8300000, guid: d4cd0e5f59dcae5449dcc451541b9513, type: 3}
+    - {fileID: 8300000, guid: e751d6e84f5a27f49a4852a47c73b5af, type: 3}
+    - {fileID: 8300000, guid: 06ec4edb1906c034a9de9b550aeddc32, type: 3}
+    audiosHi:
+    - {fileID: 8300000, guid: c91c2150f0110bb4fa9e0e41dee70a37, type: 3}
+    - {fileID: 8300000, guid: 33b19ac41f493c144a390863f773f5e5, type: 3}
+    - {fileID: 8300000, guid: 6ef06cf7f09029e46a64ef05c1b1533c, type: 3}
+    - {fileID: 8300000, guid: 813d78dbd52c2a247a396c137bee7788, type: 3}
+    - {fileID: 8300000, guid: 24cbc25609f1af64dad2e2ed57a9125f, type: 3}
+    - {fileID: 8300000, guid: 558f29d526247614eb6eab8a23de3f44, type: 3}
+    - {fileID: 8300000, guid: 93d863a15292abf44a5ac26ab42c93f9, type: 3}
+    - {fileID: 8300000, guid: 7aecb95cc77b08546b6ec41aaa825463, type: 3}
+    - {fileID: 8300000, guid: 12f2c477e8bc28941b0ca5af8e8cc701, type: 3}
+    - {fileID: 8300000, guid: 8d4d58c41b5ce894db871f4e108d0724, type: 3}
+    - {fileID: 8300000, guid: 6c990931035aba645829cc553bfabed6, type: 3}
+    - {fileID: 8300000, guid: 93bd111ff42f8924fa1889d059ac403d, type: 3}
+    - {fileID: 8300000, guid: c8e02dba74250944ba8f1c9c75df5854, type: 3}
+    name: melodies
+  - oneShot: 1
+    audiosLo:
+    - {fileID: 8300000, guid: 9713a5a38fa979a4e902312d402ccdab, type: 3}
+    - {fileID: 8300000, guid: bf418686bc7772442a1111b97c094176, type: 3}
+    - {fileID: 8300000, guid: 1c817281b67bb924a9e807545db9d74d, type: 3}
+    audiosHi:
+    - {fileID: 8300000, guid: 9713a5a38fa979a4e902312d402ccdab, type: 3}
+    - {fileID: 8300000, guid: bf418686bc7772442a1111b97c094176, type: 3}
+    - {fileID: 8300000, guid: 1c817281b67bb924a9e807545db9d74d, type: 3}
+    name: sparkles
 --- !u!1 &1297650280
 GameObject:
   m_ObjectHideFlags: 0
@@ -9907,6 +10011,7 @@ MonoBehaviour:
   flying: 0
   targetSpeed: 0
   targetFOV: 0
+  mix: {fileID: 24100000, guid: 8ff87e8b1319e4b49927e92f429cadf3, type: 2}
 --- !u!1 &1453648828
 GameObject:
   m_ObjectHideFlags: 0

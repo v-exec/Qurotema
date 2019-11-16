@@ -1,5 +1,27 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-4729645743313346176
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 05f0087e40774514395c1adbe93c9d19
+  m_EffectName: Compressor
+  m_MixLevel: 56bf6cf26e14406479086540e1fbea73
+  m_Parameters:
+  - m_ParameterName: Threshold
+    m_GUID: f9cc3472060b4074aae6e4a2f052e561
+  - m_ParameterName: Attack
+    m_GUID: 58fe3e5959ab4164fb7345b47b78ae29
+  - m_ParameterName: Release
+    m_GUID: fda50b4ebfea48d4ca15863fb213f05d
+  - m_ParameterName: Make up gain
+    m_GUID: 0f4d04065a3425f4f9ef42bc7060cff5
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -15,7 +37,9 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: debbda59d6aaadb41bee7748716fe180
+    name: Frequency_Cutoff
   m_AudioMixerGroupViews:
   - guids:
     - 854a2d0d0471b6445b406cdd95da3340
@@ -36,7 +60,9 @@ AudioMixerGroupController:
   m_Pitch: ee1a22744c2476b47bd16d241ab75366
   m_Send: 00000000000000000000000000000000
   m_Effects:
+  - {fileID: 3013259236768823124}
   - {fileID: 24400004}
+  - {fileID: -4729645743313346176}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -64,5 +90,29 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 8429cfad3cdac6f46830710779319345
-  m_FloatValues: {}
+  m_FloatValues:
+    81a2c322264cddc48b7c1aaf028ccf41: 0
+    f9cc3472060b4074aae6e4a2f052e561: 0
+    9dd2a008767bfcb46b590bed48cdf144: 0
+    debbda59d6aaadb41bee7748716fe180: 10
+    58fe3e5959ab4164fb7345b47b78ae29: 10
+    fda50b4ebfea48d4ca15863fb213f05d: 20
   m_TransitionOverrides: {}
+--- !u!244 &3013259236768823124
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 1d4743611692e3949aab48544b120451
+  m_EffectName: Highpass
+  m_MixLevel: 4a926ca0b2511864ea3873347fa11820
+  m_Parameters:
+  - m_ParameterName: Cutoff freq
+    m_GUID: debbda59d6aaadb41bee7748716fe180
+  - m_ParameterName: Resonance
+    m_GUID: acb9b9b35052ef643974ebcf5b81539f
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0

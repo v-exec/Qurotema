@@ -16,11 +16,15 @@ public class CursorBehavior : MonoBehaviour {
 
 	public float velocity = 0;
 
+	//audio
+	private Sound soundSystem;
+
 	void Start () {
 		transform.position = Camera.main.transform.position + (Camera.main.transform.forward * distanceFromCamera);
 		rb = GetComponent<Rigidbody>();
 		mat = GetComponent<MeshRenderer>().material;
 		trail = GetComponent<TrailRenderer>().material;
+		soundSystem = GameObject.Find("Nox").GetComponent<Sound>();
 	}
 
 	void Update () {
@@ -40,6 +44,19 @@ public class CursorBehavior : MonoBehaviour {
 		if (Input.GetMouseButton(2) || Nox.player.GetComponent<PlayerMove>().flying) {
 			GetComponent<MeshRenderer>().enabled = false;
 			GetComponent<TrailRenderer>().enabled = false;
+		}
+
+		//audio
+		if (Input.GetMouseButton(1) && !Nox.player.GetComponent<PlayerMove>().flying && !Input.GetMouseButton(2)) {
+			soundSystem.addEnergy(1f);
+		}
+
+		if (Input.GetMouseButtonDown(1) && !Nox.player.GetComponent<PlayerMove>().flying && !Input.GetMouseButton(2)) {
+			soundSystem.dynamicToggle("rhythms", true);
+		}
+
+		if (Input.GetMouseButtonUp(1)) {
+			soundSystem.dynamicToggle("rhythms", false);
 		}
 	}
 	

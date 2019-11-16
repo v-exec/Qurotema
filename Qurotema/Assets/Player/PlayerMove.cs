@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerMove : MonoBehaviour {
 
@@ -50,6 +51,7 @@ public class PlayerMove : MonoBehaviour {
 
 	//audio
 	private Sound soundSystem;
+	public AudioMixer mix;
 	
 	void Start() {
 		//get components
@@ -96,7 +98,7 @@ public class PlayerMove : MonoBehaviour {
 				speedChangeStop *= flightControlMultiplier;
 				directionChangeSpeed *= flightControlMultiplier;
 
-				soundSystem.toggleSound("harmonies", true);
+				soundSystem.dynamicToggle("harmonies", true);
 			} else {
 				walkSpeed /= flightSpeedMultiplier;
 				sprintSpeed /= flightSpeedMultiplier;
@@ -106,20 +108,41 @@ public class PlayerMove : MonoBehaviour {
 				speedChangeStop /= flightControlMultiplier;
 				directionChangeSpeed /= flightControlMultiplier;
 
-				soundSystem.toggleSound("harmonies", false);
+				soundSystem.dynamicToggle("harmonies", false);
+				soundSystem.dynamicToggle("pads", false);
 			}
 		}
 	}
 
 	void handleSound() {
 		if (flying && sprinting) {
-			soundSystem.addEnergy(1.4f);
+			soundSystem.addEnergy(2.4f);
 		} else if (flying && !sprinting) {
-			soundSystem.addEnergy(1.2f);
+			soundSystem.addEnergy(1.8f);
 		} else if (sprinting) {
-			soundSystem.addEnergy(0.9f);
+			soundSystem.addEnergy(1.4f);
 		} else if (getSpeed() > 1f) {
 			soundSystem.addEnergy(0.4f);
+		}
+
+		//need listener specifically for a single event
+		//repeated calls to dynamicToggle result in loss of functionality
+		if (Input.GetKeyDown(KeyCode.LeftShift)) {
+			soundSystem.dynamicToggle("percussion", true);
+		}
+
+		if (Input.GetKeyUp(KeyCode.LeftShift)) {
+			soundSystem.dynamicToggle("percussion", false);
+		}
+
+		if (jumping) {
+			float cut;
+			mix.GetFloat("Frequency_Cutoff", out cut);
+			mix.SetFloat("Frequency_Cutoff", Nox.ease(cut, 1500f, 2f));
+		} else {
+			float cut;
+			mix.GetFloat("Frequency_Cutoff", out cut);
+			mix.SetFloat("Frequency_Cutoff", Nox.ease(cut, 10f, 5f));
 		}
 	}
 
@@ -173,6 +196,7 @@ public class PlayerMove : MonoBehaviour {
 		} else if (Input.GetKey(KeyCode.LeftShift)) {
 			sprinting = true;
 			targetSpeed = Nox.ease(targetSpeed, sprintSpeed, speedChangeSprint);
+			
 		//walk
 		} else {
 			targetSpeed = Nox.ease(targetSpeed, walkSpeed, speedChangeWalk);

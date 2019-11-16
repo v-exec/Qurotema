@@ -24,6 +24,9 @@ public class DynamicClip : MonoBehaviour {
 	public string name;
 	public bool isOneShot = false;
 
+	public bool playingLo = false;
+	public bool playingHi = false;
+
 	private AudioClip[] clipsLo;
 	private AudioClip[] clipsHi;
 	private AudioSource sourceLo;
@@ -42,6 +45,9 @@ public class DynamicClip : MonoBehaviour {
 		clipsHi = audHi;
 		name = n;
 
+		sourceLo.volume = 0f;
+		sourceHi.volume = 0f;
+
 		//fill audio source
 		if (!isOneShot) {
 			sourceLo.loop = true;
@@ -50,10 +56,11 @@ public class DynamicClip : MonoBehaviour {
 				sourceHi.loop = true;
 				sourceHi.clip = clipsHi[0];
 			}
+		} else {
+			//enable volume if one-shots
+			sourceLo.volume = 1f;
+			sourceHi.volume = 1f;
 		}
-
-		sourceLo.volume = 0f;
-		sourceHi.volume = 0f;
 	}
 
 	//play random clip from array unless specified
@@ -87,9 +94,16 @@ public class DynamicClip : MonoBehaviour {
 			if (energy) {
 				secondaryMod = StartCoroutine(ToggleSoundRoutine(false, sourceLo, speed));
 				mod = StartCoroutine(ToggleSoundRoutine(on, sourceHi, speed));
+				if (on) playingHi = true;
+				else playingHi = false;
+				playingLo = false;
+				
 			} else {
 				secondaryMod = StartCoroutine(ToggleSoundRoutine(false, sourceHi, speed));
 				mod = StartCoroutine(ToggleSoundRoutine(on, sourceLo, speed));
+				if (on) playingLo = true;
+				else playingLo = false;
+				playingHi = false;
 			}
 		}
 	}

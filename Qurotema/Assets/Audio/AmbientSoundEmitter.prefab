@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
+  clip: {fileID: 0}
+  source: {fileID: 0}
 --- !u!82 &1940475542757626279
 AudioSource:
   m_ObjectHideFlags: 0
@@ -64,7 +66,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 1
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
