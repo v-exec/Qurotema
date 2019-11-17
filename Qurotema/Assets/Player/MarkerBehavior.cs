@@ -9,7 +9,7 @@ public class MarkerBehavior : MonoBehaviour {
 
 	//audio
 	private Sound soundSystem;
-	private int markerCount = 0;
+	private bool playing = false;
 
 	void Start() {
 		soundSystem = GameObject.Find("Nox").GetComponent<Sound>();
@@ -22,9 +22,10 @@ public class MarkerBehavior : MonoBehaviour {
 
 			if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask)) {
 				Instantiate(marker, hit.point, Quaternion.identity);
-				if (markerCount < 3) {
-					soundSystem.shootSound("droplets");
-					markerCount++;
+
+				if (!playing) {
+					playing = true;
+					soundSystem.dynamicToggle("droplets", true, 5f);
 				}
 
 				if (Input.GetMouseButtonDown(0)) {
@@ -37,6 +38,9 @@ public class MarkerBehavior : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetMouseButtonDown(2)) markerCount = 0;
+		if (Input.GetMouseButtonUp(2)) {
+			playing = false;
+			soundSystem.dynamicToggle("droplets", false, 5f);
+		}
 	}
 }

@@ -6487,29 +6487,21 @@ MonoBehaviour:
     name: percussion
   - oneShot: 1
     audiosLo:
-    - {fileID: 8300000, guid: 98ecbe4eb9d561142a1ca3210085c51c, type: 3}
-    - {fileID: 8300000, guid: b19bbb38b431b9747b8fe942d9f4b9f1, type: 3}
-    - {fileID: 8300000, guid: 7caa74c2a920a1e4196b950d55b15ccd, type: 3}
-    - {fileID: 8300000, guid: 29553e99e40feea42b5ff070f85592a5, type: 3}
+    - {fileID: 8300000, guid: 93ec05246fdc81443a0a91e9fbee0301, type: 3}
+    - {fileID: 8300000, guid: 89e90ef30a429634f9185561cd5068ac, type: 3}
+    - {fileID: 8300000, guid: 64f2a8544d85ef4468f37188a36ff2f8, type: 3}
+    - {fileID: 8300000, guid: b745c7c5a650a5f4e8ef032116d2cb2f, type: 3}
     audiosHi:
-    - {fileID: 8300000, guid: 1fbc84a207533dc4383dacf33c7ad2f0, type: 3}
-    - {fileID: 8300000, guid: ee22aae7f84b61742a817c5205901cb0, type: 3}
-    - {fileID: 8300000, guid: 7454496a1d4d4ba4c9966eb0405b9167, type: 3}
-    - {fileID: 8300000, guid: 15c1262f54d651847be39995a71c7b9e, type: 3}
+    - {fileID: 8300000, guid: b7b1ab753c1e77e409c4df5d4915663c, type: 3}
+    - {fileID: 8300000, guid: 5c887232ad380ef4cbc6577f593cccad, type: 3}
+    - {fileID: 8300000, guid: 8067d8a22bf2a2a4c8a6052bf050f004, type: 3}
+    - {fileID: 8300000, guid: c68ebe06badad144e9d4aec0f82c3b1f, type: 3}
     name: whips
-  - oneShot: 1
+  - oneShot: 0
     audiosLo:
-    - {fileID: 8300000, guid: 2296bc64c25ae994e8df44aad64fdd73, type: 3}
-    - {fileID: 8300000, guid: fb8d4a8b9665d7f438d6e39efdff0306, type: 3}
-    - {fileID: 8300000, guid: a96f6c08f9ca3e2428a02ba8c1d79ca1, type: 3}
-    - {fileID: 8300000, guid: 42101aaafa4d8344484bb73a0b8cc4f6, type: 3}
-    - {fileID: 8300000, guid: eee70b5868e405941a493bf8b576c065, type: 3}
+    - {fileID: 8300000, guid: 0399f44c2fd64ad47b0cecbf94114e1e, type: 3}
     audiosHi:
-    - {fileID: 8300000, guid: fa87e650fc17c264e96f4c7b5243ce77, type: 3}
-    - {fileID: 8300000, guid: 4b2a741537b069349964d567e604eccd, type: 3}
-    - {fileID: 8300000, guid: 33f836f287832054d8135d2ad5189e12, type: 3}
-    - {fileID: 8300000, guid: a2a9dce674551de4a9b3821931033aa0, type: 3}
-    - {fileID: 8300000, guid: bb37baff8bcf6ec47a049fbb9d93f8dd, type: 3}
+    - {fileID: 8300000, guid: cfe78cad0e383cd44a74c2d34f3d11b5, type: 3}
     name: droplets
   - oneShot: 0
     audiosLo:
