@@ -138,7 +138,7 @@ public class PlayerMove : MonoBehaviour {
 		if (jumping) {
 			float cut;
 			mix.GetFloat("Frequency_Cutoff", out cut);
-			mix.SetFloat("Frequency_Cutoff", Nox.ease(cut, 1500f, 2f));
+			mix.SetFloat("Frequency_Cutoff", Nox.ease(cut, 1100f, 1f));
 		} else {
 			float cut;
 			mix.GetFloat("Frequency_Cutoff", out cut);
