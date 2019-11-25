@@ -155,7 +155,7 @@ public class Sound : MonoBehaviour {
 	//at random point in time, play theme as one-shot
 	private void theme() {
 		float chance = Random.Range(0f, 1f);
-		if (chance < 0.001f && !findAmbient("theme").source.isPlaying) {
+		if (chance < 0.0003f && !findAmbient("theme").source.isPlaying) {
 			ambienceToggle("bass Em", false);
 			ambienceToggle("bass CM", false);
 			ambienceToggle("bass ambience Em", false);
