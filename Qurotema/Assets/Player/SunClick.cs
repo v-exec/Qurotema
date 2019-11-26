@@ -1,20 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.Rendering;
+using UnityEngine.Experimental.Rendering.HDPipeline;
 
 public class SunClick : MonoBehaviour {
 
 	private Sound soundSystem;
 	private float FOV;
+	private Camera camComponent;
 
 	public bool negative = false;
 	public Coroutine transitioning;
 	
 	public LayerMask mask;
 	public AudioMixer mix;
+	public GameObject pp;
 
 	void Start() {
 		soundSystem = GameObject.Find("Nox").GetComponent<Sound>();
+		camComponent = GameObject.Find("Camera").GetComponent<Camera>();
 	}
 
 	void Update() {
@@ -36,40 +42,29 @@ public class SunClick : MonoBehaviour {
 		negative = !negative;
 
 		float cut;
-		mix.GetFloat("Frequency_Cutoff", out cut);
+		mix.GetFloat("LP_Freq", out cut);
+		FOV = camComponent.fieldOfView;
 
-		if (negative) {
-			mix.SetFloat("Frequency_Cutoff", Nox.ease(cut, 500f, 0.5f));
+		while (FOV < 155f) {
+			yield return new WaitForSeconds(0.01f);
+			FOV = Nox.ease(FOV, 160f, 4f);
+			cut = Nox.ease(cut, 3000f, 0.1f);
+			mix.SetFloat("LP_Freq", cut);
+			camComponent.fieldOfView = FOV;
+		}
 
-			while (FOV < 140) {
-				yield return new WaitForSeconds(0.01f);
-				FOV += 0.5f;
+		//filter cutoff
+		if (negative) mix.SetFloat("LP_Freq", 1500f);
+		else mix.SetFloat("LP_Freq", 22000f);
 
-			}
+		//post-processing effects
+		if (negative) pp.SetActive(true);
+		else pp.SetActive(false);
 
-			mix.SetFloat("Frequency_Cutoff", Nox.ease(cut, 900f, 1f));
-
-			while (FOV > 60) {
-				yield return new WaitForSeconds(0.01f);
-				FOV -= 0.5f;
-				
-			}
-		} else {
-			mix.SetFloat("Frequency_Cutoff", Nox.ease(cut, 500f, 0.5f));
-
-			while (FOV < 140) {
-				yield return new WaitForSeconds(0.01f);
-				FOV += 0.5f;
-
-			}
-
-			mix.SetFloat("Frequency_Cutoff", Nox.ease(cut, 900f, 1f));
-
-			while (FOV > 60) {
-				yield return new WaitForSeconds(0.01f);
-				FOV -= 0.5f;
-				
-			}
+		while (FOV > 65f) {
+			yield return new WaitForSeconds(0.01f);
+			FOV = Nox.ease(FOV, 60f, 7f);
+			camComponent.fieldOfView = FOV;
 		}
 	}
 }

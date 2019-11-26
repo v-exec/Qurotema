@@ -135,22 +135,22 @@ public class PlayerMove : MonoBehaviour {
 			soundSystem.dynamicToggle("percussion", false);
 		}
 
-		if (!GameObject.Find("Camera").GetComponent<SunClick>().negative) {
-			if (jumping) {
-				float cut;
-				mix.GetFloat("Frequency_Cutoff", out cut);
-				mix.SetFloat("Frequency_Cutoff", Nox.ease(cut, 1100f, 1f));
-			} else {
+		if (jumping) {
 			float cut;
-				mix.GetFloat("Frequency_Cutoff", out cut);
-				mix.SetFloat("Frequency_Cutoff", Nox.ease(cut, 10f, 5f));
-			}
+			mix.GetFloat("Frequency_Cutoff", out cut);
+			mix.SetFloat("Frequency_Cutoff", Nox.ease(cut, 1100f, 1f));
+		} else {
+		float cut;
+			mix.GetFloat("Frequency_Cutoff", out cut);
+			mix.SetFloat("Frequency_Cutoff", Nox.ease(cut, 10f, 5f));
 		}
 	}
 
 	void setFOV() {
-		if (!flying) targetFOV = Nox.ease(targetFOV, Nox.remap(targetSpeed, walkSpeed, sprintSpeed, defaultFOV, fastFOV), FOVease);
-		camComponent.fieldOfView = targetFOV;
+		if (GameObject.Find("Camera").GetComponent<SunClick>().transitioning != null) {
+	 		if (!flying) targetFOV = Nox.ease(targetFOV, Nox.remap(targetSpeed, walkSpeed, sprintSpeed, defaultFOV, fastFOV), FOVease);
+			camComponent.fieldOfView = targetFOV;
+		}
 	}
 
 	void move() {
