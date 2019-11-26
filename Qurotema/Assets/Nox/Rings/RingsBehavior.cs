@@ -19,8 +19,6 @@ public class RingsBehavior : MonoBehaviour {
 
 			if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~mask)) {
 
-				Debug.Log(hit.collider.tag);
-
 				soundSystem.addEnergy(0.5f);
 				soundSystem.shootSound("melodies", int.Parse(hit.collider.tag));
 			}

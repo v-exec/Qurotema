@@ -135,14 +135,16 @@ public class PlayerMove : MonoBehaviour {
 			soundSystem.dynamicToggle("percussion", false);
 		}
 
-		if (jumping) {
+		if (!GameObject.Find("Camera").GetComponent<SunClick>().negative) {
+			if (jumping) {
+				float cut;
+				mix.GetFloat("Frequency_Cutoff", out cut);
+				mix.SetFloat("Frequency_Cutoff", Nox.ease(cut, 1100f, 1f));
+			} else {
 			float cut;
-			mix.GetFloat("Frequency_Cutoff", out cut);
-			mix.SetFloat("Frequency_Cutoff", Nox.ease(cut, 1100f, 1f));
-		} else {
-			float cut;
-			mix.GetFloat("Frequency_Cutoff", out cut);
-			mix.SetFloat("Frequency_Cutoff", Nox.ease(cut, 10f, 5f));
+				mix.GetFloat("Frequency_Cutoff", out cut);
+				mix.SetFloat("Frequency_Cutoff", Nox.ease(cut, 10f, 5f));
+			}
 		}
 	}
 
