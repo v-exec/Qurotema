@@ -1,10 +1,10 @@
 # TO DO
 
-- Redo low energy droplet sounds (30 min)
-- Produce instrument sounds (2h)
+- Redo low energy droplet sounds (0.5)
+- Produce instrument sounds (1.5)
 
-- Add language projections (1h)
-- Sun click secret (30m)
+- Add language projections + sparkle feedback (audio/visual) (2)
+- Sun click secret (0.5)
+- Story progressions + sparkle feedback (audio/visual) (2)
 
-- Bigger / different map with limits (3h)
-- Story progressions (2h)
+- Bigger / different map with limits (3)
