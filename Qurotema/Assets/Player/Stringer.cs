@@ -8,6 +8,7 @@ public class Stringer : MonoBehaviour {
 	private Vector3 end = new Vector3(0,0,0);
 	private bool stringing = false;
 	private CursorBehavior cursor;
+	private Sound soundSystem;
 
 	private List<StringCord> stringSet = new List<StringCord>();
 
@@ -17,6 +18,7 @@ public class Stringer : MonoBehaviour {
 	public LayerMask mask;
 
 	void Start() {
+		soundSystem = GameObject.Find("Nox").GetComponent<Sound>();
 		cursor = GameObject.Find("Cursor").GetComponent<CursorBehavior>();
 	}
 
@@ -36,7 +38,7 @@ public class Stringer : MonoBehaviour {
 
 			if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~mask)) {
 				if (hit.collider.tag == "String") {
-					hit.collider.gameObject.GetComponent<StringCord>().playSound(cursor.velocity);
+					hit.collider.gameObject.GetComponent<StringCord>().playSound();
 				}
 			}
 		}
@@ -76,28 +78,30 @@ public class Stringer : MonoBehaviour {
 		liner.SetPosition(1, Camera.main.transform.position + (Camera.main.transform.forward * 10));
 	}
 
-	private float deletePendingString() {
+	private void deletePendingString() {
 		liner.SetPosition(0, new Vector3(0,0,0));
 		liner.SetPosition(1, new Vector3(0,0,0));
-		return Vector3.Distance(start, (Camera.main.transform.forward * 10));
 	}
 
 	private void startString(Vector3 s) {
 		stringing = true;
-		playStart();
+		soundSystem.addEnergy(0.1f);
+		soundSystem.shootSound("string start");
 	}
 
 	private void endString(Vector3 e) {
 		stringing = false;
-		float snapDistance = deletePendingString();
-		playEnd(Vector3.Distance(start, end));
+		deletePendingString();
+		soundSystem.addEnergy(0.1f);
+		soundSystem.shootSound("string end");
 		createString(start, end);
 	}
 
 	private void cancelString() {
 		stringing = false;
-		float snapDistance = deletePendingString();
-		playSnap(snapDistance);
+		deletePendingString();
+		soundSystem.addEnergy(0.1f);
+		soundSystem.shootSound("string snap");
 	}
 
 	private void createString(Vector3 s, Vector3 e) {
@@ -125,17 +129,5 @@ public class Stringer : MonoBehaviour {
 			if (str.start == e && str.end == s) return true;
 		}
 		return false;
-	}
-
-	private void playSnap(float strength) {
-
-	}
-
-	private void playStart() {
-
-	}
-
-	private void playEnd(float length) {
-
 	}
 }
