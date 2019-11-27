@@ -22,13 +22,14 @@ public class Stringer : MonoBehaviour {
 		cursor = GameObject.Find("Cursor").GetComponent<CursorBehavior>();
 	}
 
-	void FixedUpdate() {
+	void Update() {
 		if (!stringing) leftClick();
 		else {
 			drawPendingString();
 			leftRelease();
 		}
 	}
+
 
 	private void leftClick() {
 		//play string

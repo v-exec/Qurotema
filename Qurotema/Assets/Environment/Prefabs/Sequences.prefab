@@ -575,7 +575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789221279698913}
-  tone: Hat
+  tone: hat
   count: 5
 --- !u!1 &6797789220014147688
 GameObject:
@@ -910,7 +910,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789221433876294}
-  tone: Hat
+  tone: hat
   count: 3
 --- !u!1 &6797789220095668087
 GameObject:
@@ -1853,7 +1853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789220553222786}
-  tone: Kick
+  tone: kick
   count: 3
 --- !u!1 &6797789220338547826
 GameObject:
@@ -4014,7 +4014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789220137554037}
-  tone: Hat
+  tone: hat
   count: 1
 --- !u!1 &6797789220643651102
 GameObject:
@@ -4591,7 +4591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789222036905605}
-  tone: Snare
+  tone: snare
   count: 6
 --- !u!1 &6797789220703276306
 GameObject:
@@ -5168,7 +5168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789221131908658}
-  tone: Hat
+  tone: hat
   count: 7
 --- !u!1 &6797789220739706622
 GameObject:
@@ -5901,7 +5901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789220014147688}
-  tone: Hat
+  tone: hat
   count: 4
 --- !u!1 &6797789220874040195
 GameObject:
@@ -6002,7 +6002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789220209318535}
-  tone: Snare
+  tone: snare
   count: 7
 --- !u!1 &6797789220892686659
 GameObject:
@@ -6103,7 +6103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789221410237183}
-  tone: Kick
+  tone: kick
   count: 7
 --- !u!1 &6797789220915127613
 GameObject:
@@ -6204,7 +6204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789220739706622}
-  tone: Hat
+  tone: hat
   count: 2
 --- !u!1 &6797789220922659285
 GameObject:
@@ -6781,7 +6781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789220345431125}
-  tone: Hat
+  tone: hat
   count: 6
 --- !u!1 &6797789220939598079
 GameObject:
@@ -6882,7 +6882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789222003316664}
-  tone: Kick
+  tone: kick
   count: 6
 --- !u!1 &6797789220954488649
 GameObject:
@@ -7537,7 +7537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789221401736577}
-  tone: Kick
+  tone: kick
   count: 2
 --- !u!1 &6797789221131908658
 GameObject:
@@ -9222,7 +9222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789220041716266}
-  tone: Kick
+  tone: kick
   count: 1
 --- !u!1 &6797789221279698913
 GameObject:
@@ -9401,7 +9401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789220783885532}
-  tone: Snare
+  tone: snare
   count: 5
 --- !u!1 &6797789221297967702
 GameObject:
@@ -10134,7 +10134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789221351225231}
-  tone: Kick
+  tone: kick
   count: 8
 --- !u!1 &6797789221351225231
 GameObject:
@@ -10469,7 +10469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789220052892425}
-  tone: Snare
+  tone: snare
   count: 2
 --- !u!1 &6797789221433876294
 GameObject:
@@ -10648,7 +10648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789221167889410}
-  tone: Snare
+  tone: snare
   count: 4
 --- !u!1 &6797789221440633724
 GameObject:
@@ -11303,7 +11303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789220095668087}
-  tone: Hat
+  tone: hat
   count: 8
 --- !u!1 &6797789221519362919
 GameObject:
@@ -11404,7 +11404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789220176918312}
-  tone: Snare
+  tone: snare
   count: 8
 --- !u!1 &6797789221571735779
 GameObject:
@@ -11505,7 +11505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789221023767034}
-  tone: Kick
+  tone: kick
   count: 4
 --- !u!1 &6797789221605955277
 GameObject:
@@ -11606,7 +11606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789221440633724}
-  tone: Kick
+  tone: kick
   count: 5
 --- !u!1 &6797789221731865245
 GameObject:
@@ -12183,7 +12183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789221342611814}
-  tone: Snare
+  tone: snare
   count: 1
 --- !u!1 &6797789221781592140
 GameObject:
@@ -13236,7 +13236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightObject: {fileID: 6797789221299467111}
-  tone: Snare
+  tone: snare
   count: 3
 --- !u!1 &6797789221911167363
 GameObject:
