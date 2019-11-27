@@ -85,23 +85,17 @@ public class Stringer : MonoBehaviour {
 
 	private void startString(Vector3 s) {
 		stringing = true;
-		soundSystem.addEnergy(0.1f);
-		soundSystem.shootSound("string start");
 	}
 
 	private void endString(Vector3 e) {
 		stringing = false;
 		deletePendingString();
-		soundSystem.addEnergy(0.1f);
-		soundSystem.shootSound("string end");
 		createString(start, end);
 	}
 
 	private void cancelString() {
 		stringing = false;
 		deletePendingString();
-		soundSystem.addEnergy(0.1f);
-		soundSystem.shootSound("string snap");
 	}
 
 	private void createString(Vector3 s, Vector3 e) {

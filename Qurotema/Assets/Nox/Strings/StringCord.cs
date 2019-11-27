@@ -44,14 +44,14 @@ public class StringCord : MonoBehaviour {
 			StartCoroutine(Refresh());
 			soundSystem.addEnergy(0.2f);
 
-			if(frequency < 305f) soundSystem.shootSound("Strings", 1);
-			else if (frequency < 450f) soundSystem.shootSound("Strings", 2);
-			else if (frequency < 605f) soundSystem.shootSound("Strings", 3);
-			else if (frequency < 680f) soundSystem.shootSound("Strings", 4);
-			else if (frequency < 850f) soundSystem.shootSound("Strings", 5);
-			else if (frequency < 950f) soundSystem.shootSound("Strings", 6);
-			else if (frequency < 1100f) soundSystem.shootSound("Strings", 7);
-			else soundSystem.shootSound("Strings", 8);
+			if(frequency < 305f) soundSystem.shootSound("strings", 1);
+			else if (frequency < 450f) soundSystem.shootSound("strings", 2);
+			else if (frequency < 605f) soundSystem.shootSound("strings", 3);
+			else if (frequency < 680f) soundSystem.shootSound("strings", 4);
+			else if (frequency < 850f) soundSystem.shootSound("strings", 5);
+			else if (frequency < 950f) soundSystem.shootSound("strings", 6);
+			else if (frequency < 1100f) soundSystem.shootSound("strings", 7);
+			else soundSystem.shootSound("strings", 8);
 		}
 	}
 
