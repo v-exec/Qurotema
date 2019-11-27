@@ -147,7 +147,7 @@ public class PlayerMove : MonoBehaviour {
 	}
 
 	void setFOV() {
-		if (GameObject.Find("Camera").GetComponent<SunClick>().transitioning != null) {
+		if (GameObject.Find("Camera").GetComponent<SunClick>().transitioning == null) {
 	 		if (!flying) targetFOV = Nox.ease(targetFOV, Nox.remap(targetSpeed, walkSpeed, sprintSpeed, defaultFOV, fastFOV), FOVease);
 			camComponent.fieldOfView = targetFOV;
 		}

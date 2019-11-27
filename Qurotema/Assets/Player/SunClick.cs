@@ -10,6 +10,7 @@ public class SunClick : MonoBehaviour {
 	private Sound soundSystem;
 	private float FOV;
 	private Camera camComponent;
+	private bool routineEnded = false;
 
 	public bool negative = false;
 	public Coroutine transitioning;
@@ -24,6 +25,12 @@ public class SunClick : MonoBehaviour {
 	}
 
 	void Update() {
+		if (routineEnded && transitioning != null) {
+			StopCoroutine(transitioning);
+			transitioning = null;
+			routineEnded = false;
+		}
+
 		if (Input.GetMouseButton(1) && Input.GetMouseButtonDown(0)) {
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -45,9 +52,9 @@ public class SunClick : MonoBehaviour {
 		mix.GetFloat("LP_Freq", out cut);
 		FOV = camComponent.fieldOfView;
 
-		while (FOV < 155f) {
+		while (FOV > 10f) {
 			yield return new WaitForSeconds(0.01f);
-			FOV = Nox.ease(FOV, 160f, 4f);
+			FOV = Nox.ease(FOV, 9.9f, 10f);
 			cut = Nox.ease(cut, 3000f, 0.1f);
 			mix.SetFloat("LP_Freq", cut);
 			camComponent.fieldOfView = FOV;
@@ -61,10 +68,12 @@ public class SunClick : MonoBehaviour {
 		if (negative) pp.SetActive(true);
 		else pp.SetActive(false);
 
-		while (FOV > 65f) {
+		while (FOV < 65f) {
 			yield return new WaitForSeconds(0.01f);
-			FOV = Nox.ease(FOV, 60f, 7f);
+			FOV = Nox.ease(FOV, 66f, 5f);
 			camComponent.fieldOfView = FOV;
 		}
+
+		routineEnded = true;
 	}
 }
