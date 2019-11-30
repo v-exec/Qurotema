@@ -18,6 +18,16 @@ public class Sound : MonoBehaviour {
 
 	public GameObject ambientSoundEmitter;
 	public GameObject dynamicSoundEmitter;
+
+	public int beat = 1;
+	public bool beatChange = false;
+	public float bpm = 120f; //originally 120, but changed to 60 for eight notes
+
+	private float musicStart;
+	private float secPerBeat;
+	private float musicPosition;
+	private float musicPositionInBeats;
+	private int bars = 0;
 	
 	[System.Serializable]
 	public class Ambient { public AudioClip audio; public string name; }
@@ -61,18 +71,23 @@ public class Sound : MonoBehaviour {
 		//activate ambience clips
 		ambienceToggle("bass Em", true);
 		ambienceToggle("bass ambience Em", true);
+
+		//handle beat tracking
+		secPerBeat = 60f / bpm;
+		musicStart = (float) AudioSettings.dspTime;
 	}
 
 	void FixedUpdate() {
 		//change chord at random point in time (unless playing theme)
 		if (!findAmbient("theme").source.isPlaying) changeChord();
 
-		//play theme if low energy
+		//play vocals if low energy
 		if (energy < lowEnergyThreshold && energyState != 0) {
 			energyState = 0;
 			ambienceToggle("vocals", true);
 		}
 
+		//play theme if low energy
 		if (energy < lowEnergyThreshold) {
 			theme();
 		}
@@ -82,6 +97,19 @@ public class Sound : MonoBehaviour {
 		//calculate energy falloff
 		energy -= eneryFalloff * Time.deltaTime;
 		energy = Mathf.Clamp(energy, 0f, 100f);
+
+		//calculate beats
+		musicPosition = (float) (AudioSettings.dspTime - musicStart);
+		int currentBeat = (int) Mathf.Floor(musicPosition / secPerBeat);
+
+		beatChange = false;
+
+		if (beat + (bars * 16) != currentBeat) {
+			beatChange = true;
+			beat = currentBeat - (bars * 16);
+		}
+		
+		if (beatChange && beat == 16) bars++;
 
 		//play appropriate sound set for different energy
 		if (energy > highEnergyTreshold) {
@@ -123,7 +151,7 @@ public class Sound : MonoBehaviour {
 
 	private void changeChord() {
 		float chance = Random.Range(0f, 1f);
-		if (chance < 0.001f) {
+		if (chance < 0.2f && beatChange && (beat == 1 || beat == 9)) {
 			atRoot = !atRoot;
 
 			if (atRoot) {
@@ -155,7 +183,7 @@ public class Sound : MonoBehaviour {
 	//at random point in time, play theme as one-shot
 	private void theme() {
 		float chance = Random.Range(0f, 1f);
-		if (chance < 0.0003f && !findAmbient("theme").source.isPlaying) {
+		if (chance < 0.3f && beatChange && beat == 1 && !findAmbient("theme").source.isPlaying) {
 			ambienceToggle("bass Em", false);
 			ambienceToggle("bass CM", false);
 			ambienceToggle("bass ambience Em", false);

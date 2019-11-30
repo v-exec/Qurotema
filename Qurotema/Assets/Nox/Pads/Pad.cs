@@ -10,7 +10,6 @@ public class Pad : MonoBehaviour {
 
 	private Material light;
 	private bool active;
-	private int time = 1;
 
 	private float minAlpha = 0.1f;
 	private float maxAlpha = 10f;
@@ -21,7 +20,15 @@ public class Pad : MonoBehaviour {
 	void Start() {
 		soundSystem = GameObject.Find("Nox").GetComponent<Sound>();
 		light = lightObject.GetComponent<Renderer>().material;
-		StartCoroutine(Timer());
+	}
+
+	void Update() {
+		if (soundSystem.beat == count && active && soundSystem.beatChange) {
+			if (glowRoutine != null) StopCoroutine(glowRoutine);
+			glowRoutine = StartCoroutine(Glow());
+			soundSystem.addEnergy(0.1f);
+			soundSystem.shootSound(tone);
+		}
 	}
 
 	private void OnTriggerEnter(Collider other) {
@@ -34,24 +41,6 @@ public class Pad : MonoBehaviour {
 			} else {
 				if (glowRoutine != null) StopCoroutine(glowRoutine);
 				light.SetFloat("_Alpha", 0f);
-			}
-		}
-	}
-
-	IEnumerator Timer() {
-		while (true) {
-			//bpm 120
-			//beat/quarter = 0.5 of second
-			//eight = 0.25 of second
-			yield return new WaitForSeconds(0.25f);
-			time++;
-			if (time > 16) time = 1;
-
-			if (time == count && active) {
-				if (glowRoutine != null) StopCoroutine(glowRoutine);
-				glowRoutine = StartCoroutine(Glow());
-				soundSystem.addEnergy(0.1f);
-				soundSystem.shootSound(tone);
 			}
 		}
 	}

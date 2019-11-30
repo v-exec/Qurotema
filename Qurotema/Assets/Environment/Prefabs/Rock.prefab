@@ -19,7 +19,7 @@ GameObject:
   m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4092853117902055918
 Transform:
@@ -133,7 +133,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -202,7 +202,7 @@ MonoBehaviour:
       frustum:
         mode: 0
         aspect: 1
-        farClipPlane: 1000
+        farClipPlane: 10000
         nearClipPlane: 0.3
         fieldOfView: 90
         projectionMatrix:
