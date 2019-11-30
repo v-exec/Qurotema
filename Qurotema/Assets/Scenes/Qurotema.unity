@@ -12645,7 +12645,7 @@ PrefabInstance:
     - target: {fileID: 6797789220153840115, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 81.02
+      value: 58.8
       objectReference: {fileID: 0}
     - target: {fileID: 6797789220153840115, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
@@ -12686,6 +12686,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789219975790069, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789219975790069, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789219975790069, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6797789219975790068, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
@@ -12752,6 +12767,21 @@ PrefabInstance:
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
       objectReference: {fileID: 0}
+    - target: {fileID: 6797789220313090710, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220313090710, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220313090710, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6797789220313090709, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
       propertyPath: m_ProbeSettings.mode
@@ -12816,6 +12846,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220338547837, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220338547837, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220338547837, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6797789220338547836, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
@@ -12882,6 +12927,21 @@ PrefabInstance:
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
       objectReference: {fileID: 0}
+    - target: {fileID: 6797789220347863579, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220347863579, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220347863579, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6797789220347863578, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
       propertyPath: m_ProbeSettings.mode
@@ -12946,6 +13006,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220369648993, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220369648993, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220369648993, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6797789220369648992, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
@@ -13012,6 +13087,21 @@ PrefabInstance:
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
       objectReference: {fileID: 0}
+    - target: {fileID: 6797789220426434954, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220426434954, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220426434954, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6797789220426434953, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
       propertyPath: m_ProbeSettings.mode
@@ -13076,6 +13166,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220643651097, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220643651097, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220643651097, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6797789220643651096, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
@@ -13142,6 +13247,21 @@ PrefabInstance:
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
       objectReference: {fileID: 0}
+    - target: {fileID: 6797789220703276317, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220703276317, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220703276317, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6797789220703276316, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
       propertyPath: m_ProbeSettings.mode
@@ -13206,6 +13326,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220858072218, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220858072218, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220858072218, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6797789220858072217, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
@@ -13272,6 +13407,21 @@ PrefabInstance:
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
       objectReference: {fileID: 0}
+    - target: {fileID: 6797789220922659280, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220922659280, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220922659280, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6797789220922659287, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
       propertyPath: m_ProbeSettings.mode
@@ -13336,6 +13486,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220954488628, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220954488628, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789220954488628, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6797789220954488651, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
@@ -13402,6 +13567,21 @@ PrefabInstance:
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
       objectReference: {fileID: 0}
+    - target: {fileID: 6797789221162986023, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221162986023, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221162986023, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6797789221162986022, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
       propertyPath: m_ProbeSettings.mode
@@ -13466,6 +13646,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221240653040, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221240653040, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221240653040, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6797789221240653047, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
@@ -13532,6 +13727,21 @@ PrefabInstance:
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
       objectReference: {fileID: 0}
+    - target: {fileID: 6797789221245080946, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221245080946, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221245080946, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6797789221245080945, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
       propertyPath: m_ProbeSettings.mode
@@ -13596,6 +13806,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221297967697, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221297967697, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221297967697, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6797789221297967696, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
@@ -13662,6 +13887,21 @@ PrefabInstance:
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
       objectReference: {fileID: 0}
+    - target: {fileID: 6797789221454411345, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221454411345, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221454411345, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6797789221454411344, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
       propertyPath: m_ProbeSettings.mode
@@ -13726,6 +13966,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221731865240, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221731865240, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221731865240, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6797789221731865247, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
@@ -13792,6 +14047,21 @@ PrefabInstance:
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
       objectReference: {fileID: 0}
+    - target: {fileID: 6797789221781592143, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221781592143, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221781592143, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6797789221781592142, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
       propertyPath: m_ProbeSettings.mode
@@ -13856,6 +14126,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221818485888, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221818485888, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221818485888, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6797789221818485895, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
@@ -13922,6 +14207,21 @@ PrefabInstance:
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
       objectReference: {fileID: 0}
+    - target: {fileID: 6797789221911167374, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221911167374, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221911167374, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6797789221911167373, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
       propertyPath: m_ProbeSettings.mode
@@ -13986,6 +14286,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221940831205, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221940831205, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221940831205, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6797789221940831204, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
@@ -14052,6 +14367,21 @@ PrefabInstance:
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
       objectReference: {fileID: 0}
+    - target: {fileID: 6797789221967120428, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221967120428, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789221967120428, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6797789221967120419, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
       propertyPath: m_ProbeSettings.mode
@@ -14116,6 +14446,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789222058030161, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789222058030161, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789222058030161, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6797789222058030160, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
@@ -14182,6 +14527,21 @@ PrefabInstance:
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
       objectReference: {fileID: 0}
+    - target: {fileID: 6797789222065206202, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789222065206202, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797789222065206202, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_BoxSize.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6797789222065206201, guid: b4cf7884f372b554ba6f33aeff423992,
         type: 3}
       propertyPath: m_ProbeSettings.mode
@@ -14246,6 +14606,126 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ProbeSettings.camera.frustum.farClipPlane
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146309350450949413, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446558464442849576, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 3448412209337947468, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550778413230927771, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647348145466734966, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 4498954400951563360, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758399479727263230, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 8394173988898937265, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 801988781524734802, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 9153111140147153499, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 427275059019115430, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955795246159614062, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 2971967060283496824, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 365801879657203419, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 8331574323512047965, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 3348475673937432310, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 230422241274533974, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838413993972200291, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098895191358196815, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 9084259021270633151, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397879579274922076, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 7039175116733096261, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 4982227192201491839, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093543329059857194, guid: b4cf7884f372b554ba6f33aeff423992,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000076293945
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4cf7884f372b554ba6f33aeff423992, type: 3}
