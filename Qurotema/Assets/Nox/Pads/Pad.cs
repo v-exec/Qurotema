@@ -40,9 +40,12 @@ public class Pad : MonoBehaviour {
 
 	IEnumerator Timer() {
 		while (true) {
-			yield return new WaitForSeconds(0.5f);
+			//bpm 120
+			//beat/quarter = 0.5 of second
+			//eight = 0.25 of second
+			yield return new WaitForSeconds(0.25f);
 			time++;
-			if (time > 8) time = 1;
+			if (time > 16) time = 1;
 
 			if (time == count && active) {
 				if (glowRoutine != null) StopCoroutine(glowRoutine);
