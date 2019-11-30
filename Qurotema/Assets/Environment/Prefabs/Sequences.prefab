@@ -109,7 +109,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -146,7 +146,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -154,7 +154,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -842,7 +842,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -879,7 +879,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -887,7 +887,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -1520,7 +1520,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -1557,7 +1557,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -1565,7 +1565,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -2074,7 +2074,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -2111,7 +2111,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -2119,7 +2119,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -2706,7 +2706,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -2743,7 +2743,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -2751,7 +2751,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -3182,7 +3182,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -3219,7 +3219,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -3227,7 +3227,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -3736,7 +3736,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -3773,7 +3773,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -3781,7 +3781,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -4414,7 +4414,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -4451,7 +4451,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -4459,7 +4459,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -5069,7 +5069,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -5106,7 +5106,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -5114,7 +5114,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -5958,7 +5958,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -5995,7 +5995,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -6003,7 +6003,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -6714,7 +6714,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -6751,7 +6751,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -6759,7 +6759,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -7190,7 +7190,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -7227,7 +7227,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -7235,7 +7235,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -7666,7 +7666,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -7703,7 +7703,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -7711,7 +7711,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -8142,7 +8142,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -8179,7 +8179,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -8187,7 +8187,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -8898,7 +8898,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -8935,7 +8935,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -8943,7 +8943,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -9553,7 +9553,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -9590,7 +9590,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -9598,7 +9598,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -10107,7 +10107,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -10144,7 +10144,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -10152,7 +10152,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -10863,7 +10863,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -10908,9 +10908,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -10918,9 +10918,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -12165,7 +12165,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -12210,9 +12210,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -12220,9 +12220,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -12742,7 +12742,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -12787,9 +12787,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -12797,9 +12797,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -13296,7 +13296,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -13341,9 +13341,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -13351,9 +13351,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -13772,7 +13772,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -13817,9 +13817,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -13827,9 +13827,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -14248,7 +14248,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -14293,9 +14293,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -14303,9 +14303,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -14903,7 +14903,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -14948,9 +14948,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -14958,9 +14958,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -15480,7 +15480,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -15525,9 +15525,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -15535,9 +15535,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -16213,7 +16213,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -16258,9 +16258,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -16268,9 +16268,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -17093,7 +17093,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -17138,9 +17138,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -17148,9 +17148,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -17771,7 +17771,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -17816,9 +17816,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -17826,9 +17826,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -18504,7 +18504,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -18549,9 +18549,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -18559,9 +18559,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -19058,7 +19058,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -19103,9 +19103,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -19113,9 +19113,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -19534,7 +19534,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -19579,9 +19579,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -19589,9 +19589,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -20290,7 +20290,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -20335,9 +20335,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -20345,9 +20345,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -21615,7 +21615,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -21660,9 +21660,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -21670,9 +21670,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -22495,7 +22495,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -22540,9 +22540,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -22550,9 +22550,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -23072,7 +23072,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -23117,9 +23117,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -23127,9 +23127,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -23548,7 +23548,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -23593,9 +23593,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -23603,9 +23603,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -24125,7 +24125,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -24170,9 +24170,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -24180,9 +24180,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -24601,7 +24601,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -24646,9 +24646,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -24656,9 +24656,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -25077,7 +25077,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -25122,9 +25122,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -25132,9 +25132,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -25709,7 +25709,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -25754,9 +25754,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -25764,9 +25764,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -26185,7 +26185,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 6, y: 6, z: 3}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -26230,9 +26230,9 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 6, y: 6, z: 3}
-      m_BoxBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
-      m_BoxBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
+      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -26240,9 +26240,9 @@ MonoBehaviour:
       m_SphereRadius: 3
       m_SphereBlendDistance: 0
       m_SphereBlendNormalDistance: 0
-      m_EditorAdvancedModeBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_EditorAdvancedModeBlendDistanceNegative: {x: 0, y: 0, z: 0}
-      m_EditorSimplifiedModeBlendDistance: 0.9
+      m_EditorAdvancedModeBlendDistancePositive: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorAdvancedModeBlendDistanceNegative: {x: 0.9, y: 0.9, z: 0.9}
+      m_EditorSimplifiedModeBlendDistance: 0
       m_EditorAdvancedModeBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_EditorAdvancedModeBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_EditorSimplifiedModeBlendNormalDistance: 0
@@ -27253,7 +27253,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -27290,7 +27290,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -27298,7 +27298,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -27729,7 +27729,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -27766,7 +27766,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -27774,7 +27774,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -28306,7 +28306,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -28343,7 +28343,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -28351,7 +28351,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -29186,7 +29186,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -29223,7 +29223,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -29231,7 +29231,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -29919,7 +29919,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -29956,7 +29956,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -29964,7 +29964,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -30574,7 +30574,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -30611,7 +30611,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -30619,7 +30619,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
@@ -31151,7 +31151,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5, y: 5, z: 1.8}
+  m_BoxSize: {x: 4.3, y: 4.5, z: 2}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -31188,7 +31188,7 @@ MonoBehaviour:
       automaticScale: 1
       viewerScale: 1
     type: 0
-    mode: 1
+    mode: 0
     realtimeMode: 1
     lighting:
       multiplier: 1
@@ -31196,7 +31196,7 @@ MonoBehaviour:
       lightLayer: 1
     influence:
       m_Shape: 0
-      m_BoxSize: {x: 5, y: 5, z: 1.8}
+      m_BoxSize: {x: 4.3, y: 4.5, z: 2}
       m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
