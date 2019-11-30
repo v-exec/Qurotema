@@ -17,26 +17,32 @@ public class Story : MonoBehaviour {
 	private Volume pp;
 	public HDRISky sky;
 	private float skyOpacity = 0f;
+	private Sound soundSystem;
+	private Nox n;
 
 	//states
 	public bool introductionFinished = false;
-	public bool endingStarted = false;
 
 	//trackers
 	public int monolithsRead = 0;
-	public int instrumentsPlayed = 0;
-	public float timeSpentPlayingStrings = 0f;
-	public float timeSpentPlayingX = 0f;
-	public float timeSpentPlayingY = 0f;
+	public int stringsPlayed = 0;
+	public int ringsPlayed = 0;
+	public int padsPlayed = 0;
+
+	//monolith texts
+	public Sprite[] monolithTexts;
 
 	//text
 	private string[] talk;
 	private int talkTracker = 0;
+	private int randomTracker = 0;
 
 	void Start() {
 		storyText = GameObject.Find("Story - Text/Text").GetComponent<Text>();
 		storyTextCanvas = GameObject.Find("Story - Text");
 		storyBackground = GameObject.Find("Story - Background");
+		soundSystem = GetComponent<Sound>();
+		n = GetComponent<Nox>();
 		pp = GameObject.Find("Rendering").GetComponent<Volume>();
 		HDRISky temp;
 		if (pp.profile.TryGet<HDRISky>(out temp)) sky = temp;
@@ -45,7 +51,7 @@ public class Story : MonoBehaviour {
 		gates.SetActive(true);
 		sky.multiplier.value = 0f;
 
-		talk = new string[22];
+		talk = new string[19];
 
 		//intro
 		talk[0] = "We have a stable port to Qurotema. RO, your vision should come in soon.";
@@ -54,7 +60,7 @@ public class Story : MonoBehaviour {
 		talk[3] = "Your vessel should be equipped with a control module through which you can interact with the world.\nHow it functions is beyond our understanding, but we trust you will discover its abilities in time.";
 		talk[4] = "Good luck with your research, RO. Make Sino proud.";
 
-		//monolith discovery
+		//first monolith discovery
 		talk[5] = "What you see in front of you is one of the Monoliths Dr. Sino spoke about. There should be a writing 'eminating' from it. Do you see anything?";
 
 		//first monolith interaction
@@ -66,33 +72,96 @@ public class Story : MonoBehaviour {
 		//first instrument discovery
 		talk[10] = "What is that? Nothing like that was documented in Sino's notes. It's not coming in clear.";
 
-		//random story progress
+		//instrument playtime story progress
 		talk[11] = "We have signals of faint acitivity away from your vessel's current position.";
-
 		talk[12] = "We've lost sight of your feed, but we are still getting readings about your position. Keep up the research.";
-
 		talk[13] = "Our connection is becoming unreliable. We are going to pull you out soon.";
 
 		//ending
 		talk[14] = "We are losing connection fast. Abandoning vessel.";
 		talk[15] = "RO? Di? Your body in the lab is unresponsive. Initiate return protocol immediately so we can resuscitate.";
 		talk[16] = "Di, I don't know what's going on but we have no connection to Qurotema, can't even find it with Sino's systems.";
-		talk[17] = "If you can still hear me, listen.";
-		talk[18] = "It is possible that Qurotema is gone, and your vessel is in the Void.";
-		talk[19] = "I'm going to be honest. I don't know what we're going to do.";
-
-		talk[20] = "Di, was it?";
-		talk[21] = "Hello. I am Nox.";
+		talk[17] = "It's possible that Qurotema is gone, and your vessel is in the Void.";
+		talk[18] = "I'm going to be honest. I don't know what we're going to do.";
 
 		if (!introductionFinished) {
 			backgroundOpacity = 1f;
 			storyBackground.GetComponent<CanvasGroup>().alpha = backgroundOpacity;
+			talkTracker = 0;
 			StartCoroutine(PlayText(talkTracker));
 		} else {
 			//skip intro
 			sun.SetActive(true);
 			gates.SetActive(false);
 			sky.multiplier.value = 1f;
+		}
+	}
+
+	//set methods
+	public void monolithDiscovered() {
+		talkTracker = 5;
+		StartCoroutine(PlayText(talkTracker));
+	}
+
+	public void monolithActivated() {
+		if (monolithsRead == 0) {
+			talkTracker = 6;
+			StartCoroutine(PlayText(talkTracker));
+		}
+
+		monolithsRead++;
+	}
+
+	public void stringPlayed() {
+		checkForInstrumentDiscovery();
+
+		stringsPlayed++;
+		if (stringsPlayed > 30) randomMessage();
+	}
+
+	public void ringPlayed() {
+		checkForInstrumentDiscovery();
+
+		ringsPlayed++;
+		if (ringsPlayed > 60) randomMessage();
+	}
+
+	public void padPlayed() {
+		checkForInstrumentDiscovery();
+
+		padsPlayed++;
+		if (padsPlayed > 50) randomMessage();
+	}
+
+	public void endGame() {
+		talkTracker = 14;
+		StartCoroutine(PlayText(talkTracker));
+	}
+
+	private void randomMessage() {
+		switch (randomTracker) {
+			case 0:
+				talkTracker = 11;
+				break;
+
+			case 1:
+				talkTracker = 12;
+				break;
+
+			case 2:
+				talkTracker = 13;
+				break;
+		}
+
+		soundSystem.shootSound("sparkles");
+		n.flashFeedback();
+		StartCoroutine(PlayText(talkTracker));
+	}
+
+	private void checkForInstrumentDiscovery() {
+		if (stringsPlayed == 0 && ringsPlayed == 0 && padsPlayed == 0) {
+			talkTracker = 10;
+			StartCoroutine(PlayText(talkTracker));
 		}
 	}
 
@@ -115,6 +184,27 @@ public class Story : MonoBehaviour {
 				StartCoroutine(FadeSky(1f));
 				gates.SetActive(false);
 				introductionFinished = true;
+				break;
+
+			//show gates
+			case 13:
+				gates.SetActive(true);
+				break;
+
+			//slow player down
+			case 14:
+				GameObject.Find("Player").GetComponent<PlayerMove>().sprintSpeed = 0.1f;
+				GameObject.Find("Player").GetComponent<PlayerMove>().walkSpeed = 0.05f;
+				break;
+
+			//fade screen
+			case 15:
+				StartCoroutine(FadeBackground(1f));
+				break;
+
+			//stop music
+			case 17:
+				soundSystem.silence();
 				break;
 		}
 

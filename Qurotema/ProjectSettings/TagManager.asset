@@ -23,6 +23,7 @@ TagManager:
   - 11
   - 12
   - 13
+  - MonolithEye
   layers:
   - Default
   - TransparentFX

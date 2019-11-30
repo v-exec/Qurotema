@@ -106,19 +106,19 @@ public class Nox : MonoBehaviour {
 	}
 
 	IEnumerator Feedback(int id) {
-		while (emissions[id] < 1f) {
-			emissions[id] += 0.1f;
-			terrainMaterial.SetFloat("_EmissionBlend" + id, emissions[id]);
+		while (emissions[id] < 2f) {
 			yield return new WaitForSeconds(0.01f);
+			emissions[id] = ease(emissions[id], 3f, 0.5f);
+			terrainMaterial.SetFloat("_EmissionBlend" + id, emissions[id]);
 		}
 
 		emissions[id] = 1f;
 		terrainMaterial.SetFloat("_EmissionBlend" + id, emissions[id]);
 
 		while (emissions[id] > 0f) {
-			emissions[id] -= 0.02f;
-			terrainMaterial.SetFloat("_EmissionBlend" + id, emissions[id]);
 			yield return new WaitForSeconds(0.01f);
+			emissions[id] = ease(emissions[id], -0.1f, 0.5f);
+			terrainMaterial.SetFloat("_EmissionBlend" + id, emissions[id]);
 		}
 
 		emissions[id] = 0f;

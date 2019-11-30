@@ -12,6 +12,7 @@ public class Sound : MonoBehaviour {
 	private float lowEnergyThreshold = 10f;
 	private bool atRoot = false;
 	private bool playingTheme = false;
+	private bool mute = false;
 
 	private DynamicClip[] dynamicClips;
 	private AmbientClip[] ambientClips;
@@ -200,19 +201,25 @@ public class Sound : MonoBehaviour {
 
 	//toggle dynamic sound
 	public void dynamicToggle(string sound, bool on, float speed = 0.1f) {
-		if (energy > highEnergyTreshold) findDynamic(sound).toggleSound(on, speed, true);
-		else findDynamic(sound).toggleSound(on, speed, false);
+		if (!mute) {
+			if (energy > highEnergyTreshold) findDynamic(sound).toggleSound(on, speed, true);
+			else findDynamic(sound).toggleSound(on, speed, false);
+		}
 	}
 
 	//toggle ambient sound
 	public void ambienceToggle(string sound, bool on, float speed = 0.1f) {
-		findAmbient(sound).toggleSound(on, speed);
+		if (!mute) {
+			findAmbient(sound).toggleSound(on, speed);
+		}
 	}
 
 	//play one-shot of soundclip
 	public void shootSound(string sound, int index = 100) {
-		if (energy > highEnergyTreshold) findDynamic(sound).shootClip(index, true);
-		else findDynamic(sound).shootClip(index, false);
+		if (!mute) {
+			if (energy > highEnergyTreshold) findDynamic(sound).shootClip(index, true);
+			else findDynamic(sound).shootClip(index, false);
+		}
 	}
 
 	private DynamicClip findDynamic(string sound) {
@@ -233,5 +240,13 @@ public class Sound : MonoBehaviour {
 		//too lazy to do proper exceptions
 		Debug.Log("couldn't find ambient sound");
 		return new AmbientClip();
+	}
+
+	public void silence() {
+		for (int i = 0; i < ambientClips.Length; i++) {
+			ambientClips[i].toggleSound(false, 0.05f);
+		}
+
+		mute = true;
 	}
 }
