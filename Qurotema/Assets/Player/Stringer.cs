@@ -9,7 +9,6 @@ public class Stringer : MonoBehaviour {
 	private bool stringing = false;
 	private CursorBehavior cursor;
 	private Sound soundSystem;
-	private Story s;
 
 	private List<StringCord> stringSet = new List<StringCord>();
 
@@ -20,7 +19,6 @@ public class Stringer : MonoBehaviour {
 
 	void Start() {
 		soundSystem = GameObject.Find("Nox").GetComponent<Sound>();
-		s = GameObject.Find("Nox").GetComponent<Story>();
 		cursor = GameObject.Find("Cursor").GetComponent<CursorBehavior>();
 	}
 
@@ -41,7 +39,6 @@ public class Stringer : MonoBehaviour {
 			if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~mask)) {
 				if (hit.collider.tag == "String") {
 					hit.collider.gameObject.GetComponent<StringCord>().playSound();
-					s.stringPlayed();
 				}
 			}
 		}
