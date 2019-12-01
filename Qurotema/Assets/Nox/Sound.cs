@@ -78,7 +78,7 @@ public class Sound : MonoBehaviour {
 		musicStart = (float) AudioSettings.dspTime;
 	}
 
-	void FixedUpdate() {
+	void Update() {
 		//change chord at random point in time (unless playing theme)
 		if (!findAmbient("theme").source.isPlaying) changeChord();
 
@@ -92,9 +92,7 @@ public class Sound : MonoBehaviour {
 		if (energy < lowEnergyThreshold) {
 			theme();
 		}
-	}
 
-	void Update() {
 		//calculate energy falloff
 		energy -= eneryFalloff * Time.deltaTime;
 		energy = Mathf.Clamp(energy, 0f, 100f);

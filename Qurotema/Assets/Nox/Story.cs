@@ -193,10 +193,11 @@ public class Story : MonoBehaviour {
 				introductionFinished = true;
 				break;
 
-			//show gates
+			//show gates and remove map limit
 			case 13:
 				gates.SetActive(true);
 				gates.GetComponent<GatesEnding>().activateEnd();
+				GameObject.Find("Map Limit (front)").SetActive(false);
 				break;
 
 			//slow player down
