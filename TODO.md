@@ -6,3 +6,4 @@
 - Make gate appear more smoothly
 - Make end "effects" smoother
 - Make monolith state change smoother
+- Optimize
