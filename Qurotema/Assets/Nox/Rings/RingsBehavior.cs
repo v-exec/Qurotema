@@ -22,7 +22,7 @@ public class RingsBehavior : MonoBehaviour {
 			if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~mask)) {
 
 				soundSystem.addEnergy(0.5f);
-				soundSystem.shootSound("rings", int.Parse(hit.collider.tag));
+				soundSystem.shootSound("rings", int.Parse(hit.collider.tag) - 1);
 				s.ringPlayed();
 			}
 		}

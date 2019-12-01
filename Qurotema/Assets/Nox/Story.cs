@@ -120,21 +120,21 @@ public class Story : MonoBehaviour {
 		checkForInstrumentDiscovery();
 
 		stringsPlayed++;
-		if (stringsPlayed == 30) randomMessage();
+		if (stringsPlayed == 50) randomMessage();
 	}
 
 	public void ringPlayed() {
 		checkForInstrumentDiscovery();
 
 		ringsPlayed++;
-		if (ringsPlayed == 60) randomMessage();
+		if (ringsPlayed == 40) randomMessage();
 	}
 
 	public void padPlayed() {
 		checkForInstrumentDiscovery();
 
 		padsPlayed++;
-		if (padsPlayed == 50) randomMessage();
+		if (padsPlayed == 30) randomMessage();
 	}
 
 	public void endGame() {
@@ -157,6 +157,8 @@ public class Story : MonoBehaviour {
 				talkTracker = 13;
 				break;
 		}
+
+		randomTracker++;
 
 		soundSystem.shootSound("sparkles");
 		n.flashFeedback();
@@ -200,19 +202,15 @@ public class Story : MonoBehaviour {
 				GameObject.Find("Map Limit (front)").SetActive(false);
 				break;
 
-			//slow player down
+			//slow player down and fade screen
 			case 14:
 				GameObject.Find("Player").GetComponent<PlayerMove>().sprintSpeed = 0.1f;
 				GameObject.Find("Player").GetComponent<PlayerMove>().walkSpeed = 0.05f;
-				break;
-
-			//fade screen
-			case 15:
 				StartCoroutine(FadeBackground(1f));
 				break;
 
 			//stop music
-			case 17:
+			case 15:
 				soundSystem.silence();
 				break;
 		}
@@ -244,7 +242,7 @@ public class Story : MonoBehaviour {
 			case 11:
 			case 12:
 			case 13:
-			case 21:
+			case 18:
 				end = true;
 				break;
 		}
@@ -260,7 +258,7 @@ public class Story : MonoBehaviour {
 	IEnumerator FadeBackground(float target) {
 		while (Mathf.Abs(backgroundOpacity - target) > 0.02f) {
 			yield return new WaitForSeconds(0.01f);
-			backgroundOpacity = Nox.ease(backgroundOpacity, target, 0.05f);
+			backgroundOpacity = Nox.ease(backgroundOpacity, target, 0.1f);
 			storyBackground.GetComponent<CanvasGroup>().alpha = backgroundOpacity;
 		}
 
