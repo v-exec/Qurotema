@@ -16,9 +16,11 @@ public class Pad : MonoBehaviour {
 	private Coroutine glowRoutine;
 
 	private Sound soundSystem;
+	private Story s;
 
 	void Start() {
 		soundSystem = GameObject.Find("Nox").GetComponent<Sound>();
+		s = GameObject.Find("Nox").GetComponent<Story>();
 		light = lightObject.GetComponent<Renderer>().material;
 	}
 
@@ -38,6 +40,7 @@ public class Pad : MonoBehaviour {
 			if (active) {
 				if (glowRoutine != null) StopCoroutine(glowRoutine);
 				light.SetFloat("_Alpha", minAlpha);
+				s.padPlayed();
 			} else {
 				if (glowRoutine != null) StopCoroutine(glowRoutine);
 				light.SetFloat("_Alpha", 0f);

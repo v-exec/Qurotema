@@ -36,6 +36,7 @@ public class Story : MonoBehaviour {
 	private string[] talk;
 	private int talkTracker = 0;
 	private int randomTracker = 0;
+	private Coroutine routine;
 
 	void Start() {
 		storyText = GameObject.Find("Story - Text/Text").GetComponent<Text>();
@@ -88,7 +89,8 @@ public class Story : MonoBehaviour {
 			backgroundOpacity = 1f;
 			storyBackground.GetComponent<CanvasGroup>().alpha = backgroundOpacity;
 			talkTracker = 0;
-			StartCoroutine(PlayText(talkTracker));
+			if (routine != null) StopCoroutine(routine);
+			routine = StartCoroutine(PlayText(talkTracker));
 		} else {
 			//skip intro
 			sun.SetActive(true);
@@ -100,13 +102,15 @@ public class Story : MonoBehaviour {
 	//set methods
 	public void monolithDiscovered() {
 		talkTracker = 5;
-		StartCoroutine(PlayText(talkTracker));
+		if (routine != null) StopCoroutine(routine);
+		routine = StartCoroutine(PlayText(talkTracker));
 	}
 
 	public void monolithActivated() {
 		if (monolithsRead == 0) {
 			talkTracker = 6;
-			StartCoroutine(PlayText(talkTracker));
+			if (routine != null) StopCoroutine(routine);
+			routine = StartCoroutine(PlayText(talkTracker));
 		}
 
 		monolithsRead++;
@@ -116,26 +120,27 @@ public class Story : MonoBehaviour {
 		checkForInstrumentDiscovery();
 
 		stringsPlayed++;
-		if (stringsPlayed > 30) randomMessage();
+		if (stringsPlayed == 30) randomMessage();
 	}
 
 	public void ringPlayed() {
 		checkForInstrumentDiscovery();
 
 		ringsPlayed++;
-		if (ringsPlayed > 60) randomMessage();
+		if (ringsPlayed == 60) randomMessage();
 	}
 
 	public void padPlayed() {
 		checkForInstrumentDiscovery();
 
 		padsPlayed++;
-		if (padsPlayed > 50) randomMessage();
+		if (padsPlayed == 50) randomMessage();
 	}
 
 	public void endGame() {
 		talkTracker = 14;
-		StartCoroutine(PlayText(talkTracker));
+		if (routine != null) StopCoroutine(routine);
+		routine = StartCoroutine(PlayText(talkTracker));
 	}
 
 	private void randomMessage() {
@@ -155,13 +160,15 @@ public class Story : MonoBehaviour {
 
 		soundSystem.shootSound("sparkles");
 		n.flashFeedback();
-		StartCoroutine(PlayText(talkTracker));
+		if (routine != null) StopCoroutine(routine);
+		routine = StartCoroutine(PlayText(talkTracker));
 	}
 
 	private void checkForInstrumentDiscovery() {
 		if (stringsPlayed == 0 && ringsPlayed == 0 && padsPlayed == 0) {
 			talkTracker = 10;
-			StartCoroutine(PlayText(talkTracker));
+			if (routine != null) StopCoroutine(routine);
+			routine = StartCoroutine(PlayText(talkTracker));
 		}
 	}
 
@@ -189,6 +196,7 @@ public class Story : MonoBehaviour {
 			//show gates
 			case 13:
 				gates.SetActive(true);
+				gates.GetComponent<GatesEnding>().activateEnd();
 				break;
 
 			//slow player down
@@ -218,7 +226,7 @@ public class Story : MonoBehaviour {
 			storyTextCanvas.GetComponent<CanvasGroup>().alpha = opacity;
 		}
 
-		yield return new WaitForSeconds(3f);
+		yield return new WaitForSeconds(2f);
 
 		while (opacity > 0.01f) {
 			yield return new WaitForSeconds(0.01f);

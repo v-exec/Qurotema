@@ -11,7 +11,7 @@ public class MonolithBehavior : MonoBehaviour {
 
 	public GameObject tear;
 	public CanvasGroup canvas;
-	public Image text;
+	public Image image;
 	public bool active = false;
 
 	void Start() {
@@ -24,8 +24,9 @@ public class MonolithBehavior : MonoBehaviour {
 		active = true;
 
 		Sprite t = s.monolithTexts[s.monolithsRead];
-		s.monolithsRead++;
-		text.sprite = t;
+		s.monolithActivated();
+		image.material.SetTexture("_MainTex", t.texture);
+		image.sprite = t;
 
 		GetComponent<Renderer>().enabled = true;
 		tear.GetComponent<Renderer>().enabled = true;

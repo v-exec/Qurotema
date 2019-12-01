@@ -11,6 +11,8 @@ public class PlayOnLook : MonoBehaviour {
 	private bool lookingAtSun = false;
 	private bool lookingAtRock = false;
 
+	private bool firstLookMonolith = false;
+
 	void Start() {
 		soundSystem = GameObject.Find("Nox").GetComponent<Sound>();
 	}
@@ -32,6 +34,10 @@ public class PlayOnLook : MonoBehaviour {
 			if (hit.collider.tag == "Monolith" && !lookingAtMonolith) {
 				disableAllFlags();
 				lookingAtMonolith = true;
+				if (!firstLookMonolith) {
+					firstLookMonolith = true;
+					GameObject.Find("Nox").GetComponent<Story>().monolithDiscovered();
+				}
 
 				soundSystem.ambienceToggle("whispers", true);
 			}

@@ -7,9 +7,11 @@ public class RingsBehavior : MonoBehaviour {
 	private Sound soundSystem;
 	public bool inArea = false;
 	public LayerMask mask;
+	private Story s;
 
 	void Start() {
 		soundSystem = GameObject.Find("Nox").GetComponent<Sound>();
+		s = GameObject.Find("Nox").GetComponent<Story>();
 	}
 
 	void Update() {
@@ -21,6 +23,7 @@ public class RingsBehavior : MonoBehaviour {
 
 				soundSystem.addEnergy(0.5f);
 				soundSystem.shootSound("rings", int.Parse(hit.collider.tag));
+				s.ringPlayed();
 			}
 		}
 	}
