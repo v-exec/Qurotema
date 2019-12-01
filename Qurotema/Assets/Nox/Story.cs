@@ -52,7 +52,7 @@ public class Story : MonoBehaviour {
 		gates.SetActive(true);
 		sky.multiplier.value = 0f;
 
-		talk = new string[19];
+		talk = new string[20];
 
 		//intro
 		talk[0] = "We have a stable port to Qurotema. RO, your vision should come in soon.";
@@ -84,6 +84,7 @@ public class Story : MonoBehaviour {
 		talk[16] = "Di, I don't know what's going on but we have no connection to Qurotema, can't even find it with Sino's systems.";
 		talk[17] = "It's possible that Qurotema is gone, and your vessel is in the Void.";
 		talk[18] = "I'm going to be honest. I don't know what we're going to do.";
+		talk[19] = "";
 
 		if (!introductionFinished) {
 			backgroundOpacity = 1f;
@@ -213,6 +214,11 @@ public class Story : MonoBehaviour {
 			case 15:
 				soundSystem.silence();
 				break;
+
+			//end game
+			case 19:
+				Application.Quit();
+				break;
 		}
 
 		float opacity = 0f;
@@ -242,7 +248,6 @@ public class Story : MonoBehaviour {
 			case 11:
 			case 12:
 			case 13:
-			case 18:
 				end = true;
 				break;
 		}

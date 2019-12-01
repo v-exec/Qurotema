@@ -101,7 +101,7 @@ public class MouseLook : MonoBehaviour {
 
 		//use player speed as subtraction to shake speed modifier
 		//the faster the player moves, the less camera shake there is
-		player.GetComponent<PlayerMove>().getSpeed();
+		playerSpeed = player.GetComponent<PlayerMove>().getSpeed();
 
 		float shakeSpeedModifier = 1f - (playerSpeed * 0.005f);
 		if (shakeSpeedModifier < 0) shakeSpeedModifier = 0;

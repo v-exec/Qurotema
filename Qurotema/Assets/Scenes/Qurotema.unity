@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2035111234}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.012313798, g: 0.012313798, b: 0.012313798, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7286,7 +7286,7 @@ MonoBehaviour:
   sun: {fileID: 2035111233}
   gates: {fileID: 8296172667768287536}
   sky: {fileID: 0}
-  introductionFinished: 1
+  introductionFinished: 0
   monolithsRead: 0
   stringsPlayed: 0
   ringsPlayed: 0
@@ -14257,7 +14257,6 @@ MonoBehaviour:
   Quro: {fileID: 463756665}
   Tema: {fileID: 1486301654}
   sphere: {fileID: 607884806}
-  a: 0
 --- !u!1 &8296172669106687155
 GameObject:
   m_ObjectHideFlags: 0
