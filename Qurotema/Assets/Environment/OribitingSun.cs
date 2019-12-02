@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class OribitingSun : MonoBehaviour {
 
-	public float orbitSpeed = 0.01f;
+	public float orbitSpeed = 1.2f;
 	
-	void FixedUpdate () {
-		transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y + orbitSpeed, transform.localEulerAngles.z);
+	void Update () {
+		transform.Rotate(0.0f, orbitSpeed * Time.deltaTime, 0.0f, Space.Self);
 	}
 }
