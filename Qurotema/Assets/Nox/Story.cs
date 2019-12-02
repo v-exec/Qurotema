@@ -199,7 +199,7 @@ public class Story : MonoBehaviour {
 			//show gates and remove map limit
 			case 13:
 				gates.SetActive(true);
-				gates.GetComponent<GatesEnding>().activateEnd();
+				gates.GetComponent<GatesStory>().activateEnd();
 				GameObject.Find("Map Limit (front)").SetActive(false);
 				break;
 
@@ -248,6 +248,7 @@ public class Story : MonoBehaviour {
 			case 11:
 			case 12:
 			case 13:
+			case 19:
 				end = true;
 				break;
 		}

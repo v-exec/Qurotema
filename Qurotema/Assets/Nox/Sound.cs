@@ -6,7 +6,7 @@ public class Sound : MonoBehaviour {
 
 	public float energy = 20f; //range: 0 - 100
 
-	private float eneryFalloff = 1f;
+	private float eneryFalloff = 0.8f;
 	private int energyState = 1;
 	private float highEnergyTreshold = 60f;
 	private float lowEnergyThreshold = 10f;

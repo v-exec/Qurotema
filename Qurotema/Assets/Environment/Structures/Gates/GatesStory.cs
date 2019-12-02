@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GatesEnding : MonoBehaviour{
+public class GatesStory : MonoBehaviour {
+
 	public GameObject Quro;
 	public GameObject Tema;
 	public GameObject sphere;

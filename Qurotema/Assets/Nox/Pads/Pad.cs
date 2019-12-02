@@ -10,6 +10,8 @@ public class Pad : MonoBehaviour {
 
 	private Material light;
 	private bool active;
+	private bool ready = true;
+	private Coroutine refreshRoutine;
 
 	private float minAlpha = 0.1f;
 	private float maxAlpha = 10f;
@@ -34,7 +36,8 @@ public class Pad : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter(Collider other) {
-		if (other.tag == "Player") {
+		if (other.tag == "Player" && ready) {
+			ready = false;
 			active = !active;
 
 			if (active) {
@@ -48,6 +51,13 @@ public class Pad : MonoBehaviour {
 		}
 	}
 
+	private void OnTriggerExit(Collider other) {
+		if (other.tag == "Player") {
+			if (refreshRoutine != null) StopCoroutine(refreshRoutine);
+			refreshRoutine = StartCoroutine(Refresh());
+		}
+	}
+
 	IEnumerator Glow() {
 		float alpha = maxAlpha;
 		light.SetFloat("_Alpha", alpha);
@@ -57,5 +67,10 @@ public class Pad : MonoBehaviour {
 			alpha = Nox.ease(alpha, minAlpha, 2f);
 			light.SetFloat("_Alpha", alpha);
 		}
+	}
+
+	IEnumerator Refresh() {
+		yield return new WaitForSeconds(0.5f);
+		ready = true;
 	}
 }
