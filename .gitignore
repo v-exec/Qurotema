@@ -36,6 +36,7 @@ sysinfo.txt
 *.unitypackage
 
 # Alternatives
-/documentation
-/assets
+documentation/
+assets/
 *.dds
+Logs/
