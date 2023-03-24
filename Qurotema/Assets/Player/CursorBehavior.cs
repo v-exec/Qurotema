@@ -8,13 +8,11 @@ public class CursorBehavior : MonoBehaviour {
 	private float followSpeed = 15f;
 	private Rigidbody rb;
 
-	private Vector3 red = new Vector3(1f, 0f, 0f);
-	private Vector3 purple = new Vector3(0.05f, 0.05f, 1f);
+	private Color red = new Color(100f, 0f, 0f);
+	private Color purple = new Color(5f, 5f, 100f);
 
 	private Material mat;
 	private Material trail;
-
-	public float velocity = 0;
 
 	//audio
 	private Sound soundSystem;
@@ -58,9 +56,7 @@ public class CursorBehavior : MonoBehaviour {
 		if (Input.GetMouseButtonUp(1)) {
 			soundSystem.dynamicToggle("rhythms", false);
 		}
-	}
-	
-	void FixedUpdate () {
+
 		Vector3 targetPosition = Camera.main.transform.position + (Camera.main.transform.forward * distanceFromCamera);
 		Vector3 newPosition = transform.position;
 
@@ -68,18 +64,16 @@ public class CursorBehavior : MonoBehaviour {
 		newPosition.y = Nox.ease(newPosition.y, targetPosition.y, followSpeed);
 		newPosition.z = Nox.ease(newPosition.z, targetPosition.z, followSpeed);
 
-		velocity = Vector3.Distance(transform.position, newPosition);
-
-		rb.MovePosition(newPosition);
+		transform.position = newPosition;
 	}
 
 	void makeActive() {
-		mat.SetVector("_Color", red);
-		trail.SetVector("_Color", red);
+		mat.SetColor("_EmissiveColor", red);
+		trail.SetColor("_EmissiveColor", red);
 	}
 
 	void makePassive() {
-		mat.SetVector("_Color", purple);
-		trail.SetVector("_Color", purple);
+		mat.SetColor("_EmissiveColor", purple);
+		trail.SetColor("_EmissiveColor", purple);
 	}
 }

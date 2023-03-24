@@ -92,20 +92,20 @@ public class UIFollow : MonoBehaviour {
 		}
 
 		GetComponent<CanvasGroup>().alpha = opacity;
-	}
 
-	void FixedUpdate() {
 		setDistance();
 		follow();
 	}
 
 	void follow() {
+		Vector3 playerPosition = playerScript.gameObject.transform.position;
 		Vector3 targetPosition = Camera.main.transform.position + (Camera.main.transform.forward * targetDistance);
-		Vector3 newPosition = transform.position;
+		//Vector3 targetPosition = playerPosition + (Camera.main.transform.forward * targetDistance);
+		Vector3 newPosition = new Vector3(0f,0f,0f);
 
-		newPosition.x = Nox.ease(newPosition.x, targetPosition.x, followSpeed);
-		newPosition.y = Nox.ease(newPosition.y, targetPosition.y, followSpeed);
-		newPosition.z = Nox.ease(newPosition.z, targetPosition.z, followSpeed);
+		newPosition.x = Nox.ease(transform.position.x, targetPosition.x, followSpeed);
+		newPosition.y = Nox.ease(transform.position.y, targetPosition.y, followSpeed);
+		newPosition.z = Nox.ease(transform.position.z, targetPosition.z, followSpeed);
 
 		transform.position = newPosition;
 		transform.rotation = Camera.main.transform.rotation;

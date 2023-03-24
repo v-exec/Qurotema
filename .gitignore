@@ -36,7 +36,6 @@ sysinfo.txt
 *.unitypackage
 
 # Alternatives
-/documentation/old
+/documentation
+/assets
 *.dds
-*.spp
-documentation/new/Qurotema Playthrough - Dec 2.mp4

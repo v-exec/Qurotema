@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
-using UnityEngine.Experimental.Rendering.HDPipeline;
+using UnityEngine.Rendering.HighDefinition;
 
 public class Story : MonoBehaviour {
 
@@ -14,9 +14,6 @@ public class Story : MonoBehaviour {
 	private float backgroundOpacity = 0f;
 	public GameObject sun;
 	public GameObject gates;
-	private Volume pp;
-	public HDRISky sky;
-	private float skyOpacity = 0f;
 	private Sound soundSystem;
 	private Nox n;
 
@@ -44,21 +41,17 @@ public class Story : MonoBehaviour {
 		storyBackground = GameObject.Find("Story - Background");
 		soundSystem = GetComponent<Sound>();
 		n = GetComponent<Nox>();
-		pp = GameObject.Find("Rendering").GetComponent<Volume>();
-		HDRISky temp;
-		if (pp.profile.TryGet<HDRISky>(out temp)) sky = temp;
 
 		sun.SetActive(false);
 		gates.SetActive(true);
-		sky.multiplier.value = 0f;
 
 		talk = new string[20];
 
 		//intro
 		talk[0] = "We have a stable port to Qurotema. RO, your vision should come in soon.";
 		talk[1] = "We should remind you that because of the Gates, this is only a one-way communication channel.";
-		talk[2] = "Beyond this point is only the unknown. We will keep watch, and study Qurotema alongside you, Operator.";
-		talk[3] = "Your vessel should be equipped with a control module through which you can interact with the world.\nHow it functions is beyond our understanding, but we trust you will discover its abilities in time.";
+		talk[2] = "We will keep watch, and study Qurotema alongside you, Operator.";
+		talk[3] = "Your vessel should be equipped with a control module.\nWe trust you will discover how it interacts with this world in time.";
 		talk[4] = "Good luck with your research, RO. Make Sino proud.";
 
 		//first monolith discovery
@@ -96,7 +89,6 @@ public class Story : MonoBehaviour {
 			//skip intro
 			sun.SetActive(true);
 			gates.SetActive(false);
-			sky.multiplier.value = 1f;
 		}
 	}
 
@@ -162,7 +154,7 @@ public class Story : MonoBehaviour {
 		randomTracker++;
 
 		soundSystem.shootSound("sparkles");
-		n.flashFeedback();
+		n.terrain.flashFeedback();
 		if (routine != null) StopCoroutine(routine);
 		routine = StartCoroutine(PlayText(talkTracker));
 	}
@@ -189,9 +181,8 @@ public class Story : MonoBehaviour {
 				sun.SetActive(true);
 				break;
 
-			//remove gates, allow movement, enable sky
+			//remove gates, allow movement
 			case 2:
-				StartCoroutine(FadeSky(1f));
 				gates.SetActive(false);
 				introductionFinished = true;
 				break;
@@ -270,16 +261,5 @@ public class Story : MonoBehaviour {
 
 		backgroundOpacity = target;
 		storyBackground.GetComponent<CanvasGroup>().alpha = backgroundOpacity;
-	}
-
-	IEnumerator FadeSky(float target) {
-		while (Mathf.Abs(skyOpacity - target) > 0.02f) {
-			yield return new WaitForSeconds(0.01f);
-			skyOpacity = Nox.ease(skyOpacity, target, 0.05f);
-			sky.multiplier.value = skyOpacity;
-		}
-
-		skyOpacity = target;
-		sky.multiplier.value = skyOpacity;
 	}
 }

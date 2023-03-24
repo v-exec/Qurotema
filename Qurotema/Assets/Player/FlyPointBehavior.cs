@@ -21,9 +21,7 @@ public class FlyPointBehavior : MonoBehaviour {
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-			if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask)) {
-				targetPoint = hit.point;
-			}
+			if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask)) targetPoint = hit.point;
 
 			soundSystem.addEnergy(1f);
 		}

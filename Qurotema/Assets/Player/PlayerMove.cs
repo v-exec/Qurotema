@@ -11,40 +11,43 @@ public class PlayerMove : MonoBehaviour {
 	private Camera camComponent;
 
 	//movement
+	[Header("Speed")]
 	public float walkSpeed = 0.2f;
 	public float sprintSpeed = 0.8f;
 
-	private float jumpSpeed = 450f;
-	private float flyHeight = 80f;
-	private float gravity = 5f;
+	[Header("Verticality")]
+	public float jumpSpeed = 450f;
+	public float flyHeight = 80f;
+	public float gravity = 5f;
+	public float groundedHeight = 0.2f;
+	public float floatDistance = 4f;
+	public float graceSpace = 0.5f;
+	public float jumpDelayTime = 0.5f;
+	public LayerMask mask;
 
-	private float speedChangeWalk = 2.0f;
-	private float speedChangeSprint = 0.2f;
-	private float speedChangeStop = 1.5f;
-	private float directionChangeSpeed = 3f;
-	private float airDampening = 0.2f;
-	private float flyEase = 4f;
+	[Header("Acceleration")]
+	public float speedChangeWalk = 2.0f;
+	public float speedChangeSprint = 0.2f;
+	public float speedChangeStop = 1.5f;
+	public float directionChangeSpeed = 3f;
+	public float airDampening = 0.2f;
+	public float flyEase = 4f;
+	public float flightSpeedMultiplier = 2f;
+	public float flightControlMultiplier = 10f;
 
-	private float jumpDelayTime = 0.1f;
-	private float groundedHeight = 0.2f;
-	private float floatDistance = 4f;
-	private float flightSpeedMultiplier = 2f;
-	private float flightControlMultiplier = 10f;
-
+	[Header("FOV")]
 	public float defaultFOV = 65f;
 	public float fastFOV = 90f;
-	
-	private float flyingFOV = 100f;
-	private float FOVease = 2f;
+	public float flyingFOV = 100f;
+	public float FOVease = 2f;
 
-	//internal
+	[Header("Internals")]
 	public bool flying = false;
 	public float targetSpeed = 0f;
 	public float targetFOV = 0f;
-
-	private bool jumping = false;
-	private bool sprinting = false;
-	private Vector2 targetDirection = new Vector2(0, 0);
+	public bool jumping = false;
+	public bool sprinting = false;
+	public Vector2 targetDirection = new Vector2(0f, 0f);
 
 	//story
 	private bool ready = false;
@@ -54,36 +57,29 @@ public class PlayerMove : MonoBehaviour {
 	public AudioMixer mix;
 	
 	void Start() {
-		//get components
 		cam = GameObject.Find("Camera");
 		camComponent = cam.GetComponent<Camera>();
-		rb = GetComponent<Rigidbody>();
 		soundSystem = GameObject.Find("Nox").GetComponent<Sound>();
 
-		//set fov to default
 		targetFOV = defaultFOV;
 	}
 
-	//escape
 	void Update() {
 		if (!ready) {
 			if (GameObject.Find("Nox").GetComponent<Story>().introductionFinished) ready = true;
 		}
 		
-		if (ready) handleKeys();
-		setFOV();
+		if (ready) {
+			handleKeys();
+			move();
+		}
 
+		setFOV();
 		handleSound();
 	}
 
-	void FixedUpdate() {
-		if (ready) move();
-	}
-
 	void handleKeys() {
-		if (Input.GetKeyDown("escape")) {
-			Application.Quit();
-		}
+		if (Input.GetKeyDown("escape")) Application.Quit();
 
 		//switch to flying mode only if no mouse buttons are pressed
 		if (Input.GetKeyDown(KeyCode.LeftAlt) && !Input.GetMouseButton(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2)) {
@@ -115,15 +111,10 @@ public class PlayerMove : MonoBehaviour {
 	}
 
 	void handleSound() {
-		if (flying && sprinting) {
-			soundSystem.addEnergy(2.4f);
-		} else if (flying && !sprinting) {
-			soundSystem.addEnergy(1.8f);
-		} else if (sprinting) {
-			soundSystem.addEnergy(1.4f);
-		} else if (getSpeed() > 1f) {
-			soundSystem.addEnergy(0.4f);
-		}
+		if (flying && sprinting) soundSystem.addEnergy(2.4f);
+		else if (flying && !sprinting) soundSystem.addEnergy(1.8f);
+		else if (sprinting) soundSystem.addEnergy(1.4f);
+		else if (getSpeed() > 1f) soundSystem.addEnergy(0.4f);
 
 		//need listener specifically for a single event
 		//repeated calls to dynamicToggle result in loss of functionality
@@ -140,7 +131,7 @@ public class PlayerMove : MonoBehaviour {
 			mix.GetFloat("Frequency_Cutoff", out cut);
 			mix.SetFloat("Frequency_Cutoff", Nox.ease(cut, 1100f, 1f));
 		} else {
-		float cut;
+			float cut;
 			mix.GetFloat("Frequency_Cutoff", out cut);
 			mix.SetFloat("Frequency_Cutoff", Nox.ease(cut, 10f, 5f));
 		}
@@ -160,15 +151,17 @@ public class PlayerMove : MonoBehaviour {
 		if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f) horizontal = Input.GetAxis("Horizontal");
 		if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f) vertical = Input.GetAxis("Vertical");
 		Vector2 direction = getInput(horizontal, vertical);
-		Vector3 newLoc = new Vector3(gameObject.transform.position.x + direction.x, gameObject.transform.position.y, gameObject.transform.position.z + direction.y);
+		Vector3 newLoc = new Vector3(gameObject.transform.position.x + direction.x * Time.deltaTime, gameObject.transform.position.y, gameObject.transform.position.z + direction.y * Time.deltaTime);
 
-		//glue to ground, or add gravity for jump
+		/*
+		An important component of the movement is how, unless the player jumps, they are glued to the ground.
+		This is done to create a feeling of 'skating' or 'gliding' across the landscape.
+		*/
+
+		//glue to ground, or add gravity while airborne jump
 		if (!flying) {
-			if (!jumping) {
-				newLoc = groundPlayer(newLoc);
-			} else {
-				rb.AddForce(new Vector3(0, -gravity, 0));
-			}
+			if (!jumping) newLoc = groundPlayer(newLoc);
+			else rb.AddForce(-Vector3.up * gravity);
 		} else {
 			//fly
 			rb.velocity = new Vector3(0, 0, 0);
@@ -181,20 +174,26 @@ public class PlayerMove : MonoBehaviour {
 		//apply movement
 		rb.MovePosition(newLoc);
 
+		//limit player to bounds
+		if (transform.position.z > 2900f) transform.position = new Vector3(transform.position.x, transform.position.y, 2899f);
+		if (transform.position.z < -2900f) transform.position = new Vector3(transform.position.x, transform.position.y, -2899f);
+		if (transform.position.x > 2900f) transform.position = new Vector3(2899f, transform.position.y, transform.position.z);
+		if (transform.position.x < -2900f) transform.position = new Vector3(-2899f, transform.position.y, transform.position.z);
+
 		//jump
-		if (Input.GetKeyDown(KeyCode.Space) && isGrounded(groundedHeight) && !jumping && !flying) {
+		if (Input.GetKeyDown(KeyCode.Space) && isGrounded() && !jumping && !flying) {
 			jumping = true;
-			rb.AddForce(Vector3.up * (jumpSpeed));
+			rb.AddForce(Vector3.up * jumpSpeed);
 			StartCoroutine(jumpDelay());
 		}
 
-		sprinting = false;
-
 		//no movement - stop all forces (excluding vertical force for jumping)
-		if (horizontal == 0f && vertical == 0f && isGrounded(groundedHeight)) {
+		if (horizontal == 0f && vertical == 0f && isGrounded()) {
 			targetSpeed = Nox.ease(targetSpeed, 0f, speedChangeStop);
 			rb.velocity = new Vector3(0, rb.velocity.y, 0);
+
 		//sprint
+		sprinting = false;
 		} else if (Input.GetKey(KeyCode.LeftShift)) {
 			sprinting = true;
 			targetSpeed = Nox.ease(targetSpeed, sprintSpeed, speedChangeSprint);
@@ -234,31 +233,23 @@ public class PlayerMove : MonoBehaviour {
 	}
 
 	Vector3 groundPlayer(Vector3 location) {
+		
+		//add small correction (offset upwards) so that a collider on a steep hill doesn't clip through
 		RaycastHit hit;
-		//offset raycast location to take into account collider height (add small correction for when collider and surface are perfectly aligned)
-		Vector3 boundLocation = new Vector3(location.x, location.y - (GetComponent<Collider>().bounds.extents.y - 0.01f), location.z);
-		Ray downRay = new Ray(boundLocation, -Vector3.up);
+		if (Physics.Raycast(new Vector3(location.x, location.y + graceSpace, location.z), -Vector3.up, out hit, floatDistance, mask)) {
+			location = new Vector3(location.x, hit.point.y + GetComponent<Collider>().bounds.extents.y + graceSpace, location.z);
 
-		if (Physics.Raycast(downRay, out hit)) {
-
-			if (hit.collider.gameObject.layer != 9) { //PlayerNonColliders layer
-				
-				//if distance is big enough, make player fall with gravity instead of forcing them to the ground
-				if (hit.distance > floatDistance && !jumping) {
-					jumping = true;
-					StartCoroutine(jumpDelay());
-				} else if (hit.distance > groundedHeight) {
-					//only apply transformation pushing player down if they're too high - otherwise this continuously pushes player downwards undesireably
-					location = new Vector3(location.x, location.y - hit.distance + groundedHeight, location.z);
-				}
-			}
+		//if distance is big enough (float), make player fall with gravity instead of forcing them to the ground
+		} else if (!jumping) {
+			jumping = true;
+			StartCoroutine(jumpDelay());
 		}
 
 		return location;
 	}
 
-	bool isGrounded(float extraDistance) {
-		return Physics.Raycast(transform.position, -Vector3.up, GetComponent<Collider>().bounds.extents.y + extraDistance);
+	bool isGrounded() {
+		return Physics.Raycast(transform.position, -Vector3.up, GetComponent<Collider>().bounds.extents.y + groundedHeight);
 	}
 
 	IEnumerator jumpDelay() {
@@ -266,7 +257,7 @@ public class PlayerMove : MonoBehaviour {
 
 		while(jumping) {
 			yield return new WaitForSeconds(0.01f);
-			if (isGrounded(groundedHeight)) jumping = false;
+			if (isGrounded()) jumping = false;
 		}
 	}
 

@@ -5,12 +5,12 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour {
 
 	//mouse
-	private float mouseSensitivity = 130.0f;
-	private float clampAngle = 80.0f;
-	private float easeSpeed = 1.5f;
-	private float shakeSpeed = 1.0f;
-	private float shakeQuantity = 1.4f;
-	private float followSpeed = 8f;
+	public float mouseSensitivity = 130.0f;
+	public float clampAngle = 80.0f;
+	public float easeSpeed = 2.0f;
+	public float shakeSpeed = 1.0f;
+	public float shakeQuantity = 1.4f;
+	public float followSpeed = 8f;
  
 	//internal mouse
 	private float rotY = 0.0f;
@@ -53,7 +53,7 @@ public class MouseLook : MonoBehaviour {
 		cam = gameObject.GetComponent<Camera>();
 	}
 
-	void FixedUpdate() {
+	void Update() {
 		if (!ready) {
 			if (GameObject.Find("Nox").GetComponent<Story>().introductionFinished) ready = true;
 		}
