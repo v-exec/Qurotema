@@ -6,7 +6,6 @@ Off-limit universe.
 
 - Redo audio (film showcase and send to composer)
 - Improve story
-- Impoved level design, heightmap, and object layout
 - Fix vertical movement issues
 	- Possible clipping through ground when moving at high speed uphill and jumping
 	- Undesireable sliding when falling from large height (seems to stop when not moving, why?)

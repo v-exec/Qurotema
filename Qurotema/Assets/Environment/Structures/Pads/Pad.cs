@@ -24,6 +24,15 @@ public class Pad : MonoBehaviour {
 		soundSystem = GameObject.Find("Nox").GetComponent<Sound>();
 		s = GameObject.Find("Nox").GetComponent<Story>();
 		light = lightObject.GetComponent<Renderer>().material;
+
+		//move platform down and align to normal so that it matches terrain topology
+		RaycastHit hit;
+		if (Physics.Raycast(transform.position, -Vector3.up, out hit)) {
+			transform.position = hit.point + new Vector3(0f, -0.1f, 0f);
+
+			//in order to avoid any grid pattern breaking on y axis, the pads parent needs to be aligned to the y axis (0, 180, -180, etc.)
+			transform.up = hit.normal;
+		}
 	}
 
 	void Update() {
