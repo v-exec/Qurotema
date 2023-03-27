@@ -4,7 +4,7 @@ Off-limit universe.
 
 ## TO DO
 
-- Redo audio
+- Redo audio (film showcase and send to composer)
 - Improve story
 - Impoved level design, heightmap, and object layout
 - Fix vertical movement issues

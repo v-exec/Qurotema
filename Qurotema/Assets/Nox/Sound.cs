@@ -225,7 +225,6 @@ public class Sound : MonoBehaviour {
 			if (dynamicClips[i].name == sound) return dynamicClips[i];
 		}
 
-		//too lazy to do proper exceptions
 		Debug.Log("couldn't find dynamic sound");
 		return new DynamicClip();
 	}
@@ -235,7 +234,6 @@ public class Sound : MonoBehaviour {
 			if (ambientClips[i].name == sound) return ambientClips[i];
 		}
 
-		//too lazy to do proper exceptions
 		Debug.Log("couldn't find ambient sound");
 		return new AmbientClip();
 	}
