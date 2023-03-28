@@ -73,9 +73,9 @@ public class MouseLook : MonoBehaviour {
 			mouseY = 0;
 		}
 
-		//rotation manipulation
-		rotY += mouseX * mouseSensitivity * Time.deltaTime;
-		rotX += mouseY * mouseSensitivity * Time.deltaTime;
+		//rotation manipulation (no need to scale by deltaTime as mouse axis are already frame deltas)
+		rotY += mouseX * mouseSensitivity;
+		rotX += mouseY * mouseSensitivity;
 
 		rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
 

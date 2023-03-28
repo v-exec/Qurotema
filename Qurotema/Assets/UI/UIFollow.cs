@@ -29,6 +29,8 @@ public class UIFollow : MonoBehaviour {
 		transform.position = Camera.main.transform.position + (Camera.main.transform.forward * targetDistance);
 		transform.rotation = Camera.main.transform.rotation;
 
+		targetDistance = distanceFromCamera;
+
 		minDistanceFromCamera = distanceFromCamera - distanceFromCameraDifference;
 	}
 
@@ -93,26 +95,19 @@ public class UIFollow : MonoBehaviour {
 
 		GetComponent<CanvasGroup>().alpha = opacity;
 
-		setDistance();
 		follow();
 	}
-
+	
 	void follow() {
-		Vector3 playerPosition = playerScript.gameObject.transform.position;
-		Vector3 targetPosition = Camera.main.transform.position + (Camera.main.transform.forward * targetDistance);
-		//Vector3 targetPosition = playerPosition + (Camera.main.transform.forward * targetDistance);
-		Vector3 newPosition = new Vector3(0f,0f,0f);
-
-		newPosition.x = Nox.ease(transform.position.x, targetPosition.x, followSpeed);
-		newPosition.y = Nox.ease(transform.position.y, targetPosition.y, followSpeed);
-		newPosition.z = Nox.ease(transform.position.z, targetPosition.z, followSpeed);
-
-		transform.position = newPosition;
-		transform.rotation = Camera.main.transform.rotation;
-	}
-
-	void setDistance() {
 		targetDistance = Nox.remap(playerScript.targetFOV, playerScript.defaultFOV, playerScript.fastFOV, distanceFromCamera, minDistanceFromCamera);
+		Vector3 targetPosition = Camera.main.transform.position + (Camera.main.transform.forward * targetDistance);
+
+		float x = Nox.ease(transform.position.x, targetPosition.x, followSpeed);
+		float y = Nox.ease(transform.position.y, targetPosition.y, followSpeed);
+		float z = Nox.ease(transform.position.z, targetPosition.z, followSpeed);
+
+		transform.position = new Vector3(x, y, z);
+		transform.rotation = Camera.main.transform.rotation;
 	}
 
 	IEnumerator Fade(float target) {
