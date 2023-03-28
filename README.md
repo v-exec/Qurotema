@@ -4,7 +4,6 @@ Off-limit universe.
 
 ## TO DO
 
-- Refine UI easing
 - Redo audio (film showcase and send to composer)
 - Improve story
 - Fix vertical movement issues

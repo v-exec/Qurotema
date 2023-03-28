@@ -94,7 +94,9 @@ public class UIFollow : MonoBehaviour {
 		}
 
 		GetComponent<CanvasGroup>().alpha = opacity;
+	}
 
+	void FixedUpdate() {
 		follow();
 	}
 
@@ -102,7 +104,7 @@ public class UIFollow : MonoBehaviour {
 		targetDistance = Nox.remap(playerScript.targetFOV, playerScript.defaultFOV, playerScript.fastFOV, distanceFromCamera, minDistanceFromCamera);
 		Vector3 targetPosition = Camera.main.transform.position + (Camera.main.transform.forward * targetDistance);
 
-		transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
+		transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.fixedDeltaTime);
 		transform.rotation = Camera.main.transform.rotation;
 	}
 

@@ -5,18 +5,20 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour {
 
 	//mouse
-	public float mouseSensitivity = 130.0f;
-	public float clampAngle = 80.0f;
-	public float easeSpeed = 2.0f;
-	public float shakeSpeed = 1.0f;
+	public float mouseSensitivity = 130f;
+	public float clampAngle = 80f;
+	public float easeSpeed = 2f;
+	public float shakeSpeed = 1f;
 	public float shakeQuantity = 1.4f;
 	public float followSpeed = 8f;
  
 	//internal mouse
-	private float rotY = 0.0f;
-	private float rotX = 0.0f;
-	private float currentX = 0.0f;
-	private float currentY = 0.0f;
+	private float mouseX = 0f;
+	private float mouseY = 0f;
+	private float rotY = 0f;
+	private float rotX = 0f;
+	private float currentX = 0f;
+	private float currentY = 0f;
 	private float playerSpeed;
 
 	//components
@@ -51,6 +53,8 @@ public class MouseLook : MonoBehaviour {
 		//get components
 		player = GameObject.Find("Player");
 		cam = gameObject.GetComponent<Camera>();
+
+		//Application.targetFrameRate = 60;
 	}
 
 	void Update() {
@@ -59,14 +63,18 @@ public class MouseLook : MonoBehaviour {
 		}
 
 		handleInput();
-		shake();
+	}
+
+	void FixedUpdate() {
+		rotate();
 		follow();
+		shake();
 	}
 
 	void handleInput() {
 		//get input
-		float mouseX = Input.GetAxis("Mouse X");
-		float mouseY = -Input.GetAxis("Mouse Y");
+		mouseX = Input.GetAxis("Mouse X");
+		mouseY = -Input.GetAxis("Mouse Y");
 
 		if (!ready) {
 			mouseX = 0;
@@ -76,23 +84,28 @@ public class MouseLook : MonoBehaviour {
 		//rotation manipulation (no need to scale by deltaTime as mouse axis are already frame deltas)
 		rotY += mouseX * mouseSensitivity;
 		rotX += mouseY * mouseSensitivity;
-
 		rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
+	}
 
+	void rotate() {
 		//ease rotation
-		currentX = Mathf.Lerp(currentX, rotX, easeSpeed * Time.deltaTime);
-		currentY = Mathf.Lerp(currentY, rotY, easeSpeed * Time.deltaTime);
+		currentX = Mathf.Lerp(currentX, rotX, easeSpeed * Time.fixedDeltaTime);
+		currentY = Mathf.Lerp(currentY, rotY, easeSpeed * Time.fixedDeltaTime);
 
 		//apply rotation
 		Quaternion localRotation = Quaternion.Euler(currentX, currentY, 0.0f);
 		transform.rotation = localRotation;
 	}
 
+	void follow() {
+		transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, player.transform.position.z), followSpeed * Time.deltaTime);
+	}
+
 	void shake() {
 		//increment perlin 'cursor'
-		perlinX += shakeSpeed * Time.deltaTime;
-		perlinY += shakeSpeed * Time.deltaTime;
-		perlinZ += shakeSpeed * Time.deltaTime;
+		perlinX += shakeSpeed * Time.fixedDeltaTime;
+		perlinY += shakeSpeed * Time.fixedDeltaTime;
+		perlinZ += shakeSpeed * Time.fixedDeltaTime;
 
 		//remap to -1 to 1 and amplify according to shake quantity
 		float x = Nox.remap(Mathf.PerlinNoise(perlinX, 0), 0f, 1f, -1f, 1f) * shakeQuantity;
@@ -108,9 +121,5 @@ public class MouseLook : MonoBehaviour {
 
 		//apply perlin noise as rotation
 		transform.localEulerAngles = new Vector3(transform.localEulerAngles.x + (x * shakeSpeedModifier), transform.localEulerAngles.y + (y * shakeSpeedModifier), transform.localEulerAngles.z + (z * shakeSpeedModifier));
-	}
-
-	void follow() {
-		transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, player.transform.position.z), followSpeed * Time.deltaTime);
 	}
 }

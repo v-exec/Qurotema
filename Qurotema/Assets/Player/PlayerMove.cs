@@ -48,6 +48,8 @@ public class PlayerMove : MonoBehaviour {
 	public bool jumping = false;
 	public bool sprinting = false;
 	public Vector2 targetDirection = new Vector2(0f, 0f);
+	private bool spacePressed = false;
+	private bool shiftPressed = false;
 
 	//story
 	private bool ready = false;
@@ -67,17 +69,20 @@ public class PlayerMove : MonoBehaviour {
 	void Update() {
 		if (!ready) {
 			if (GameObject.Find("Nox").GetComponent<Story>().introductionFinished) ready = true;
-		}
-		
-		if (ready) {
+		} else {
 			handleKeys();
-			move();
 		}
 
 		setFOV();
 		handleSound();
 	}
 
+	//needs to be in fixedupdate as we're modifying a rigidbody
+	void FixedUpdate() {
+		if (ready) move();
+	}
+
+	//this lets us handle key presses in the update loop, whereas they can be missed in FixedUpdate
 	void handleKeys() {
 		if (Input.GetKeyDown("escape")) Application.Quit();
 
@@ -108,6 +113,12 @@ public class PlayerMove : MonoBehaviour {
 				soundSystem.dynamicToggle("pads", false);
 			}
 		}
+
+		if (Input.GetKeyDown(KeyCode.Space)) spacePressed = true;
+		if (Input.GetKeyUp(KeyCode.Space)) spacePressed = false;
+
+		if (Input.GetKeyDown(KeyCode.LeftShift)) shiftPressed = true;
+		if (Input.GetKeyUp(KeyCode.LeftShift)) shiftPressed = false;
 	}
 
 	void handleSound() {
@@ -151,23 +162,23 @@ public class PlayerMove : MonoBehaviour {
 		if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f) horizontal = Input.GetAxis("Horizontal");
 		if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f) vertical = Input.GetAxis("Vertical");
 		Vector2 direction = getInput(horizontal, vertical);
-		Vector3 newLoc = new Vector3(gameObject.transform.position.x + direction.x * Time.deltaTime, gameObject.transform.position.y, gameObject.transform.position.z + direction.y * Time.deltaTime);
+		Vector3 newLoc = new Vector3(gameObject.transform.position.x + direction.x * Time.fixedDeltaTime, gameObject.transform.position.y, gameObject.transform.position.z + direction.y * Time.fixedDeltaTime);
 
 		/*
 		An important component of the movement is how, unless the player jumps, they are glued to the ground.
 		This is done to create a feeling of 'skating' or 'gliding' across the landscape.
 		*/
 
-		//glue to ground, or add gravity while airborne jump
+		//glue to ground, or add gravity while airborne
 		if (!flying) {
 			if (!jumping) newLoc = groundPlayer(newLoc);
 			else rb.AddForce(-Vector3.up * gravity);
 		} else {
 			//fly
 			rb.velocity = new Vector3(0, 0, 0);
-			targetFOV = Mathf.Lerp(targetFOV, flyingFOV, FOVease * Time.deltaTime);
+			targetFOV = Mathf.Lerp(targetFOV, flyingFOV, FOVease * Time.fixedDeltaTime);
 
-			if (transform.position.y < flyHeight - 0.001f) newLoc = new Vector3(newLoc.x, Mathf.Lerp(transform.position.y, flyHeight, flyEase * Time.deltaTime), newLoc.z);
+			if (transform.position.y < flyHeight - 0.001f) newLoc = new Vector3(newLoc.x, Mathf.Lerp(transform.position.y, flyHeight, flyEase * Time.fixedDeltaTime), newLoc.z);
 			else newLoc = new Vector3(newLoc.x, flyHeight, newLoc.z);
 		}
 
@@ -181,7 +192,7 @@ public class PlayerMove : MonoBehaviour {
 		if (transform.position.x < -2900f) transform.position = new Vector3(-2899f, transform.position.y, transform.position.z);
 
 		//jump
-		if (Input.GetKeyDown(KeyCode.Space) && isGrounded() && !jumping && !flying) {
+		if (spacePressed && isGrounded() && !jumping && !flying) {
 			jumping = true;
 			rb.AddForce(Vector3.up * jumpSpeed);
 			StartCoroutine(jumpDelay());
@@ -189,18 +200,18 @@ public class PlayerMove : MonoBehaviour {
 
 		//no movement - stop all forces (excluding vertical force for jumping)
 		if (horizontal == 0f && vertical == 0f && isGrounded()) {
-			targetSpeed = Mathf.Lerp(targetSpeed, 0f, speedChangeStop * Time.deltaTime);
+			targetSpeed = Mathf.Lerp(targetSpeed, 0f, speedChangeStop * Time.fixedDeltaTime);
 			rb.velocity = new Vector3(0, rb.velocity.y, 0);
 
 		//sprint
 		sprinting = false;
-		} else if (Input.GetKey(KeyCode.LeftShift)) {
+		} else if (shiftPressed) {
 			sprinting = true;
-			targetSpeed = Mathf.Lerp(targetSpeed, sprintSpeed, speedChangeSprint * Time.deltaTime);
+			targetSpeed = Mathf.Lerp(targetSpeed, sprintSpeed, speedChangeSprint * Time.fixedDeltaTime);
 			
 		//walk
 		} else {
-			targetSpeed = Mathf.Lerp(targetSpeed, walkSpeed, speedChangeWalk * Time.deltaTime);
+			targetSpeed = Mathf.Lerp(targetSpeed, walkSpeed, speedChangeWalk * Time.fixedDeltaTime);
 		}
 	}
 

@@ -10,7 +10,7 @@ public class StringCord : MonoBehaviour {
 
 	private Sound soundSystem;
 	private Story s;
-	private BoxCollider collider;
+	private BoxCollider col;
 	private Material mat;
 	private float distance;
 	private float offset = 0f;
@@ -25,7 +25,7 @@ public class StringCord : MonoBehaviour {
 
 	void Start () {
 		soundSystem = GameObject.Find("Nox").GetComponent<Sound>();
-		collider = GetComponent<BoxCollider>();
+		col = GetComponent<BoxCollider>();
 		mat = GetComponent<MeshRenderer>().material;
 		s = GameObject.Find("Nox").GetComponent<Story>();
 	}
