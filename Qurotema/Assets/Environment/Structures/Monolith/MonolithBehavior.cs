@@ -43,7 +43,7 @@ public class MonolithBehavior : MonoBehaviour {
 		while (!done) {
 			yield return new WaitForSeconds(0.05f);
 
-			alpha = Nox.ease(alpha, 1f, 2f);
+			alpha = Mathf.Lerp(alpha, 1f, 2f * Time.deltaTime);
 
 			canvas.alpha = alpha;
 

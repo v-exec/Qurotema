@@ -10,7 +10,7 @@ public class OribitingSun : MonoBehaviour {
 	
 	void Update () {
 		transform.Rotate(0.0f, orbitSpeed * Time.deltaTime, 0.0f, Space.Self);
-		if (sphereProxim) sunSphere.localPosition = new Vector3(sunSphere.localPosition.x, sunSphere.localPosition.y, Nox.ease(sunSphere.localPosition.z, -1000f, 10f));
-		else sunSphere.localPosition = new Vector3(sunSphere.localPosition.x, sunSphere.localPosition.y, Nox.ease(sunSphere.localPosition.z, -9000f, 10f));
+		if (sphereProxim) sunSphere.localPosition = new Vector3(sunSphere.localPosition.x, sunSphere.localPosition.y, Mathf.Lerp(sunSphere.localPosition.z, -1000f, 10f * Time.deltaTime));
+		else sunSphere.localPosition = new Vector3(sunSphere.localPosition.x, sunSphere.localPosition.y, Mathf.Lerp(sunSphere.localPosition.z, -9000f, 10f * Time.deltaTime));
 	}
 }

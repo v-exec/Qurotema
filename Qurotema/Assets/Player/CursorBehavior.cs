@@ -58,13 +58,7 @@ public class CursorBehavior : MonoBehaviour {
 		}
 
 		Vector3 targetPosition = Camera.main.transform.position + (Camera.main.transform.forward * distanceFromCamera);
-		Vector3 newPosition = transform.position;
-
-		newPosition.x = Nox.ease(newPosition.x, targetPosition.x, followSpeed);
-		newPosition.y = Nox.ease(newPosition.y, targetPosition.y, followSpeed);
-		newPosition.z = Nox.ease(newPosition.z, targetPosition.z, followSpeed);
-
-		transform.position = newPosition;
+		transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
 	}
 
 	void makeActive() {

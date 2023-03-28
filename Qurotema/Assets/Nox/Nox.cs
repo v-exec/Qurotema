@@ -16,13 +16,6 @@ public class Nox : MonoBehaviour {
 		playerPosition = player.transform.position;
 	}
 
-	public static float ease(float val, float target, float ease) {
-		if (Mathf.Abs(val - target) < 0.01f) return val;
-
-		float difference = target - val;
-		return val += ((difference * ease) * Time.deltaTime);
-	}
-
 	public static float remap(float val, float min1, float max1, float min2, float max2) {
 		if (val < min1) val = min1;
 		if (val > max1) val = max1;

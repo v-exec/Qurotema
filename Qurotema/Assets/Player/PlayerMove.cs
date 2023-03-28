@@ -129,17 +129,17 @@ public class PlayerMove : MonoBehaviour {
 		if (jumping) {
 			float cut;
 			mix.GetFloat("Frequency_Cutoff", out cut);
-			mix.SetFloat("Frequency_Cutoff", Nox.ease(cut, 1100f, 1f));
+			mix.SetFloat("Frequency_Cutoff", Mathf.Lerp(cut, 1100f, 1f * Time.deltaTime));
 		} else {
 			float cut;
 			mix.GetFloat("Frequency_Cutoff", out cut);
-			mix.SetFloat("Frequency_Cutoff", Nox.ease(cut, 10f, 5f));
+			mix.SetFloat("Frequency_Cutoff", Mathf.Lerp(cut, 10f, 5f * Time.deltaTime));
 		}
 	}
 
 	void setFOV() {
 		if (GameObject.Find("Camera").GetComponent<SunClick>().transitioning == null) {
-	 		if (!flying) targetFOV = Nox.ease(targetFOV, Nox.remap(targetSpeed, walkSpeed, sprintSpeed, defaultFOV, fastFOV), FOVease);
+	 		if (!flying) targetFOV = Mathf.Lerp(targetFOV, Nox.remap(targetSpeed, walkSpeed, sprintSpeed, defaultFOV, fastFOV), FOVease * Time.deltaTime);
 			camComponent.fieldOfView = targetFOV;
 		}
 	}
@@ -165,9 +165,9 @@ public class PlayerMove : MonoBehaviour {
 		} else {
 			//fly
 			rb.velocity = new Vector3(0, 0, 0);
-			targetFOV = Nox.ease(targetFOV, flyingFOV, FOVease);
+			targetFOV = Mathf.Lerp(targetFOV, flyingFOV, FOVease * Time.deltaTime);
 
-			if (transform.position.y < flyHeight - 0.001f) newLoc = new Vector3(newLoc.x, Nox.ease(transform.position.y, flyHeight, flyEase), newLoc.z);
+			if (transform.position.y < flyHeight - 0.001f) newLoc = new Vector3(newLoc.x, Mathf.Lerp(transform.position.y, flyHeight, flyEase * Time.deltaTime), newLoc.z);
 			else newLoc = new Vector3(newLoc.x, flyHeight, newLoc.z);
 		}
 
@@ -189,18 +189,18 @@ public class PlayerMove : MonoBehaviour {
 
 		//no movement - stop all forces (excluding vertical force for jumping)
 		if (horizontal == 0f && vertical == 0f && isGrounded()) {
-			targetSpeed = Nox.ease(targetSpeed, 0f, speedChangeStop);
+			targetSpeed = Mathf.Lerp(targetSpeed, 0f, speedChangeStop * Time.deltaTime);
 			rb.velocity = new Vector3(0, rb.velocity.y, 0);
 
 		//sprint
 		sprinting = false;
 		} else if (Input.GetKey(KeyCode.LeftShift)) {
 			sprinting = true;
-			targetSpeed = Nox.ease(targetSpeed, sprintSpeed, speedChangeSprint);
+			targetSpeed = Mathf.Lerp(targetSpeed, sprintSpeed, speedChangeSprint * Time.deltaTime);
 			
 		//walk
 		} else {
-			targetSpeed = Nox.ease(targetSpeed, walkSpeed, speedChangeWalk);
+			targetSpeed = Mathf.Lerp(targetSpeed, walkSpeed, speedChangeWalk * Time.deltaTime);
 		}
 	}
 
@@ -225,8 +225,8 @@ public class PlayerMove : MonoBehaviour {
 		float changer = directionChangeSpeed;
 		if (jumping) changer *= airDampening;
 
-		targetDirection.x = Nox.ease(targetDirection.x, direction.x, changer);
-		targetDirection.y = Nox.ease(targetDirection.y, direction.z, changer);
+		targetDirection.x = Mathf.Lerp(targetDirection.x, direction.x, changer * Time.deltaTime);
+		targetDirection.y = Mathf.Lerp(targetDirection.y, direction.z, changer * Time.deltaTime);
 
 		//amplify normalized vector to desired speed
 		return new Vector2(targetDirection.x, targetDirection.y) * targetSpeed;

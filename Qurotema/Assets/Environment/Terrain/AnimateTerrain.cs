@@ -55,7 +55,7 @@ public class AnimateTerrain : MonoBehaviour {
 		bool done = false;
 		while (!done) {
 			yield return new WaitForSeconds(0.01f);
-			UV = Nox.ease(UV, 1f, ribbonEaseSpeed);
+			UV = Mathf.Lerp(UV, 1f, ribbonEaseSpeed * Time.deltaTime);
 			ribbonLowMaterial.SetVector("_DistortionUV", new Vector2(UV, 1f));
 			ribbonHighMaterial.SetVector("_DistortionUV", new Vector2(UV, 1f));
 			if (UV < 1.01f) done = true;

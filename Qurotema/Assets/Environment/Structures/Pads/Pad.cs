@@ -73,7 +73,7 @@ public class Pad : MonoBehaviour {
 
 		while (alpha > minAlpha) {
 			yield return new WaitForSeconds(0.01f);
-			alpha = Nox.ease(alpha, minAlpha, 2f);
+			alpha = Mathf.Lerp(alpha, minAlpha, 2f * Time.deltaTime);
 			light.SetColor("_BaseColor", new Color(1f, 1f, 1f, alpha));
 		}
 	}

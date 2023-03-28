@@ -41,10 +41,10 @@ public class UIFollow : MonoBehaviour {
 			case "flight":
 				if (Nox.player.GetComponent<PlayerMove>().flying) {
 					if (fader != null) StopCoroutine(fader);
-					if (opacity != targetOpacity) opacity = Nox.ease(opacity, targetOpacity, (fadeSpeed / 2f) * fadeDelay);
+					if (opacity != targetOpacity) opacity = Mathf.Lerp(opacity, targetOpacity, (fadeSpeed / 2f) * fadeDelay * Time.deltaTime);
 				} else {
 					if (fader != null) StopCoroutine(fader);
-					if (opacity != 0f) opacity = Nox.ease(opacity, 0f, fadeSpeed / 2f);
+					if (opacity != 0f) opacity = Mathf.Lerp(opacity, 0f, fadeSpeed / 2f * Time.deltaTime);
 				}
 				break;
 
@@ -66,7 +66,7 @@ public class UIFollow : MonoBehaviour {
 
 				if (Nox.player.GetComponent<PlayerMove>().flying) {
 					if (fader != null) StopCoroutine(fader);
-					if (opacity != 0f) opacity = Nox.ease(opacity, 0f, fadeSpeed / 2f);
+					if (opacity != 0f) opacity = Mathf.Lerp(opacity, 0f, fadeSpeed / 2f * Time.deltaTime);
 				}
 				break;
 
@@ -88,7 +88,7 @@ public class UIFollow : MonoBehaviour {
 
 				if (Nox.player.GetComponent<PlayerMove>().flying) {
 					if (fader != null) StopCoroutine(fader);
-					if (opacity != 0f) opacity = Nox.ease(opacity, 0f, fadeSpeed / 2f);
+					if (opacity != 0f) opacity = Mathf.Lerp(opacity, 0f, fadeSpeed / 2f * Time.deltaTime);
 				}
 				break;
 		}
@@ -97,16 +97,12 @@ public class UIFollow : MonoBehaviour {
 
 		follow();
 	}
-	
+
 	void follow() {
 		targetDistance = Nox.remap(playerScript.targetFOV, playerScript.defaultFOV, playerScript.fastFOV, distanceFromCamera, minDistanceFromCamera);
 		Vector3 targetPosition = Camera.main.transform.position + (Camera.main.transform.forward * targetDistance);
 
-		float x = Nox.ease(transform.position.x, targetPosition.x, followSpeed);
-		float y = Nox.ease(transform.position.y, targetPosition.y, followSpeed);
-		float z = Nox.ease(transform.position.z, targetPosition.z, followSpeed);
-
-		transform.position = new Vector3(x, y, z);
+		transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
 		transform.rotation = Camera.main.transform.rotation;
 	}
 
@@ -115,7 +111,7 @@ public class UIFollow : MonoBehaviour {
 
 		while (Mathf.Abs(opacity - target) > 0.01f) {
 			yield return new WaitForSeconds(0.01f);
-			opacity = Nox.ease(opacity, target, fadeSpeed);
+			opacity = Mathf.Lerp(opacity, target, fadeSpeed * Time.deltaTime);
 		}
 
 		opacity = target;

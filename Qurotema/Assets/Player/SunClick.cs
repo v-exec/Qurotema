@@ -54,8 +54,8 @@ public class SunClick : MonoBehaviour {
 
 		while (FOV > 10f) {
 			yield return new WaitForSeconds(0.01f);
-			FOV = Nox.ease(FOV, 9.9f, 10f);
-			cut = Nox.ease(cut, 3000f, 0.1f);
+			FOV = Mathf.Lerp(FOV, 9.9f, 10f * Time.deltaTime);
+			cut = Mathf.Lerp(cut, 3000f, 0.1f * Time.deltaTime);
 			mix.SetFloat("LP_Freq", cut);
 			camComponent.fieldOfView = FOV;
 		}
@@ -70,7 +70,7 @@ public class SunClick : MonoBehaviour {
 
 		while (FOV < 65f) {
 			yield return new WaitForSeconds(0.01f);
-			FOV = Nox.ease(FOV, 66f, 5f);
+			FOV = Mathf.Lerp(FOV, 66f, 5f * Time.deltaTime);
 			camComponent.fieldOfView = FOV;
 		}
 

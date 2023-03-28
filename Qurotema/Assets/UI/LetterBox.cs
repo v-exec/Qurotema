@@ -42,7 +42,7 @@ public class LetterBox : MonoBehaviour {
 		//override when flying
 		if (Nox.player.GetComponent<PlayerMove>().flying) {
 			if (letterBox != null) StopCoroutine(letterBox);
-			if (currentAspect != cam.aspect) currentAspect = Nox.ease(currentAspect, cam.aspect, aspecRatioChangeSpeed / 4f);
+			if (currentAspect != cam.aspect) currentAspect = Mathf.Lerp(currentAspect, cam.aspect, aspecRatioChangeSpeed / 4f * Time.deltaTime);
 			forceAspectRatio(currentAspect);
 		}
 	}
@@ -67,7 +67,7 @@ public class LetterBox : MonoBehaviour {
 			yield return new WaitForSeconds(0.01f);
 			if (Mathf.Abs(currentAspect - desiredRatio) < 0.01f) currentAspect = desiredRatio;
 			else {
-				currentAspect = Nox.ease(currentAspect, desiredRatio, aspecRatioChangeSpeed);
+				currentAspect = Mathf.Lerp(currentAspect, desiredRatio, aspecRatioChangeSpeed * Time.deltaTime);
 				forceAspectRatio(currentAspect);
 			}
 		}

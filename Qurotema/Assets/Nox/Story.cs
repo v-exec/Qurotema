@@ -255,7 +255,7 @@ public class Story : MonoBehaviour {
 	IEnumerator FadeBackground(float target) {
 		while (Mathf.Abs(backgroundOpacity - target) > 0.02f) {
 			yield return new WaitForSeconds(0.01f);
-			backgroundOpacity = Nox.ease(backgroundOpacity, target, 0.1f);
+			backgroundOpacity = Mathf.Lerp(backgroundOpacity, target, 0.1f * Time.deltaTime);
 			storyBackground.GetComponent<CanvasGroup>().alpha = backgroundOpacity;
 		}
 

@@ -80,8 +80,8 @@ public class MouseLook : MonoBehaviour {
 		rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
 
 		//ease rotation
-		currentX = Nox.ease(currentX, rotX, easeSpeed);
-		currentY = Nox.ease(currentY, rotY, easeSpeed);
+		currentX = Mathf.Lerp(currentX, rotX, easeSpeed * Time.deltaTime);
+		currentY = Mathf.Lerp(currentY, rotY, easeSpeed * Time.deltaTime);
 
 		//apply rotation
 		Quaternion localRotation = Quaternion.Euler(currentX, currentY, 0.0f);
@@ -111,9 +111,6 @@ public class MouseLook : MonoBehaviour {
 	}
 
 	void follow() {
-		float x = Nox.ease(transform.position.x, player.transform.position.x, followSpeed);
-		float y = Nox.ease(transform.position.y, player.transform.position.y + 0.5f, followSpeed);
-		float z = Nox.ease(transform.position.z, player.transform.position.z, followSpeed);
-		transform.position = new Vector3(x, y, z);
+		transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, player.transform.position.z), followSpeed * Time.deltaTime);
 	}
 }
