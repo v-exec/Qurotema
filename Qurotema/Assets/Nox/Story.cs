@@ -32,7 +32,7 @@ public class Story : MonoBehaviour {
 	//text
 	private string[] talk;
 	private int talkTracker = 0;
-	private int randomTracker = 0;
+	private int instrumentDiscoveryTracker = 0;
 	private Coroutine routine;
 
 	void Start() {
@@ -42,42 +42,38 @@ public class Story : MonoBehaviour {
 		soundSystem = GetComponent<Sound>();
 		n = GetComponent<Nox>();
 
-		sun.SetActive(false);
-		gates.SetActive(true);
-
 		talk = new string[20];
 
 		//intro
 		talk[0] = "We have a stable port to Qurotema. RO, your vision should come in soon.";
 		talk[1] = "We should remind you that because of the Gates, this is only a one-way communication channel.";
-		talk[2] = "We will keep watch, and study Qurotema alongside you, Operator.";
-		talk[3] = "Your vessel should be equipped with a control module.\nWe trust you will discover how it interacts with this world in time.";
-		talk[4] = "Good luck with your research, RO. Make Sino proud.";
+		talk[2] = "We will keep watch and study Qurotema alongside you, Operator.";
+		talk[3] = "Your vessel should be equipped with a control module.\nLearn its controls through experimentation.";
+		talk[4] = "Make Sino proud.";
 
 		//first monolith discovery
 		talk[5] = "What you see in front of you is one of the Monoliths Dr. Sino spoke about. There should be a writing 'eminating' from it. Do you see anything?";
 
 		//first monolith interaction
-		talk[6] = "We have a feed of the characters. Sino called this script 'i-tema'. He claims there's no way to speak it, as it is a written-only language.";
-		talk[7] = "This set of symbols in particular were already translated by Sino. They say: 'The night will flow when black time's sand knows foreign touch.'";
+		talk[6] = "We have a feed of the characters. Sino called this script 'i-tema'.\nHe claims there's no way to speak it, as it is a written-only language.";
+		talk[7] = "This set of symbols in particular were already translated by Sino.\nThey say: 'The night will flow when black time's sand knows foreign touch.'";
 		talk[8] = "Nothing else was translated other than the writing on the gates, 'Quro' and 'Tema'.";
-		talk[9] = "We are not sure how Sino felt so confident in his understanding of i-tema, but finding more Monoliths will help us fill a database for linguistic analysis.";
+		talk[9] = "We are not sure how Sino felt so confident in his understanding of i-tema,\nbut finding more Monoliths will help us fill a database for linguistic analysis.";
 
 		//first instrument discovery
-		talk[10] = "What is that? Nothing like that was documented in Sino's notes. It's not coming in clear.";
+		talk[10] = "What is that? Nothing like that was documented in Sino's notes.";
 
 		//instrument playtime story progress
-		talk[11] = "We have signals of faint acitivity away from your vessel's current position.";
-		talk[12] = "We've lost sight of your feed, but we are still getting readings about your position. Keep up the research.";
-		talk[13] = "Our connection is becoming unreliable. We are going to pull you out soon.";
+		talk[11] = "We hav. signals of faint acit.vity aw.y from your vessel's current pos.tion.";
+		talk[12] = "We've l.st sight .f your fe.d, but we are st..l getting r.adings about your p.s.tion. Ke.p up the research.";
+		talk[13] = "Our co..ection is bec.ming unreli.ble. We ar. g.ing to pu.l you out s..n.";
 
 		//ending
-		talk[14] = "We are losing connection fast. Abandoning vessel.";
-		talk[15] = "RO? Di? Your body in the lab is unresponsive. Initiate return protocol immediately so we can resuscitate.";
-		talk[16] = "Di, I don't know what's going on but we have no connection to Qurotema, can't even find it with Sino's systems.";
-		talk[17] = "It's possible that Qurotema is gone, and your vessel is in the Void.";
-		talk[18] = "I'm going to be honest. I don't know what we're going to do.";
-		talk[19] = "";
+		talk[14] = "Lo.ing co..ection fas., wh.t's ..ing on?";
+		talk[15] = "RO? Di. B.dy .. ... la... .. ..resp.n.ive. ........ ret.r. pro.ocol ........... .. .. ... .....cit.te.";
+		talk[16] = "Qur..ema .. ...., .... ... ..... ... .... ves.el .. .. ... Vo.d.";
+		talk[17] = "Aban.on.ng ...... ... so.ry. ...";
+		talk[18] = "";
 
 		if (!introductionFinished) {
 			backgroundOpacity = 1f;
@@ -87,8 +83,6 @@ public class Story : MonoBehaviour {
 			routine = StartCoroutine(PlayText(talkTracker));
 		} else {
 			//skip intro
-			sun.SetActive(true);
-			gates.SetActive(false);
 		}
 	}
 
@@ -113,21 +107,21 @@ public class Story : MonoBehaviour {
 		checkForInstrumentDiscovery();
 
 		stringsPlayed++;
-		if (stringsPlayed == 50) randomMessage();
+		if (stringsPlayed == 50) instrumentDiscoveryMessage();
 	}
 
 	public void ringPlayed() {
 		checkForInstrumentDiscovery();
 
 		ringsPlayed++;
-		if (ringsPlayed == 40) randomMessage();
+		if (ringsPlayed == 40) instrumentDiscoveryMessage();
 	}
 
 	public void padPlayed() {
 		checkForInstrumentDiscovery();
 
 		padsPlayed++;
-		if (padsPlayed == 30) randomMessage();
+		if (padsPlayed == 30) instrumentDiscoveryMessage();
 	}
 
 	public void endGame() {
@@ -136,8 +130,8 @@ public class Story : MonoBehaviour {
 		routine = StartCoroutine(PlayText(talkTracker));
 	}
 
-	private void randomMessage() {
-		switch (randomTracker) {
+	private void instrumentDiscoveryMessage() {
+		switch (instrumentDiscoveryTracker) {
 			case 0:
 				talkTracker = 11;
 				break;
@@ -151,7 +145,7 @@ public class Story : MonoBehaviour {
 				break;
 		}
 
-		randomTracker++;
+		instrumentDiscoveryTracker++;
 
 		soundSystem.shootSound("sparkles");
 		n.terrain.flashFeedback();
@@ -178,20 +172,17 @@ public class Story : MonoBehaviour {
 			//allow vision
 			case 1:
 				StartCoroutine(FadeBackground(0f));
-				sun.SetActive(true);
 				break;
 
-			//remove gates, allow movement
+			//allow movement
 			case 2:
-				gates.SetActive(false);
 				introductionFinished = true;
 				break;
 
-			//show gates and remove map limit
+			//show gates
 			case 13:
 				gates.SetActive(true);
 				gates.GetComponent<GatesStory>().activateEnd();
-				GameObject.Find("Map Limit (front)").SetActive(false);
 				break;
 
 			//slow player down and fade screen
@@ -207,7 +198,7 @@ public class Story : MonoBehaviour {
 				break;
 
 			//end game
-			case 19:
+			case 18:
 				Application.Quit();
 				break;
 		}
@@ -239,7 +230,7 @@ public class Story : MonoBehaviour {
 			case 11:
 			case 12:
 			case 13:
-			case 19:
+			case 18:
 				end = true;
 				break;
 		}

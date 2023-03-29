@@ -3548,6 +3548,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419257189}
   m_CullTransparentMesh: 0
+--- !u!84 &421094874
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 1032
+  m_Height: 614
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 94
+  m_ColorFormat: 74
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &429154332
 GameObject:
   m_ObjectHideFlags: 0
@@ -6806,43 +6843,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066517806}
   m_CullTransparentMesh: 0
---- !u!84 &1078357044
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 1097
-  m_Height: 614
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 74
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &1098124615
 GameObject:
   m_ObjectHideFlags: 0
@@ -8290,14 +8290,14 @@ MonoBehaviour:
   padsPlayed: 0
   monolithTexts:
   - {fileID: 21300000, guid: fb7a5f5659c4441498c6774c5bbe28c4, type: 3}
-  - {fileID: 21300000, guid: 0cedf8590552b21428f137d986f8c3f4, type: 3}
-  - {fileID: 21300000, guid: ad1013554fd4d114b9e08877fcabbcf3, type: 3}
-  - {fileID: 21300000, guid: d89a10353bbf7894da129a076e4195d1, type: 3}
-  - {fileID: 21300000, guid: d30b7639fa743bd46a7c808c9fb154e3, type: 3}
-  - {fileID: 21300000, guid: 88af63cd6cbc60e4fb5f8d776c2eb4aa, type: 3}
-  - {fileID: 21300000, guid: 2014a9c8f9922f84aaeafcbcc16dd1b5, type: 3}
   - {fileID: 21300000, guid: b214fc2f37b8a9b45ab39cb0e4b693a7, type: 3}
+  - {fileID: 21300000, guid: 0cedf8590552b21428f137d986f8c3f4, type: 3}
+  - {fileID: 21300000, guid: 2014a9c8f9922f84aaeafcbcc16dd1b5, type: 3}
+  - {fileID: 21300000, guid: d30b7639fa743bd46a7c808c9fb154e3, type: 3}
+  - {fileID: 21300000, guid: d89a10353bbf7894da129a076e4195d1, type: 3}
+  - {fileID: 21300000, guid: ad1013554fd4d114b9e08877fcabbcf3, type: 3}
   - {fileID: 21300000, guid: 363f21e582bbdba468cd84a1bfc8ef3d, type: 3}
+  - {fileID: 21300000, guid: 88af63cd6cbc60e4fb5f8d776c2eb4aa, type: 3}
 --- !u!114 &1283151640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8543,7 +8543,7 @@ MonoBehaviour:
     m_InputFilters: []
     m_AOVBitmask: 0
     m_AOVRenderTargets: []
-    m_RenderTarget: {fileID: 1078357044}
+    m_RenderTarget: {fileID: 421094874}
     m_ClearsBackGround: 0
     m_Show: 1
     m_LayerCamera: {fileID: 0}
@@ -15909,7 +15909,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &8296172667768287537
 MonoBehaviour:
   m_ObjectHideFlags: 0
