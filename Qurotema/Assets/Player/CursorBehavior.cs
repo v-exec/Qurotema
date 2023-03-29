@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CursorBehavior : MonoBehaviour {
 
-	private float distanceFromCamera = 5f;
-	private float followSpeed = 15f;
+	public float distanceFromCamera = 5f;
+	public float followSpeed = 15f;
 	private Rigidbody rb;
 
 	private Color red = new Color(100f, 0f, 0f);

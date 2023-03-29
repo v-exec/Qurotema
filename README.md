@@ -4,11 +4,10 @@ Off-limit universe.
 
 ## TO DO
 
-- Recreate collisions
 - Redo audio (film showcase and send to composer)
-- Fix vertical movement issues
-	- Possible clipping through ground when moving at high speed uphill and jumping
-	- Undesireable sliding when falling from large height (seems to stop when not moving, why?)
+- Recreate collisions
+- Fix possible clipping through ground when moving at high speed uphill and jumping
+
 - Improve story
 - Make gate appear more smoothly
 - Make end "effects" smoother
