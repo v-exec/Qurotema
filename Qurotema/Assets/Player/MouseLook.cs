@@ -24,6 +24,7 @@ public class MouseLook : MonoBehaviour {
 	//components
 	private GameObject player;
 	private Camera cam;
+	private Rigidbody rb;
 
 	//shake noise
 	private float perlinX;
@@ -53,8 +54,7 @@ public class MouseLook : MonoBehaviour {
 		//get components
 		player = GameObject.Find("Player");
 		cam = gameObject.GetComponent<Camera>();
-
-		//Application.targetFrameRate = 60;
+		rb = gameObject.GetComponent<Rigidbody>();
 	}
 
 	void Update() {
@@ -63,9 +63,6 @@ public class MouseLook : MonoBehaviour {
 		}
 
 		handleInput();
-	}
-
-	void FixedUpdate() {
 		rotate();
 		follow();
 		shake();
@@ -89,11 +86,12 @@ public class MouseLook : MonoBehaviour {
 
 	void rotate() {
 		//ease rotation
-		currentX = Mathf.Lerp(currentX, rotX, easeSpeed * Time.fixedDeltaTime);
-		currentY = Mathf.Lerp(currentY, rotY, easeSpeed * Time.fixedDeltaTime);
+		currentX = Mathf.Lerp(currentX, rotX, easeSpeed * Time.deltaTime);
+		currentY = Mathf.Lerp(currentY, rotY, easeSpeed * Time.deltaTime);
 
 		//apply rotation
-		Quaternion localRotation = Quaternion.Euler(currentX, currentY, 0.0f);
+		Vector3 rotation = new Vector3(currentX, currentY, 0.0f);
+		Quaternion localRotation = Quaternion.Euler(rotation);
 		transform.rotation = localRotation;
 	}
 
@@ -103,9 +101,9 @@ public class MouseLook : MonoBehaviour {
 
 	void shake() {
 		//increment perlin 'cursor'
-		perlinX += shakeSpeed * Time.fixedDeltaTime;
-		perlinY += shakeSpeed * Time.fixedDeltaTime;
-		perlinZ += shakeSpeed * Time.fixedDeltaTime;
+		perlinX += shakeSpeed * Time.deltaTime;
+		perlinY += shakeSpeed * Time.deltaTime;
+		perlinZ += shakeSpeed * Time.deltaTime;
 
 		//remap to -1 to 1 and amplify according to shake quantity
 		float x = Nox.remap(Mathf.PerlinNoise(perlinX, 0), 0f, 1f, -1f, 1f) * shakeQuantity;

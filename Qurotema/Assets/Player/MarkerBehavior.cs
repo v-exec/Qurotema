@@ -30,7 +30,6 @@ public class MarkerBehavior : MonoBehaviour {
 
 				if (Input.GetMouseButtonDown(0)) {
 					Nox.player.GetComponent<PlayerMove>().targetFOV = 20f;
-					Nox.player.GetComponent<PlayerMove>().rb.velocity = new Vector3(0,0,0);
 					Nox.player.transform.position = new Vector3(hit.point.x, hit.point.y + 2f, hit.point.z);
 					soundSystem.addEnergy(3f);
 					soundSystem.shootSound("whips");

@@ -56,11 +56,9 @@ public class CursorBehavior : MonoBehaviour {
 		if (Input.GetMouseButtonUp(1)) {
 			soundSystem.dynamicToggle("rhythms", false);
 		}
-	}
 
-	void FixedUpdate() {
 		Vector3 targetPosition = Camera.main.transform.position + (Camera.main.transform.forward * distanceFromCamera);
-		transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.fixedDeltaTime);
+		transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
 	}
 
 	void makeActive() {

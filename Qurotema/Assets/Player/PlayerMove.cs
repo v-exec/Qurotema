@@ -6,34 +6,34 @@ using UnityEngine.Audio;
 public class PlayerMove : MonoBehaviour {
 
 	//components
-	public Rigidbody rb;
 	private GameObject cam;
 	private Camera camComponent;
 
 	//movement
 	[Header("Speed")]
-	public float walkSpeed = 0.2f;
-	public float sprintSpeed = 0.8f;
+	public float walkSpeed = 20f;
+	public float sprintSpeed = 80f;
 
 	[Header("Verticality")]
-	public float jumpSpeed = 450f;
-	public float flyHeight = 80f;
-	public float gravity = 5f;
-	public float groundedHeight = 0.2f;
-	public float floatDistance = 4f;
+	public float jumpSpeed = 200f;
+	public float terminalVelocity = -20f;
+	public float flyHeight = 200f;
+	public float gravityEase = 5f;
+	public float groundedHeight = 1f;
+	public float floatDistance = 5f;
 	public float graceSpace = 0.5f;
 	public float jumpDelayTime = 0.5f;
 	public LayerMask mask;
 
 	[Header("Acceleration")]
-	public float speedChangeWalk = 2.0f;
-	public float speedChangeSprint = 0.2f;
-	public float speedChangeStop = 1.5f;
+	public float speedChangeWalk = 2f;
+	public float speedChangeSprint = 2f;
+	public float speedChangeStop = 2f;
 	public float directionChangeSpeed = 3f;
 	public float airDampening = 0.2f;
 	public float flyEase = 4f;
 	public float flightSpeedMultiplier = 2f;
-	public float flightControlMultiplier = 10f;
+	public float flightControlMultiplier = 3f;
 
 	[Header("FOV")]
 	public float defaultFOV = 65f;
@@ -43,16 +43,14 @@ public class PlayerMove : MonoBehaviour {
 
 	[Header("Internals")]
 	public bool flying = false;
-	public float targetSpeed = 0f;
-	public float targetFOV = 0f;
+	public bool jumpTrigger = false;
 	public bool jumping = false;
 	public bool sprinting = false;
+	public float targetSpeed = 0f;
+	public float targetFOV = 0f;
+	public float verticalForce = 0f;
 	public Vector2 targetDirection = new Vector2(0f, 0f);
-	private bool spacePressed = false;
-	private bool shiftPressed = false;
-
-	//story
-	private bool ready = false;
+	private bool ready = false; //story
 
 	//audio
 	private Sound soundSystem;
@@ -62,7 +60,6 @@ public class PlayerMove : MonoBehaviour {
 		cam = GameObject.Find("Camera");
 		camComponent = cam.GetComponent<Camera>();
 		soundSystem = GameObject.Find("Nox").GetComponent<Sound>();
-
 		targetFOV = defaultFOV;
 	}
 
@@ -71,18 +68,13 @@ public class PlayerMove : MonoBehaviour {
 			if (GameObject.Find("Nox").GetComponent<Story>().introductionFinished) ready = true;
 		} else {
 			handleKeys();
+			move();
 		}
 
 		setFOV();
 		handleSound();
 	}
 
-	//needs to be in fixedupdate as we're modifying a rigidbody
-	void FixedUpdate() {
-		if (ready) move();
-	}
-
-	//this lets us handle key presses in the update loop, whereas they can be missed in FixedUpdate
 	void handleKeys() {
 		if (Input.GetKeyDown("escape")) Application.Quit();
 
@@ -113,12 +105,6 @@ public class PlayerMove : MonoBehaviour {
 				soundSystem.dynamicToggle("pads", false);
 			}
 		}
-
-		if (Input.GetKeyDown(KeyCode.Space)) spacePressed = true;
-		if (Input.GetKeyUp(KeyCode.Space)) spacePressed = false;
-
-		if (Input.GetKeyDown(KeyCode.LeftShift)) shiftPressed = true;
-		if (Input.GetKeyUp(KeyCode.LeftShift)) shiftPressed = false;
 	}
 
 	void handleSound() {
@@ -129,13 +115,8 @@ public class PlayerMove : MonoBehaviour {
 
 		//need listener specifically for a single event
 		//repeated calls to dynamicToggle result in loss of functionality
-		if (Input.GetKeyDown(KeyCode.LeftShift)) {
-			soundSystem.dynamicToggle("percussion", true);
-		}
-
-		if (Input.GetKeyUp(KeyCode.LeftShift)) {
-			soundSystem.dynamicToggle("percussion", false);
-		}
+		if (Input.GetKeyDown(KeyCode.LeftShift)) soundSystem.dynamicToggle("percussion", true);
+		if (Input.GetKeyUp(KeyCode.LeftShift)) soundSystem.dynamicToggle("percussion", false);
 
 		if (jumping) {
 			float cut;
@@ -162,7 +143,7 @@ public class PlayerMove : MonoBehaviour {
 		if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f) horizontal = Input.GetAxis("Horizontal");
 		if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f) vertical = Input.GetAxis("Vertical");
 		Vector2 direction = getInput(horizontal, vertical);
-		Vector3 newLoc = new Vector3(gameObject.transform.position.x + direction.x * Time.fixedDeltaTime, gameObject.transform.position.y, gameObject.transform.position.z + direction.y * Time.fixedDeltaTime);
+		Vector3 newLoc = new Vector3(transform.position.x + direction.x * Time.deltaTime, transform.position.y, transform.position.z + direction.y * Time.deltaTime);
 
 		/*
 		An important component of the movement is how, unless the player jumps, they are glued to the ground.
@@ -172,18 +153,31 @@ public class PlayerMove : MonoBehaviour {
 		//glue to ground, or add gravity while airborne
 		if (!flying) {
 			if (!jumping) newLoc = groundPlayer(newLoc);
-			else rb.AddForce(-Vector3.up * gravity);
+			else {
+				if (jumpTrigger) {
+					verticalForce = jumpSpeed;
+					jumpTrigger = false;
+					StartCoroutine(jumpDelay());
+				}
+
+				if (verticalForce > 2f) {
+					verticalForce = Mathf.Lerp(verticalForce, 0f, gravityEase * Time.deltaTime);
+				} else {
+					verticalForce = Mathf.Lerp(verticalForce, terminalVelocity, gravityEase * Time.deltaTime);
+				}
+
+				newLoc.y += verticalForce * Time.deltaTime;
+			}
 		} else {
 			//fly
-			rb.velocity = new Vector3(0, 0, 0);
-			targetFOV = Mathf.Lerp(targetFOV, flyingFOV, FOVease * Time.fixedDeltaTime);
+			targetFOV = Mathf.Lerp(targetFOV, flyingFOV, FOVease * Time.deltaTime);
 
-			if (transform.position.y < flyHeight - 0.001f) newLoc = new Vector3(newLoc.x, Mathf.Lerp(transform.position.y, flyHeight, flyEase * Time.fixedDeltaTime), newLoc.z);
+			if (transform.position.y < flyHeight - 0.001f) newLoc = new Vector3(newLoc.x, Mathf.Lerp(transform.position.y, flyHeight, flyEase * Time.deltaTime), newLoc.z);
 			else newLoc = new Vector3(newLoc.x, flyHeight, newLoc.z);
 		}
 
 		//apply movement
-		rb.MovePosition(newLoc);
+		transform.position = newLoc;
 
 		//limit player to bounds
 		if (transform.position.z > 2900f) transform.position = new Vector3(transform.position.x, transform.position.y, 2899f);
@@ -192,27 +186,23 @@ public class PlayerMove : MonoBehaviour {
 		if (transform.position.x < -2900f) transform.position = new Vector3(-2899f, transform.position.y, transform.position.z);
 
 		//jump
-		if (spacePressed && isGrounded() && !jumping && !flying) {
+		if (Input.GetKeyDown(KeyCode.Space) && isGrounded() && !jumping && !flying) {
 			jumping = true;
-			rb.AddForce(Vector3.up * jumpSpeed);
-			StartCoroutine(jumpDelay());
+			jumpTrigger = true;
 		}
 
 		//no movement - stop all forces (excluding vertical force for jumping)
 		if (horizontal == 0f && vertical == 0f && isGrounded()) {
-			targetSpeed = Mathf.Lerp(targetSpeed, 0f, speedChangeStop * Time.fixedDeltaTime);
-			rb.velocity = new Vector3(0, rb.velocity.y, 0);
+			targetSpeed = Mathf.Lerp(targetSpeed, 0f, speedChangeStop * Time.deltaTime);
 
 		//sprint
 		sprinting = false;
-		} else if (shiftPressed) {
+		} else if (Input.GetKey(KeyCode.LeftShift)) {
 			sprinting = true;
-			targetSpeed = Mathf.Lerp(targetSpeed, sprintSpeed, speedChangeSprint * Time.fixedDeltaTime);
+			targetSpeed = Mathf.Lerp(targetSpeed, sprintSpeed, speedChangeSprint * Time.deltaTime);
 			
 		//walk
-		} else {
-			targetSpeed = Mathf.Lerp(targetSpeed, walkSpeed, speedChangeWalk * Time.fixedDeltaTime);
-		}
+		} else targetSpeed = Mathf.Lerp(targetSpeed, walkSpeed, speedChangeWalk * Time.deltaTime);
 	}
 
 	Vector2 getInput(float horizontal, float vertical) {
