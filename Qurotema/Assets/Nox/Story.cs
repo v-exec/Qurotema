@@ -7,26 +7,31 @@ using UnityEngine.Rendering.HighDefinition;
 
 public class Story : MonoBehaviour {
 
-	//media
+	[Header("References")]
+	public GameObject sun;
+	public GameObject gates;
+
 	private Text storyText;
 	private GameObject storyTextCanvas;
 	private GameObject storyBackground;
 	private float backgroundOpacity = 0f;
-	public GameObject sun;
-	public GameObject gates;
 	private Sound soundSystem;
 	private Nox n;
 
-	//states
+	[Header("States")]
 	public bool introductionFinished = false;
 
-	//trackers
+	[Header("Text Animation")]
+	public float textTime = 3f;
+	public float opacityChangeSpeed = 0.01f;
+
+	[Header("Trackers")]
 	public int monolithsRead = 0;
 	public int stringsPlayed = 0;
 	public int ringsPlayed = 0;
 	public int padsPlayed = 0;
 
-	//monolith texts
+	[Header("Text")]
 	public Sprite[] monolithTexts;
 
 	//text
@@ -194,6 +199,9 @@ public class Story : MonoBehaviour {
 
 			//stop music
 			case 15:
+				//decrease animation time for added intensity
+				textTime = 1f;
+				opacityChangeSpeed = 0.05f;
 				soundSystem.silence();
 				break;
 
@@ -209,15 +217,15 @@ public class Story : MonoBehaviour {
 
 		while (opacity < 0.99f) {
 			yield return new WaitForSeconds(0.01f);
-			opacity += 0.01f;
+			opacity += opacityChangeSpeed;
 			storyTextCanvas.GetComponent<CanvasGroup>().alpha = opacity;
 		}
 
-		yield return new WaitForSeconds(2f);
+		yield return new WaitForSeconds(textTime);
 
 		while (opacity > 0.01f) {
 			yield return new WaitForSeconds(0.01f);
-			opacity -= 0.01f;
+			opacity -= opacityChangeSpeed;
 			storyTextCanvas.GetComponent<CanvasGroup>().alpha = opacity;
 		}
 
