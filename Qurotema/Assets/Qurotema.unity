@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2035111234}
-  m_IndirectSpecularColor: {r: 0.03628911, g: 0.03628911, b: 0.038101863, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3599,7 +3599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceFromCamera: 1.5
-  followSpeed: 50
+  followSpeed: 55
   fadeDelay: 0.6
   triggerLayer: flight
 --- !u!225 &429154335
@@ -6338,7 +6338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceFromCamera: 1.3
-  followSpeed: 45
+  followSpeed: 50
   fadeDelay: 0
   triggerLayer: control
 --- !u!225 &978761194
@@ -8418,7 +8418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Enable: 1
-  m_Material: {fileID: 2110059158}
+  m_Material: {fileID: 2057519204}
   m_OutputDisplay: 0
   m_InputLayers:
   - m_LayerName: BaseLayer
@@ -8792,6 +8792,9 @@ MonoBehaviour:
   shakeSpeed: 1
   shakeQuantity: 1.4
   followSpeed: 8
+  mask:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!114 &1297650286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10320,8 +10323,8 @@ MonoBehaviour:
   flyHeight: 200
   gravityEase: 1
   groundedHeight: 1
-  floatDistance: 5
-  graceSpace: 0.5
+  floatDistance: 10
+  graceSpace: 0.1
   jumpDelayTime: 0.5
   mask:
     serializedVersion: 2
@@ -10345,6 +10348,7 @@ MonoBehaviour:
   targetSpeed: 0
   targetFOV: 0
   verticalForce: 0
+  bottomDistanceFromCenter: 1
   targetDirection: {x: 0, y: 0}
   mix: {fileID: 24100000, guid: 8ff87e8b1319e4b49927e92f429cadf3, type: 2}
 --- !u!1 &1453648828
@@ -10599,7 +10603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceFromCamera: 1.2
-  followSpeed: 50
+  followSpeed: 55
   fadeDelay: 1
   triggerLayer: flight
 --- !u!225 &1494617101
@@ -12925,7 +12929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceFromCamera: 1.8
-  followSpeed: 50
+  followSpeed: 55
   fadeDelay: 0.2
   triggerLayer: flight
 --- !u!225 &1925697219
@@ -14114,6 +14118,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049537689}
   m_CullTransparentMesh: 0
+--- !u!21 &2057519204
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs/DefaultCompositionGraph
+  m_Shader: {fileID: -6465566751694194690, guid: d2b72c4759ff207479c9c419063cc540,
+    type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - BaseLayer:
+        m_Texture: {fileID: 1078357044}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats: []
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &2075128229
 GameObject:
   m_ObjectHideFlags: 0
@@ -14418,50 +14466,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109861633}
   m_CullTransparentMesh: 0
---- !u!21 &2110059158
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs/DefaultCompositionGraph
-  m_Shader: {fileID: -6465566751694194690, guid: d2b72c4759ff207479c9c419063cc540,
-    type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - BaseLayer:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats: []
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!4 &748880166459998639 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,

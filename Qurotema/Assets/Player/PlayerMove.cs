@@ -49,6 +49,7 @@ public class PlayerMove : MonoBehaviour {
 	public float targetSpeed = 0f;
 	public float targetFOV = 0f;
 	public float verticalForce = 0f;
+	public float bottomDistanceFromCenter = 1f;
 	public Vector2 targetDirection = new Vector2(0f, 0f);
 	private bool ready = false; //story
 
@@ -160,13 +161,11 @@ public class PlayerMove : MonoBehaviour {
 					StartCoroutine(jumpDelay());
 				}
 
-				if (verticalForce > 2f) {
-					verticalForce = Mathf.Lerp(verticalForce, 0f, gravityEase * Time.deltaTime);
-				} else {
-					verticalForce = Mathf.Lerp(verticalForce, terminalVelocity, gravityEase * Time.deltaTime);
-				}
+				if (verticalForce > 2f) verticalForce = Mathf.Lerp(verticalForce, 0f, gravityEase * Time.deltaTime);
+				else verticalForce = Mathf.Lerp(verticalForce, terminalVelocity, gravityEase * Time.deltaTime);
 
 				newLoc.y += verticalForce * Time.deltaTime;
+				newLoc.y = preventClip(newLoc);
 			}
 		} else {
 			//fly
@@ -196,13 +195,15 @@ public class PlayerMove : MonoBehaviour {
 			targetSpeed = Mathf.Lerp(targetSpeed, 0f, speedChangeStop * Time.deltaTime);
 
 		//sprint
-		sprinting = false;
 		} else if (Input.GetKey(KeyCode.LeftShift)) {
 			sprinting = true;
 			targetSpeed = Mathf.Lerp(targetSpeed, sprintSpeed, speedChangeSprint * Time.deltaTime);
 			
 		//walk
-		} else targetSpeed = Mathf.Lerp(targetSpeed, walkSpeed, speedChangeWalk * Time.deltaTime);
+		} else {
+			sprinting = false;
+			targetSpeed = Mathf.Lerp(targetSpeed, walkSpeed, speedChangeWalk * Time.deltaTime);
+		}
 	}
 
 	Vector2 getInput(float horizontal, float vertical) {
@@ -238,7 +239,7 @@ public class PlayerMove : MonoBehaviour {
 		//add small correction (offset upwards) so that a collider on a steep hill doesn't clip through
 		RaycastHit hit;
 		if (Physics.Raycast(new Vector3(location.x, location.y + graceSpace, location.z), -Vector3.up, out hit, floatDistance, mask)) {
-			location = new Vector3(location.x, hit.point.y + GetComponent<Collider>().bounds.extents.y + graceSpace, location.z);
+			location = new Vector3(location.x, hit.point.y + bottomDistanceFromCenter + graceSpace, location.z);
 
 		//if distance is big enough (float), make player fall with gravity instead of forcing them to the ground
 		} else if (!jumping) {
@@ -249,8 +250,18 @@ public class PlayerMove : MonoBehaviour {
 		return location;
 	}
 
+	float preventClip(Vector3 location) {
+		RaycastHit hit;
+		if (Physics.Raycast(new Vector3(location.x, location.y + 20f, location.z), -Vector3.up, out hit, 50f, mask)) {
+			if (hit.point.y-3f > location.y - bottomDistanceFromCenter) {
+				return hit.point.y + bottomDistanceFromCenter + graceSpace;
+			}
+		}
+		return location.y;
+	}
+
 	bool isGrounded() {
-		return Physics.Raycast(transform.position, -Vector3.up, GetComponent<Collider>().bounds.extents.y + groundedHeight);
+		return Physics.Raycast(transform.position - new Vector3(0f, bottomDistanceFromCenter, 0f), -Vector3.up, groundedHeight);
 	}
 
 	IEnumerator jumpDelay() {

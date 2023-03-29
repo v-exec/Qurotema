@@ -11,6 +11,8 @@ public class MouseLook : MonoBehaviour {
 	public float shakeSpeed = 1f;
 	public float shakeQuantity = 1.4f;
 	public float followSpeed = 8f;
+
+	public LayerMask mask;
  
 	//internal mouse
 	private float mouseX = 0f;
@@ -97,6 +99,14 @@ public class MouseLook : MonoBehaviour {
 
 	void follow() {
 		transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x, player.transform.position.y + 0.5f, player.transform.position.z), followSpeed * Time.deltaTime);
+
+		//move up if clipping
+		RaycastHit hit;
+		if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y + 10f, transform.position.z), -Vector3.up, out hit, 50f, mask)) {
+			if (hit.point.y > transform.position.y - 2f) {
+				transform.position = new Vector3(transform.position.x, hit.point.y + 2f, transform.position.z);
+			}
+		}
 	}
 
 	void shake() {
