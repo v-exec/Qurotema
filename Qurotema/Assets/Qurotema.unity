@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2035111234}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.035308987, g: 0.035308987, b: 0.037068516, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -358,7 +358,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1379775439}
+    m_TransformParent: {fileID: 801699980}
     m_Modifications:
     - target: {fileID: 702956587, guid: 90a8f6f3a4021c342990a3502c946c7f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -376,22 +376,22 @@ PrefabInstance:
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 100.00018
+      value: 100.00019
       objectReference: {fileID: 0}
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 100.000145
+      value: 100.00016
       objectReference: {fileID: 0}
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 100.000305
+      value: 100.0003
       objectReference: {fileID: 0}
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}
@@ -1925,7 +1925,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1379775439}
+    m_TransformParent: {fileID: 801699980}
     m_Modifications:
     - target: {fileID: 702956587, guid: 90a8f6f3a4021c342990a3502c946c7f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1943,7 +1943,12 @@ PrefabInstance:
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 99.99996
       objectReference: {fileID: 0}
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}
@@ -2314,7 +2319,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1379775439}
+    m_TransformParent: {fileID: 801699980}
     m_Modifications:
     - target: {fileID: 1601258651, guid: 90a8f6f3a4021c342990a3502c946c7f, type: 3}
       propertyPath: m_Sprite
@@ -2324,7 +2329,12 @@ PrefabInstance:
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 100.0001
       objectReference: {fileID: 0}
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}
@@ -3752,6 +3762,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435254326}
   m_CullTransparentMesh: 0
+--- !u!21 &436508403
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs/DefaultCompositionGraph
+  m_Shader: {fileID: -6465566751694194690, guid: d2b72c4759ff207479c9c419063cc540,
+    type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - BaseLayer:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats: []
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &445797106
 GameObject:
   m_ObjectHideFlags: 0
@@ -5436,6 +5490,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789029960}
   m_CullTransparentMesh: 0
+--- !u!1 &801699979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 801699980}
+  m_Layer: 0
+  m_Name: Colliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &801699980
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801699979}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 882351987}
+  - {fileID: 748880166459998639}
+  - {fileID: 191655265}
+  - {fileID: 227151397}
+  - {fileID: 1529473177}
+  - {fileID: 1503856887}
+  - {fileID: 1342376889}
+  - {fileID: 1346374698}
+  - {fileID: 14558482}
+  m_Father: {fileID: 1379775439}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &826251625
 GameObject:
   m_ObjectHideFlags: 0
@@ -6085,8 +6179,8 @@ Transform:
   m_LocalScale: {x: 5, y: 200, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1379775439}
-  m_RootOrder: 0
+  m_Father: {fileID: 801699980}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &902700171
 GameObject:
@@ -8418,7 +8512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Enable: 1
-  m_Material: {fileID: 2057519204}
+  m_Material: {fileID: 436508403}
   m_OutputDisplay: 0
   m_InputLayers:
   - m_LayerName: BaseLayer
@@ -9195,7 +9289,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1379775439}
+    m_TransformParent: {fileID: 801699980}
     m_Modifications:
     - target: {fileID: 702956587, guid: 90a8f6f3a4021c342990a3502c946c7f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9213,7 +9307,7 @@ PrefabInstance:
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}
@@ -9342,7 +9436,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1379775439}
+    m_TransformParent: {fileID: 801699980}
     m_Modifications:
     - target: {fileID: 702956587, guid: 90a8f6f3a4021c342990a3502c946c7f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9360,7 +9454,7 @@ PrefabInstance:
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}
@@ -9863,15 +9957,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 882351987}
-  - {fileID: 748880166459998639}
-  - {fileID: 191655265}
-  - {fileID: 227151397}
-  - {fileID: 1529473177}
-  - {fileID: 1503856887}
-  - {fileID: 1342376889}
-  - {fileID: 1346374698}
-  - {fileID: 14558482}
+  - {fileID: 801699980}
   - {fileID: 1709144925}
   - {fileID: 165968826}
   - {fileID: 840888817}
@@ -10316,6 +10402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9377d39e6dde5ff478baf3fcb8d3a2b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders: {fileID: 801699980}
   walkSpeed: 20
   sprintSpeed: 80
   jumpSpeed: 20
@@ -10686,7 +10773,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1379775439}
+    m_TransformParent: {fileID: 801699980}
     m_Modifications:
     - target: {fileID: 702956587, guid: 90a8f6f3a4021c342990a3502c946c7f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10704,7 +10791,7 @@ PrefabInstance:
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}
@@ -11044,7 +11131,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1379775439}
+    m_TransformParent: {fileID: 801699980}
     m_Modifications:
     - target: {fileID: 702956587, guid: 90a8f6f3a4021c342990a3502c946c7f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11062,7 +11149,7 @@ PrefabInstance:
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}
@@ -11072,12 +11159,12 @@ PrefabInstance:
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 100.000015
+      value: 100.00002
       objectReference: {fileID: 0}
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 100.00013
+      value: 100.00012
       objectReference: {fileID: 0}
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}
@@ -14118,50 +14205,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049537689}
   m_CullTransparentMesh: 0
---- !u!21 &2057519204
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs/DefaultCompositionGraph
-  m_Shader: {fileID: -6465566751694194690, guid: d2b72c4759ff207479c9c419063cc540,
-    type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - BaseLayer:
-        m_Texture: {fileID: 1078357044}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats: []
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!1 &2075128229
 GameObject:
   m_ObjectHideFlags: 0
@@ -14478,12 +14521,17 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1379775439}
+    m_TransformParent: {fileID: 801699980}
     m_Modifications:
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 99.999985
       objectReference: {fileID: 0}
     - target: {fileID: 135952927022415067, guid: 90a8f6f3a4021c342990a3502c946c7f,
         type: 3}

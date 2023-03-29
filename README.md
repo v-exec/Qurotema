@@ -4,8 +4,6 @@ Off-limit universe.
 
 ## TO DO
 
-- Recreate collisions for monoliths and other structures
-
 - Improve story
 - Make gate appear more smoothly
 - Make end "effects" smoother

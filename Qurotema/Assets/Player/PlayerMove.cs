@@ -8,6 +8,7 @@ public class PlayerMove : MonoBehaviour {
 	//components
 	private GameObject cam;
 	private Camera camComponent;
+	public Transform colliders;
 
 	//movement
 	[Header("Speed")]
@@ -176,7 +177,8 @@ public class PlayerMove : MonoBehaviour {
 		}
 
 		//apply movement
-		transform.position = newLoc;
+		if (isColliding(newLoc)) transform.position = new Vector3(transform.position.x, newLoc.y, transform.position.z); //prevent collisions with select objects
+		else transform.position = newLoc;
 
 		//limit player to bounds
 		if (transform.position.z > 2900f) transform.position = new Vector3(transform.position.x, transform.position.y, 2899f);
@@ -258,6 +260,14 @@ public class PlayerMove : MonoBehaviour {
 			}
 		}
 		return location.y;
+	}
+
+	bool isColliding(Vector3 location) {
+		foreach (Transform child in colliders) {
+			if (child.gameObject.GetComponent<Collider>().bounds.Contains(location)) return true;
+		}
+
+		return false;
 	}
 
 	bool isGrounded() {
